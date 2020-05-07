@@ -4,6 +4,8 @@ import Brand from "./Components/Brand";
 
 import logo from "./logo.svg";
 
+import sampleJSON from "./data/sample.json";
+
 import "antd/dist/antd.css";
 import "./index.css";
 import { Layout, Menu, Breadcrumb } from "antd";
@@ -27,6 +29,8 @@ const App = () => {
   const toggle = () => {
     setCollapsedState(!collapsedState);
   };
+
+  console.log(sampleJSON);
 
   return (
     <div className="App">
@@ -72,7 +76,14 @@ const App = () => {
               padding: 24,
               minHeight: 280,
             }}
-          ></Content>
+          >
+            We need to create dynamic components here. For example...
+            <br />
+            profile content/viz gets rendered if user clicks on profile
+            assessment
+            <br />
+            content/viz gets rendered if user clicks on assessment
+          </Content>
           <Footer style={{ textAlign: "center" }}>Teamric</Footer>
         </Layout>
       </Layout>
