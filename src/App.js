@@ -9,6 +9,7 @@ function App() {
       <a href="#services">Services</a>
       <a href="#clients">Clients</a>
       <a href="#contact">Contact</a>
+      <a href="#team-members">Team Members</a>
     </div>
     <div class="main">
       <h2>TeamRic</h2>
