@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 
-import Brand from "./Components/Brand";
-
-import logo from "./logo.svg";
-
 import sampleJSON from "./data/sample.json";
+
+import Sidebar from "./Components/Sidebar"
 
 import "antd/dist/antd.css";
 import "./index.css";
@@ -12,16 +10,9 @@ import { Layout, Menu, Breadcrumb } from "antd";
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
-  UserOutlined,
-  LogoutOutlined,
-  EyeOutlined,
-  QuestionOutlined,
-  CalendarOutlined,
-  SolutionOutlined,
 } from "@ant-design/icons";
 
-const { SubMenu } = Menu;
-const { Header, Content, Footer, Sider } = Layout;
+const { Header, Content, Footer } = Layout;
 
 const App = () => {
   const [collapsedState, setCollapsedState] = useState(false);
@@ -35,30 +26,7 @@ const App = () => {
   return (
     <div className="App">
       <Layout>
-        <Sider trigger={null} collapsible collapsed={collapsedState}>
-          <Brand url={logo} />
-          <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
-            <SubMenu key="sub1" icon={<UserOutlined />} title="Me">
-              <Menu.Item key="3" icon={<EyeOutlined />}>
-                Profile
-              </Menu.Item>
-              <Menu.Item key="4" icon={<QuestionOutlined />}>
-                Help
-              </Menu.Item>
-              <Menu.Item key="5" icon={<LogoutOutlined />}>
-                Signout
-              </Menu.Item>
-            </SubMenu>
-
-            <Menu.Item key="sub2" icon={<CalendarOutlined />}>
-              Calendar
-            </Menu.Item>
-
-            <Menu.Item key="sub3" icon={<SolutionOutlined />}>
-              Start Assessment
-            </Menu.Item>
-          </Menu>
-        </Sider>
+      <Sidebar collapsedState={collapsedState}/>
         <Layout className="site-layout">
           <Header className="site-layout-background" style={{ padding: 0 }}>
             {React.createElement(
@@ -86,7 +54,7 @@ const App = () => {
           </Content>
           <Footer style={{ textAlign: "center" }}>Teamric</Footer>
         </Layout>
-      </Layout>
+        </Layout>
     </div>
   );
 };
