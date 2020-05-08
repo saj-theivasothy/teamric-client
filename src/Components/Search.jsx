@@ -1,39 +1,47 @@
-import React, { useState } from 'react';
-import {  AutoComplete  } from 'antd';
+import React, { useEffect, useState } from "react";
 
-import './styles/search.css'
+import SearchBar from "./SearchBar";
+import Results from "./Results";
 
-const { Option } = AutoComplete;
+import "./styles/search.css";
 
-const Search = () => {
-  const [result, setResult] = useState([]);
+const data = {
+  employees: [
+    { id: 1, name: "Sylvia Palmer", avatar: "https://i.imgur.com/LpaY82x.png" },
+    { id: 2, name: "Tori Malcolm", avatar: "https://i.imgur.com/Nmx0Qxo.png" },
+    { id: 3, name: "Mildred Nazir", avatar: "https://i.imgur.com/T2WwVfS.png" },
+    { id: 4, name: "Cohana Roy", avatar: "https://i.imgur.com/FK8V841.jpg" },
+    { id: 5, name: "Sven Jones", avatar: "https://i.imgur.com/twYrpay.jpg" },
+    { id: 6, name: "Dave Smith", avatar: "https://i.imgur.com/LpaY82x.png" },
+    { id: 7, name: "Jack Doherty", avatar: "https://i.imgur.com/Nmx0Qxo.png" },
+    { id: 8, name: "Shannon Baker", avatar: "https://i.imgur.com/T2WwVfS.png" },
+    { id: 9, name: "Thomas Mike", avatar: "https://i.imgur.com/FK8V841.jpg" },
+    { id: 10, name: "Peter Pan", avatar: "https://i.imgur.com/twYrpay.jpg" },
+  ]
+}
 
-  const handleSearch = value => {
-    let res = [];
+const Search = (props) => {
+  const [term, setTerm] = useState("");
+  const [results, setResults] = useState(data.employees)
 
-    if (!value || value.indexOf('@') >= 0) {
-      res = [];
+  useEffect(() => {
+  
+    if (!term) {
+      setResults(data.employees)
     } else {
-      res = ['gmail.com', '163.com', 'qq.com'].map(domain => `${value}@${domain}`);
+      const liveResults = results.filter(result => result.name.toLowerCase().includes(term) && result)
+      setResults(liveResults)
     }
+  },[term])
 
-    setResult(res);
-  };
-
-  const children = result.map(email => (
-    <Option key={email} value={email}>
-      {email}
-    </Option>
-  ));
   return (
-    <AutoComplete 
-      class="search_bar"
-      onSearch={handleSearch}
-      placeholder="Search team member"
-    >
-      {children}
-    </AutoComplete>
+      <main className="container">
+        <SearchBar onSearch={term => setTerm(term)} term={ term } />
+        <div className="results_container">
+          <Results results={results} />
+        </div>
+      </main>
   );
-};
+}
 
 export default Search;
