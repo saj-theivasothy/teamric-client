@@ -1,0 +1,11 @@
+@import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
+
+.search_bar {
+  width: 80%;
+  background: none;
+  border: none;
+  border-bottom: 1px solid grey;
+  outline: none;
+}
+
+.fontAwesome{ font-family: 'Helvetica', FontAwesome, sans-serif; }
