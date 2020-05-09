@@ -17,31 +17,35 @@ const data = {
     { id: 8, name: "Shannon Baker", avatar: "https://i.imgur.com/T2WwVfS.png" },
     { id: 9, name: "Thomas Mike", avatar: "https://i.imgur.com/FK8V841.jpg" },
     { id: 10, name: "Peter Pan", avatar: "https://i.imgur.com/twYrpay.jpg" },
-  ]
-}
+  ],
+};
 
+// const getMatchingEmployees = (term, result) => {
+//   const employee = result.name.toLowerCase();
+//   if(employee.includes(term)) {
+//     return result
+//   } else {}
+// }
 const Search = (props) => {
   const [term, setTerm] = useState("");
-  const [results, setResults] = useState(data.employees)
+  const [results, setResults] = useState(data.employees);
+  const [searchResults, setSearchResults] = useState(data.employees);
 
   useEffect(() => {
-  
-    if (!term) {
-      setResults(data.employees)
-    } else {
-      const liveResults = results.filter(result => result.name.toLowerCase().includes(term) && result)
-      setResults(liveResults)
-    }
-  },[term])
+    const liveResults = results.filter(
+      (result) => result.name.toLowerCase().includes(term) && result
+    );
+    setSearchResults(liveResults);
+  }, [term, results]);
 
   return (
-      <main className="container">
-        <SearchBar onSearch={term => setTerm(term)} term={ term } />
-        <div className="results_container">
-          <Results results={results} />
-        </div>
-      </main>
+    <main className="container">
+      <SearchBar onSearch={(term) => setTerm(term)} term={term} />
+      <div className="results_container">
+        <Results results={searchResults} />
+      </div>
+    </main>
   );
-}
+};
 
 export default Search;
