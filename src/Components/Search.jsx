@@ -20,12 +20,6 @@ const data = {
   ],
 };
 
-// const getMatchingEmployees = (term, result) => {
-//   const employee = result.name.toLowerCase();
-//   if(employee.includes(term)) {
-//     return result
-//   } else {}
-// }
 const Search = (props) => {
   const [term, setTerm] = useState("");
   const [results, setResults] = useState(data.employees);
