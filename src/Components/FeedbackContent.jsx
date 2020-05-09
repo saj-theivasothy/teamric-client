@@ -4,10 +4,10 @@ import './styles/feedback.scss'
 function FeedbackContent() {
   return <section class='wrapper flex-row'>
   <div class='flex-column'>
-    <div class='content'>
-      <h4>Feedback Summary</h4>
+    {/* <div class='content'>
+      <h4>Feedback Summary</h4> */}
       {/* <h6>Personal Skills and competences</h6> */}
-    </div>
+    {/* </div> */}
     <div>
       <dl>
       <dt>
