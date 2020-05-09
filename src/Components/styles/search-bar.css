@@ -6,6 +6,13 @@
   border: none;
   border-bottom: 1px solid grey;
   outline: none;
+  color: grey;
 }
 
-.fontAwesome{ font-family: 'Helvetica', FontAwesome, sans-serif; }
+.search_bar::placeholder {
+  font-size: 0.45rem;
+}
+
+.fontAwesome { 
+  font-family: 'Helvetica', FontAwesome, sans-serif; 
+}
