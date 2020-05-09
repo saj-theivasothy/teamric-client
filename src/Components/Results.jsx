@@ -6,7 +6,7 @@ const Results = (props) => {
   const { results } = props;
 
   return results.map(result => {
-    return <Employee key={result.id} {...result} />;
+    return <Employee key={result.id} {...result} onClick={props.onClick}/>;
   });
 }
 
