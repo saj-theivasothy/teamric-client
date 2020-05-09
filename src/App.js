@@ -1,12 +1,19 @@
 import React from 'react';
 import './App.css';
 import Sidebar from './Components/Sidebar';
-import FeedbackSummary from './Components/FeedbackSummary'
+import Search from './Components/Search';
+import FeedbackSummary from './Components/FeedbackSummary';
+import FeedbackContent from './Components/FeedbackContent';
 
 function App() {
   return <div>
-    <Sidebar/>
-    <FeedbackSummary/>
+    <Sidebar>
+      <Search/>
+    </Sidebar>
+    <div class="main">
+      <FeedbackSummary/>
+      <FeedbackContent/>
+    </div>
 </div>
 }
 

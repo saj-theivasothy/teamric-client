@@ -1,4 +1,5 @@
 import React from 'react';
+import Search from './Search'
 
 function Sidebar() {
 return <div class="sidenav">
@@ -6,6 +7,7 @@ return <div class="sidenav">
 <a href="#services">Services</a>
 <a href="#clients">Clients</a>
 <a href="#contact">Contact</a>
+<Search/>
 </div>
 }
 
