@@ -1,0 +1,20 @@
+.employee {
+  position: relative;
+  top: 0.25rem;
+}
+
+.employee_avatar {
+  position: relative;
+  border-radius: 50%;
+  margin-bottom: -0.5rem;
+  cursor: pointer;
+}
+
+.employee_name {
+  position: relative;
+  left: 1.75rem;
+  bottom: 0.75rem;
+  color: gray;
+  font-size: 0.60rem;
+  cursor: pointer;
+}
