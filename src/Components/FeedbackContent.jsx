@@ -5,13 +5,13 @@ function FeedbackContent() {
   return <section class='wrapper flex-row'>
   <div class='flex-column'>
     <div class='content'>
-      <h5>Feedback Summary</h5>
-      <h6>Personal Skills and competences</h6>
+      <h4>Feedback Summary</h4>
+      {/* <h6>Personal Skills and competences</h6> */}
     </div>
     <div>
       <dl>
       <dt>
-        Browser market share June 2015
+      Personal Skills and competences
       </dt>
       <dd class="percentage percentage-11"><span class="text">Communication</span></dd>
       <dd class="percentage percentage-49"><span class="text">Skill2</span></dd>
