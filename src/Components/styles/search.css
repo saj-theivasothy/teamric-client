@@ -5,7 +5,7 @@
 }
 
 .results_container {
-  overflow-x: hidden;
+  overflow: hidden;
   overflow-y: scroll;
   width: 80%;
   height: 10rem;
