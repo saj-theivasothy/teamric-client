@@ -1,5 +1,12 @@
 body {
   font-family: "Lato", sans-serif;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(80, 81, 101, 1) 0%,
+    rgba(65, 64, 88, 1) 98%
+  );
 }
 
 .sidenav {
@@ -9,7 +16,7 @@ body {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #111;
+  background-color: rgba(53, 57, 119, 0.2);
   overflow-x: hidden;
   padding-top: 20px;
 }
@@ -33,8 +40,10 @@ body {
 }
 
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
 }
-
-
