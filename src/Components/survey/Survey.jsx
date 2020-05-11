@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
-import Search from "./Search";
+import Search from "../search/Search";
 
-import data from "../data/sample.json";
+import data from "../../data/sample.json";
 
 import VirtueBucketList from "./VirtueBucketList";
 
-import "./styles/survey.css";
+import "../styles/survey.css";
 
 const Survey = () => {
   const [employee, setEmployee] = useState(0);

@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./styles/virtue-bucket-list-item.scss";
+import "../styles/virtue-bucket-list-item.scss";
 
 const VirtueBucketListItem = (props) => {
   return (

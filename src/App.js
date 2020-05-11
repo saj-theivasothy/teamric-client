@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import Sidebar from "./Components/Sidebar";
-import Survey from "./Components/Survey";
+import Survey from "./Components/survey/Survey";
 import Nav from "./Components/Nav";
 import FeedbackSummary from "./Components/FeedbackSummary";
 import FeedbackContent from "./Components/FeedbackContent";

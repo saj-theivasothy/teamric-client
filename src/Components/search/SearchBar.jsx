@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./styles/search-bar.css";
+import "../styles/search-bar.css";
 
 const SearchBar = (props) => {
   return (
