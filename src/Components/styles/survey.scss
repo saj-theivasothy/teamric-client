@@ -25,4 +25,25 @@ header > h1 {
   background-color: #01011d;
   border-radius: 20px;
   text-align: center;
+
+  .virtue_categories {
+    position: relative;
+    top: 1rem;
+
+    h6 {
+      color: white;
+    }
+  }
+
+  .virtues {
+    position: relative;
+    display: flex;
+    flex-flow: column wrap;
+    bottom: 0.25rem;
+
+    h6 {
+      color: white;
+      margin: 0;
+    }
+  }
 }

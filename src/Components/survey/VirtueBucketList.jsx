@@ -11,7 +11,6 @@ const VirtueBucketList = (props) => {
 
   return (
     <article className="virtue_buckets_container">
-      <h6>Select a Virtue Category</h6>
       <div>{virtueBuckets}</div>
     </article>
   );
