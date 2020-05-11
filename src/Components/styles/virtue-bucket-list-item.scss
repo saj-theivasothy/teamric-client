@@ -3,6 +3,7 @@
   text-align: center;
   width: fit-content;
   bottom: -110px;
+  margin: 0.25rem;
 }
 
 .icon {
@@ -14,11 +15,12 @@
 
   &:hover {
     background-color: #200122;
-    border: 2px solid black;
+    border: 2px solid #af3b4a;
   }
 
   &:focus {
-    background-color: #413f3f;
+    background-color: #200122;
+    border: 2px solid #af3b4a;
   }
 }
 

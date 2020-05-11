@@ -4,7 +4,7 @@ import Search from "./Search";
 
 import data from "../data/sample.json";
 
-import VirtueBucketListItem from "./VirtueBucketListItem";
+import VirtueBucketList from "./VirtueBucketList";
 
 import "./styles/survey.css";
 
@@ -26,7 +26,7 @@ const Survey = () => {
           <Search className="search" onClick={selectEmployee} />
         </div>
         <div class="survey_bucket_container">
-          <VirtueBucketListItem {...data.virtue_buckets[0]} />
+          <VirtueBucketList virtue_buckets={data.virtue_buckets} />
         </div>
       </main>
     </>

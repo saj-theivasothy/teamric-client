@@ -1,0 +1,15 @@
+.virtue_buckets_container {
+  h6 {
+    color: white;
+  }
+
+  div {
+    position: relative;
+    bottom: 6rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    width: fit-content;
+    margin: auto;
+  }
+}

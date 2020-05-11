@@ -6,21 +6,23 @@ header > h1 {
 .search_container {
   position: relative;
   width: 20%;
+  height: 12.5rem;
   bottom: 1rem;
   left: 1rem;
   padding-left: 0.5rem;
   padding-bottom: 0.5rem;
-  background-image: linear-gradient(#6f0000, #200122);
+  background-color: #01011d;
   border-radius: 20px;
   color: #111111;
 }
 
 .survey_bucket_container {
   position: relative;
-  bottom: 13.5rem;
+  bottom: 15.34rem;
   left: 10rem;
   width: 73%;
   height: 12.5rem;
-  background-image: linear-gradient(#6f0000, #200122);
+  background-color: #01011d;
   border-radius: 20px;
+  text-align: center;
 }
