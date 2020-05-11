@@ -11,8 +11,9 @@
 
 .search_bar::placeholder {
   font-size: 0.45rem;
+  color: grey;
 }
 
-.fontAwesome { 
-  font-family: 'Helvetica', FontAwesome, sans-serif; 
+.fontAwesome {
+  font-family: "Helvetica", FontAwesome, sans-serif;
 }

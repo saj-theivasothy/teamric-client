@@ -1,30 +1,85 @@
-[
-  {
-    "color": "red",
-    "value": "#f00"
-  },
-  {
-    "color": "green",
-    "value": "#0f0"
-  },
-  {
-    "color": "blue",
-    "value": "#00f"
-  },
-  {
-    "color": "cyan",
-    "value": "#0ff"
-  },
-  {
-    "color": "magenta",
-    "value": "#f0f"
-  },
-  {
-    "color": "yellow",
-    "value": "#ff0"
-  },
-  {
-    "color": "black",
-    "value": "#000"
-  }
-]
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Sylvia Palmer",
+      "avatar": "https://i.imgur.com/LpaY82x.png"
+    },
+    {
+      "id": 2,
+      "name": "Tori Malcolm",
+      "avatar": "https://i.imgur.com/Nmx0Qxo.png"
+    },
+    {
+      "id": 3,
+      "name": "Mildred Nazir",
+      "avatar": "https://i.imgur.com/T2WwVfS.png"
+    },
+    {
+      "id": 4,
+      "name": "Cohana Roy",
+      "avatar": "https://i.imgur.com/FK8V841.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Sven Jones",
+      "avatar": "https://i.imgur.com/twYrpay.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Dave Smith",
+      "avatar": "https://i.imgur.com/LpaY82x.png"
+    },
+    {
+      "id": 7,
+      "name": "Jack Doherty",
+      "avatar": "https://i.imgur.com/Nmx0Qxo.png"
+    },
+    {
+      "id": 8,
+      "name": "Shannon Baker",
+      "avatar": "https://i.imgur.com/T2WwVfS.png"
+    },
+    {
+      "id": 9,
+      "name": "Thomas Mike",
+      "avatar": "https://i.imgur.com/FK8V841.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Peter Pan",
+      "avatar": "https://i.imgur.com/twYrpay.jpg"
+    }
+  ],
+  "virtue_buckets": [
+    {
+      "id": 1,
+      "name": "Execution",
+      "img": "https://image.flaticon.com/icons/svg/875/875755.svg"
+    },
+    {
+      "id": 2,
+      "name": "Knowledge",
+      "img": "https://image.flaticon.com/icons/svg/1447/1447628.svg"
+    },
+    {
+      "id": 3,
+      "name": "Courage",
+      "img": "https://image.flaticon.com/icons/svg/1454/1454657.svg"
+    }
+  ],
+  "virtues": [
+    { "virtue_bucket_id": 1, "name": "Fearless agility" },
+    { "virtue_bucket_id": 1, "name": "Time concious" },
+    { "virtue_bucket_id": 1, "name": "Pushing through" },
+    { "virtue_bucket_id": 1, "name": "Defiance" },
+    { "virtue_bucket_id": 2, "name": "Curiosity" },
+    { "virtue_bucket_id": 2, "name": "Analytical" },
+    { "virtue_bucket_id": 2, "name": "Detail oriented" },
+    { "virtue_bucket_id": 2, "name": "Strategic" },
+    { "virtue_bucket_id": 3, "name": "Bravery" },
+    { "virtue_bucket_id": 3, "name": "Persistence" },
+    { "virtue_bucket_id": 3, "name": "Persevering" },
+    { "virtue_bucket_id": 3, "name": "Vitality" }
+  ]
+}

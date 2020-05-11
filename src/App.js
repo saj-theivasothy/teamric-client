@@ -1,22 +1,34 @@
-import React from 'react';
-import './App.css';
-import Sidebar from './Components/Sidebar';
-import Search from './Components/Search';
-import Nav from './Components/Nav';
-import FeedbackSummary from './Components/FeedbackSummary';
-import FeedbackContent from './Components/FeedbackContent';
+import React, { useState } from "react";
+import "./App.css";
+import Sidebar from "./Components/Sidebar";
+import Survey from "./Components/Survey";
+import Nav from "./Components/Nav";
+import FeedbackSummary from "./Components/FeedbackSummary";
+import FeedbackContent from "./Components/FeedbackContent";
+
+const getEmployeePage = (id) => {
+  // This is where the axios request will go to get the employees feedback summary page
+  console.log("hello", id);
+};
 
 function App() {
-  return <div>
-    <Sidebar>
-      <Search/>
-    </Sidebar>
-    <div class="main">
-      <Nav/>
-      <FeedbackSummary/>
-      <FeedbackContent/>
+  const [page, setPage] = useState("profile");
+
+  return (
+    <div>
+      <Sidebar onClick={getEmployeePage} onNavClick={setPage} />
+      <div class="main">
+        {page === "profile" && (
+          <>
+            <Nav />
+            <FeedbackSummary />
+            <FeedbackContent />
+          </>
+        )}
+        {page === "add dot" && <Survey />}
+      </div>
     </div>
-</div>
+  );
 }
 
 export default App;

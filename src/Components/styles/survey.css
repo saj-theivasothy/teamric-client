@@ -1,0 +1,26 @@
+header > h1 {
+  position: relative;
+  text-align: center;
+}
+
+.search_container {
+  position: relative;
+  width: 20%;
+  bottom: 1rem;
+  left: 1rem;
+  padding-left: 0.5rem;
+  padding-bottom: 0.5rem;
+  background-image: linear-gradient(#6f0000, #200122);
+  border-radius: 20px;
+  color: #111111;
+}
+
+.survey_bucket_container {
+  position: relative;
+  bottom: 13.5rem;
+  left: 10rem;
+  width: 73%;
+  height: 12.5rem;
+  background-image: linear-gradient(#6f0000, #200122);
+  border-radius: 20px;
+}
