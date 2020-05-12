@@ -1,12 +1,11 @@
-import React from 'react';
+import React from "react";
 
-import './styles/search-bar.css'
+import "./styles/search-bar.css";
 
 const SearchBar = (props) => {
-  
   return (
     <section>
-      <form onSubmit={event => event.preventDefault()}>
+      <form onSubmit={(event) => event.preventDefault()}>
         <input
           className="search_bar fontAwesome"
           placeholder="&#xf002; Search Team Member"
@@ -14,11 +13,11 @@ const SearchBar = (props) => {
           name="search-bar"
           type="text"
           value={props.term}
-          onChange={event => props.onSearch(event.target.value)}
+          onChange={(event) => props.onSearch(event.target.value)}
         />
       </form>
     </section>
-  )
+  );
 };
 
 export default SearchBar;

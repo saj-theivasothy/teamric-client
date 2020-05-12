@@ -4,7 +4,6 @@ import Sidebar from "./Components/Sidebar";
 import Search from "./Components/Search";
 
 import FeedbackSummary from "./Components/FeedbackSummary";
-import FeedbackContent from "./Components/FeedbackContent";
 
 function App() {
   return (
