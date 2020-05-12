@@ -9,7 +9,7 @@ import BlurOnIcon from "@material-ui/icons/BlurOn";
 
 function Sidebar() {
   return (
-    <div className="sidenav">
+    <div className="sidenav_bar">
       <div className="logo">
         <h3>TeamRic</h3>
         <BlurOnIcon />

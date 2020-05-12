@@ -8,12 +8,14 @@ import FeedbackContent from "./Components/FeedbackContent";
 
 function App() {
   return (
-    <section>
-      <Header />
-      <Sidebar />
-      <FeedbackSummary />
-      <FeedbackContent />
-      <Footer />
+    <section className="gridcontainer">
+      <Header className="header" />
+      <Sidebar className="sidenav" />
+      <div className="main">
+        <FeedbackSummary />
+        <FeedbackContent />
+      </div>
+      <Footer className="footer" />
     </section>
   );
 }

@@ -8,7 +8,7 @@ body {
   /* Chrome 10-25, Safari 5.1-6 */
 }
 
-.sidenav {
+.sidenav_bar {
   height: 100%;
   width: 12%;
   position: fixed;
@@ -19,7 +19,7 @@ body {
   padding-top: 20px;
 }
 
-.sidenav a {
+.sidenav_bar a {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   font-size: 25px;
