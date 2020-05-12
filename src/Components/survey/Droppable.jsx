@@ -6,7 +6,8 @@ function Droppable(props) {
     event.preventDefault();
     const virtue_id = event.dataTransfer.getData("virtue_id");
 
-    event.target.appendChild(document.getElementById(virtue_id));
+    // event.target.appendChild(document.getElementById(virtue_id));
+    props.handleSetColumn(virtue_id);
   };
 
   const allowDrop = (event) => {
