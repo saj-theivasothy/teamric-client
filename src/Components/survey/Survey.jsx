@@ -10,6 +10,7 @@ import Search from "../search/Search";
 import VirtueBucketList from "./VirtueBucketList";
 
 import VirtueList from "./VirtueList";
+import VirtueListItem from "./VirtueListItem";
 
 import "../styles/survey.scss";
 
@@ -20,6 +21,10 @@ const Survey = () => {
     setEmployee(id);
     console.log("Hi your survey id is", employee);
   };
+
+  const virtues = data.virtues.map((virtue) => (
+    <VirtueListItem key={virtue.id} {...virtue} />
+  ));
 
   return (
     <>
@@ -36,19 +41,18 @@ const Survey = () => {
             <VirtueBucketList virtue_buckets={data.virtue_buckets} />
           </div>
         </div>
-        <div>
-          <div className="virtues">
-            <h6>Select Virtue</h6>
-            <Droppable id="dr1">
-              <div>
-                <VirtueList virtues={data.virtues} />
-              </div>
-            </Droppable>
-          </div>
+        <article className="dragzone_container">
+          <h6>Drag Virtues</h6>
+          <Droppable id="dr1">
+            <div className="virtues_container">{virtues}</div>
+          </Droppable>
+        </article>
+        <div className="dropzone_container">
+          <h6>Drop Virtues</h6>
+          <Droppable id="dr2">
+            <div className="dropzone"></div>
+          </Droppable>
         </div>
-        <Droppable id="dr2">
-          <div className="dropzone_container"></div>
-        </Droppable>
         <div className="feedback_container">
           <h6></h6>
         </div>
