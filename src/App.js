@@ -2,10 +2,8 @@ import React from "react";
 import "./App.css";
 import Sidebar from "./Components/Sidebar";
 import Search from "./Components/Search";
-// import Nav from "./Components/Nav";
-// import FeedbackSummary from "./Components/FeedbackSummary";
-// import FeedbackContent from "./Components/FeedbackContent";
-import Profile from "./Components/Profile/Profile";
+
+import FeedbackSummary from "./Components/FeedbackSummary";
 
 function App() {
   return (
@@ -13,11 +11,8 @@ function App() {
       <Sidebar>
         <Search />
       </Sidebar>
-      <div className="main">
-        <Profile />
-        {/* <Nav />
+      <div class="main">
         <FeedbackSummary />
-        <FeedbackContent /> */}
       </div>
     </div>
   );
