@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 
-import Search from "../search/Search";
+import Droppable from "./Droppable";
+import Draggable from "./Draggable";
 
 import data from "../../data/sample.json";
+
+import Search from "../search/Search";
 
 import VirtueBucketList from "./VirtueBucketList";
 
@@ -32,10 +35,22 @@ const Survey = () => {
             <h6>Select a Virtue Category</h6>
             <VirtueBucketList virtue_buckets={data.virtue_buckets} />
           </div>
+        </div>
+        <div>
           <div className="virtues">
             <h6>Select Virtue</h6>
-            <VirtueList virtues={data.virtues} />
+            <Droppable id="dr1">
+              <div>
+                <VirtueList virtues={data.virtues} />
+              </div>
+            </Droppable>
           </div>
+        </div>
+        <Droppable id="dr2">
+          <div className="dropzone_container"></div>
+        </Droppable>
+        <div className="feedback_container">
+          <h6></h6>
         </div>
       </main>
     </>

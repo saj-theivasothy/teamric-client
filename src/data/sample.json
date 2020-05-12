@@ -69,17 +69,17 @@
     }
   ],
   "virtues": [
-    { "virtue_bucket_id": 1, "name": "Fearless agility" },
-    { "virtue_bucket_id": 1, "name": "Time concious" },
-    { "virtue_bucket_id": 1, "name": "Pushing through" },
-    { "virtue_bucket_id": 1, "name": "Defiance" },
-    { "virtue_bucket_id": 2, "name": "Curiosity" },
-    { "virtue_bucket_id": 2, "name": "Analytical" },
-    { "virtue_bucket_id": 2, "name": "Detail oriented" },
-    { "virtue_bucket_id": 2, "name": "Strategic" },
-    { "virtue_bucket_id": 3, "name": "Bravery" },
-    { "virtue_bucket_id": 3, "name": "Persistence" },
-    { "virtue_bucket_id": 3, "name": "Persevering" },
-    { "virtue_bucket_id": 3, "name": "Vitality" }
+    { "id": "1", "virtue_bucket_id": 1, "name": "Fearless agility" },
+    { "id": "2", "virtue_bucket_id": 1, "name": "Time concious" },
+    { "id": "4", "virtue_bucket_id": 1, "name": "Pushing through" },
+    { "id": "5", "virtue_bucket_id": 1, "name": "Defiance" },
+    { "id": "6", "virtue_bucket_id": 2, "name": "Curiosity" },
+    { "id": "7", "virtue_bucket_id": 2, "name": "Analytical" },
+    { "id": "8", "virtue_bucket_id": 2, "name": "Detail oriented" },
+    { "id": "9", "virtue_bucket_id": 2, "name": "Strategic" },
+    { "id": "10", "virtue_bucket_id": 3, "name": "Bravery" },
+    { "id": "11", "virtue_bucket_id": 3, "name": "Persistence" },
+    { "id": "12", "virtue_bucket_id": 3, "name": "Persevering" },
+    { "id": "13", "virtue_bucket_id": 3, "name": "Vitality" }
   ]
 }
