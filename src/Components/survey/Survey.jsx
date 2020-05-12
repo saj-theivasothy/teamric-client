@@ -9,20 +9,32 @@ import Search from "../search/Search";
 
 import VirtueBucketList from "./VirtueBucketList";
 
-import VirtueList from "./VirtueList";
 import VirtueListItem from "./VirtueListItem";
 
 import "../styles/survey.scss";
 
 const Survey = () => {
-  const [employee, setEmployee] = useState(0);
+  const [employee, setEmployee] = useState();
+  const [virtueBucket, setVirtueBucket] = useState();
 
   const selectEmployee = (id) => {
     setEmployee(id);
     console.log("Hi your survey id is", employee);
   };
 
-  const virtues = data.virtues.map((virtue) => (
+  const selectVirtueBucket = (id) => {
+    setVirtueBucket(id);
+  };
+
+  const getVirtuesForBucketId = (id) => {
+    const virtues = data.virtues.filter(
+      (virtue) => virtue.virtue_bucket_id === id
+    );
+
+    return virtues;
+  };
+
+  const virtues = getVirtuesForBucketId(virtueBucket).map((virtue) => (
     <VirtueListItem key={virtue.id} {...virtue} />
   ));
 
@@ -38,7 +50,10 @@ const Survey = () => {
         <div className="survey_bucket_container">
           <div className="virtue_categories">
             <h6>Select a Virtue Category</h6>
-            <VirtueBucketList virtue_buckets={data.virtue_buckets} />
+            <VirtueBucketList
+              virtue_buckets={data.virtue_buckets}
+              onClick={selectVirtueBucket}
+            />
           </div>
         </div>
         <article className="dragzone_container">

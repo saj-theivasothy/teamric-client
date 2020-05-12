@@ -6,7 +6,10 @@ import "../styles/virtue-bucket-list.scss";
 
 const VirtueBucketList = (props) => {
   const virtueBuckets = props.virtue_buckets.map((virtueBucket) => (
-    <VirtueBucketListItem {...virtueBucket} />
+    <VirtueBucketListItem
+      {...virtueBucket}
+      onClick={() => props.onClick(virtueBucket.id)}
+    />
   ));
 
   return (
