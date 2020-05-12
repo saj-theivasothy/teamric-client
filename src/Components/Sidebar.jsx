@@ -1,20 +1,5 @@
 import React from "react";
 import Search from "./Search";
-<<<<<<< HEAD
-
-const Sidebar = (props) => {
-  return (
-    <div className="sidenav">
-      <a href="#profile">Profile</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#clients">Clients</a>
-      <a href="#contact">Contact</a>
-      <Search />
-    </div>
-  );
-};
-=======
 import "./styles/Sidebar.scss";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import GradeIcon from "@material-ui/icons/Grade";
@@ -58,6 +43,5 @@ function Sidebar() {
     </div>
   );
 }
->>>>>>> master
 
 export default Sidebar;
