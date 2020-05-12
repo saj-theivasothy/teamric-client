@@ -22,8 +22,8 @@ const data = {
 
 const getEmployeePage = (id) => {
   // This is where the axios request will go to get the employees feedback summary page
-  console.log("hello", id)
-}
+  console.log("hello", id);
+};
 
 const Search = (props) => {
   const [term, setTerm] = useState("");
@@ -41,7 +41,7 @@ const Search = (props) => {
     <main className="container">
       <SearchBar onSearch={(term) => setTerm(term)} term={term} />
       <div className="results_container">
-        <Results results={searchResults} onClick={getEmployeePage}/>
+        <Results results={searchResults} onClick={getEmployeePage} />
       </div>
     </main>
   );
