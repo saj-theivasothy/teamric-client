@@ -1,22 +1,62 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
+import "./styles.css";
 import * as d3 from "d3";
-import { getTimelineData, getScatterData } from "./utils/dummyData";
 
-const Profile = (props) => {
-  // const { container } = styles;
+import BarChart from "./Charts/BarChart";
+import TimelineChart from "./Charts/TimelineChart";
+import ScatterChart from "./Charts/ScatterChart";
+
+import {
+  getBarData,
+  getScatterData,
+  getTimeLineData,
+} from "./utils/generateData";
+
+const xAccessor = (d) => d.x;
+const yAccessor = (d) => d.y;
+
+const parseDate = d3.timeParse("%m/%d/%Y");
+const dateAccessor = (d) => parseDate(xAccessor(d));
+
+const getData = () => ({
+  bar: getBarData(),
+  timeline: getTimeLineData(),
+  scatter: getScatterData(),
+});
+
+const Graphics = (props) => {
+  const [data, setData] = useState(getData());
+
   return (
-    <div className="App">
-      <h1>Weather Dashboard</h1>
+    <>
+      <h1>Chart</h1>
       <div className="App__charts">
-        <Bar
+        <BarChart
+          data={data.bar}
+          xAccessor={xAccessor}
+          yAccessor={yAccessor}
+          xLabel="Time Spent"
+          yLabel="Categories"
+        />
+
+        <TimelineChart
           data={data.timeline}
           xAccessor={dateAccessor}
-          yAccessor={temperatureAccessor}
-          label="Temperature"
+          yAccessor={yAccessor}
+          xLabel="Date"
+          yLabel="Performance Index"
+        />
+
+        <ScatterChart
+          data={data.scatter}
+          xAccessor={xAccessor}
+          yAccessor={yAccessor}
+          xLabel="Hours Worked"
+          yLabel="Performance Index"
         />
       </div>
-    </div>
+    </>
   );
 };
 
-export default Profile;
+export default Graphics;
