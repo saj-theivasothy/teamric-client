@@ -9,7 +9,8 @@
 }
 
 .search_bar::placeholder {
-  font-size: 0.6rem;
+  font-size: 0.45rem;
+  color: grey;
 }
 
 .fontAwesome {

@@ -2,6 +2,31 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+<<<<<<< HEAD
+=======
+  margin: 0;
+}
+
+.flex-row-end {
+  justify-content: space-around;
+}
+
+.flex-row p,
+.flex-row h6 {
+  padding: 10px;
+  margin: 0;
+  font-size: 16px;
+}
+
+.img {
+  margin: 10em;
+}
+
+.wrapper {
+  width: 80%;
+  margin: 1em auto;
+  color: gray;
+>>>>>>> 0fadb1e04ecaaefb024864e9e619614c0091c9e2
 }
 body {
   background: #20222f;
@@ -16,6 +41,7 @@ body {
 //   flex-direction: row;
 //   justify-content: space-between;
 
+<<<<<<< HEAD
 //   margin: 0 auto;
 // }
 
@@ -23,12 +49,19 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
+=======
+.stars {
+  color: salmon;
+  margin-top: 0.8em;
+  width: 1.2em;
+>>>>>>> 0fadb1e04ecaaefb024864e9e619614c0091c9e2
 }
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+<<<<<<< HEAD
 .card {
   height: 40vh;
   width: 22vw;
@@ -45,6 +78,76 @@ body {
   position: relative;
 }
 .card::after {
+=======
+html,
+body {
+  height: 500px;
+  font-family: "fira-sans-2", sans-serif;
+  color: #333;
+}
+
+//Feedback Content
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #20222f;
+  color: #fffffd;
+  font-family: "Lato", sans-serif;
+}
+
+.container-one {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+.card {
+  background-color: #252b43;
+  padding: 5px 0;
+  border-radius: 3px;
+  margin-bottom: 3px;
+  height: 500px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card,
+.card__ig,
+.card__yt {
+  margin: 1%;
+  flex: 0 30%;
+}
+.card::after {
+  border-top: 5px solid #1ba2f4;
+  border-radius: 3px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.card__ig {
+  display: flex;
+  flex-direction: column;
+  background-color: #252b43;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  position: relative;
+  margin-bottom: 30px;
+  margin-top: 5px;
+}
+.card__ig::after {
+>>>>>>> 0fadb1e04ecaaefb024864e9e619614c0091c9e2
   content: "";
   border-top: none;
   border-top-left-radius: 3px;
@@ -57,6 +160,12 @@ body {
   top: 0;
   left: 0;
   background: linear-gradient(90deg, #fac06c, #db4e93);
+<<<<<<< HEAD
+=======
+}
+.card__yt::after {
+  border-top: 5px solid #c2042a;
+>>>>>>> 0fadb1e04ecaaefb024864e9e619614c0091c9e2
 }
 
 @keyframes card {
@@ -65,6 +174,7 @@ body {
   }
   50% {
     background-position: 300%;
+<<<<<<< HEAD
   }
   100% {
     background-position: 0 0;
@@ -79,6 +189,11 @@ body {
   .container {
     margin: 0;
     flex-direction: row;
+=======
+  }
+  100% {
+    background-position: 0 0;
+>>>>>>> 0fadb1e04ecaaefb024864e9e619614c0091c9e2
   }
   .card,
   .card__ig,
@@ -93,6 +208,61 @@ body {
   background: red;
 }
 
+<<<<<<< HEAD
+=======
+.card-small {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: #252b43;
+  flex: 1;
+  align-items: stretch;
+  justify-content: space-between;
+  padding: 30px 30px;
+  border-radius: 3px;
+  position: relative;
+  margin-bottom: 30px;
+}
+.card-small .card__name {
+  flex: 0 50%;
+}
+.card-small .fa {
+  flex: 0 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.card-small .card__number {
+  flex: 0 50%;
+  font-size: 36px;
+}
+.card-small .card__change {
+  flex: 0 50%;
+  position: relative;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+// @media only screen and (min-width: 600px) {
+//   body {
+//     max-width: 600px;
+//     margin: 0 auto;
+//   }
+//   .container {
+//     margin: 0;
+//     flex-direction: row;
+//   }
+//   .card,
+//   .card__ig,
+//   .card__yt {
+//     margin: 15px;
+//     flex: 0 41%;
+//   }
+// }
+
+>>>>>>> 0fadb1e04ecaaefb024864e9e619614c0091c9e2
 @media only screen and (min-width: 1200px) {
   body {
     max-width: 1200px;
@@ -102,7 +272,12 @@ body {
   .card,
   .card__ig,
   .card__yt {
+<<<<<<< HEAD
     margin: 5px;
     flex: 0 40%;
+=======
+    margin: 1%;
+    flex: 0 30%;
+>>>>>>> 0fadb1e04ecaaefb024864e9e619614c0091c9e2
   }
 }

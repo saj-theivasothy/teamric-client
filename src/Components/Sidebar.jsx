@@ -1,5 +1,5 @@
 import React from "react";
-import Search from "./Search";
+import Search from "./search/Search";
 import "./styles/sidebar.scss";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import GradeIcon from "@material-ui/icons/Grade";
@@ -7,39 +7,41 @@ import PeopleAltIcon from "@material-ui/icons/PeopleAlt";
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
 import BlurOnIcon from "@material-ui/icons/BlurOn";
 
-function Sidebar() {
+function Sidebar(props) {
   return (
-    <div class="sidenav">
-      <div class="logo">
+    <div className="sidenav">
+      <div className="logo">
         <h3>TeamRic</h3>
         <BlurOnIcon />
       </div>
-      <a>
-        <div class="button" href="#">
+      <a href="#">
+        <div className="button">
           <DashboardIcon />
-          <div class="button-title">Dashboard</div>
+          <div className="button-title">Dashboard</div>
         </div>
       </a>
-      <a>
-        <div class="button" href="#">
+      <a href="#">
+        <div className="button">
           <AddCircleOutlineIcon />
-          <div class="button-title">AddDot</div>
+          <div className="button-title">AddDot</div>
         </div>
       </a>
-      <a>
-        <div class="button" href="#">
+      <a href="#">
+        <div className="button">
           <GradeIcon />
-          <div class="button-title">Reviews</div>
+          <div className="button-title">Reviews</div>
         </div>
       </a>
-      <a>
-        <div class="button" href="#">
+      <a href="#">
+        <div className="button">
           <PeopleAltIcon />
-          <div class="button-title">Employees</div>
+          <div className="button-title">Employees</div>
         </div>
       </a>
-
-      <Search />
+      <a href="#add_dot" onClick={() => props.onNavClick("add dot")}>
+        Add Dot
+      </a>
+      <Search onClick={props.onClick} />
     </div>
   );
 }

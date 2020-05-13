@@ -1,6 +1,5 @@
 import React from "react";
-
-export default function Header() {
+export default function Footer() {
   return (
     <footer class="footer">
       <div class="footer__copyright">&copy; 2020</div>

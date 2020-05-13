@@ -40,6 +40,7 @@ function FeedbackSummary() {
           <div className="flex-row">
             <h6 className="number">4.5</h6>
             <div className="stars flex-row">
+
               <StarIcon />
               <StarIcon />
               <StarIcon />

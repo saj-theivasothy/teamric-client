@@ -4,12 +4,12 @@ import Profile from "./Profile/Profile";
 
 function FeedbackContent() {
   return (
-    <section className="flex-column">
-      <div className="container-one flex-row">
-        <div className="card"></div>
+    <section>
+      <div class="container-one">
+        <div class="card"></div>
 
-        <div className="card card__ig"></div>
-        <div className="card card__yt"></div>
+        <div class="card card__ig"></div>
+        <div class="card card__yt"></div>
       </div>
       <div className="big_card"></div>
     </section>
