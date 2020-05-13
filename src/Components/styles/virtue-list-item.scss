@@ -1,0 +1,21 @@
+.virtue_container {
+  background-color: #af3b4a;
+  color: #00c6e1;
+  font-size: 0.5rem;
+  width: fit-content;
+  margin: 0.15rem;
+  padding: 0.2rem;
+  border-radius: 25px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #200122;
+    border: 2px solid #af3b4a;
+    padding: 0.1rem;
+  }
+
+  &:focus {
+    background-color: #200122;
+    border: 2px solid #af3b4a;
+  }
+}

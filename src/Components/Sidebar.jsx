@@ -38,8 +38,11 @@ function Sidebar() {
           <div class="button-title">Employees</div>
         </div>
       </a>
+      <a href="#add_dot" onClick={() => props.onNavClick("add dot")}>
+        Add Dot
+      </a>
+      <Search onClick={props.onClick} />
 
-      <Search />
     </div>
   );
 }

@@ -1,0 +1,92 @@
+header > h1 {
+  position: relative;
+  text-align: center;
+}
+
+.search_container,
+.survey_bucket_container,
+.feedback_container,
+.dropzone_container,
+.dragzone_container {
+  position: relative;
+  background-color: #01011d;
+  box-shadow: 5px 5px 3px grey;
+}
+
+.search_container {
+  width: 20%;
+  bottom: 1rem;
+  left: 1rem;
+  height: 12.5rem;
+  padding-left: 0.5rem;
+  padding-bottom: 0.5rem;
+  color: #111111;
+}
+
+.survey_bucket_container {
+  bottom: 15.34rem;
+  left: 9.5rem;
+  width: 32.5%;
+  height: 12.5rem;
+  text-align: center;
+
+  .virtue_categories {
+    position: relative;
+    top: 0.5rem;
+
+    h6 {
+      color: white;
+    }
+  }
+}
+
+.dragzone_container {
+  width: 20%;
+  height: 12.5rem;
+  bottom: 29.65rem;
+  left: 23.1rem;
+  text-align: center;
+
+  h6 {
+    position: relative;
+    top: 0.5rem;
+    color: white;
+  }
+
+  .virtues_container {
+    position: relative;
+    bottom: 1rem;
+    height: 10rem;
+    overflow: auto;
+  }
+}
+
+.dropzone_container {
+  width: 20%;
+  height: 12.5rem;
+  bottom: 44rem;
+  left: 31.6rem;
+  text-align: center;
+
+  h6 {
+    position: relative;
+    top: 0.5rem;
+    color: white;
+  }
+
+  .dropzone {
+    position: relative;
+    overflow: scroll;
+    height: 10rem;
+    bottom: 1rem;
+  }
+}
+
+.feedback_container {
+  bottom: 31rem;
+  width: 94.6%;
+  left: 1rem;
+  height: 12.5rem;
+  text-align: center;
+  color: white;
+}
