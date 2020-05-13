@@ -1,7 +1,6 @@
 @import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
 
 .search_bar {
-  width: 80%;
   background: none;
   border: none;
   border-bottom: 1px solid grey;
@@ -10,9 +9,9 @@
 }
 
 .search_bar::placeholder {
-  font-size: 0.45rem;
+  font-size: 0.6rem;
 }
 
-.fontAwesome { 
-  font-family: 'Helvetica', FontAwesome, sans-serif; 
+.fontAwesome {
+  font-family: "Helvetica", FontAwesome, sans-serif;
 }
