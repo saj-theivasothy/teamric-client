@@ -1,12 +1,11 @@
 body {
   font-family: "Lato", sans-serif;
-  background: rgb(255, 255, 255);
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(80, 81, 101, 1) 0%,
-    rgba(65, 64, 88, 1) 98%
-  );
+  /* background: #1f1c2c; fallback for old browsers */
+  /* background: -webkit-linear-gradient(
+    to right,
+    #1f1c2c,
+    #928dab */
+  /* Chrome 10-25, Safari 5.1-6 */
 }
 
 .sidenav {
@@ -16,7 +15,6 @@ body {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: rgba(53, 57, 119, 0.2);
   overflow-x: hidden;
   padding-top: 20px;
 }
@@ -46,4 +44,42 @@ body {
   .sidenav a {
     font-size: 18px;
   }
+}
+
+.block {
+  display: block;
+}
+
+/* css NEW */
+
+.gridcontainer {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  grid-template-rows: 50px 1fr 50px;
+  grid-template-areas:
+    "sidenav header"
+    "sidenav main"
+    "sidenav footer";
+  height: 100vh;
+}
+
+/* Give every child element its grid name */
+.header {
+  grid-area: header;
+  background-color: #648ca6;
+}
+
+.sidenav {
+  grid-area: sidenav;
+  background-color: #394263;
+}
+
+.main {
+  grid-area: main;
+  background-color: #8fd4d9;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #648ca6;
 }
