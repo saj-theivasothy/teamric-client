@@ -1,12 +1,12 @@
 import React from "react";
 
-import "../styles/virtue-bucket-list-item.scss";
+import styles from "../styles/virtue.module.scss";
 
 const VirtueBucketListItem = (props) => {
   return (
-    <article className="bucket_item_container">
+    <article className={styles.bucket_item_container}>
       <img
-        className="icon"
+        className={styles.icon}
         src={props.img}
         alt="virtue bucket icon"
         onClick={props.onClick}
