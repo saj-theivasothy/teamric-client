@@ -1,6 +1,6 @@
 import React from "react";
 import Rater from "react-rater";
-import "../styles/rating.scss";
+import "./styles/rating.scss";
 
 const Rating = (props) => {
   return (

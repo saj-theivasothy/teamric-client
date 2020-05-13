@@ -1,6 +1,6 @@
 import React from "react";
 
-import styles from "../styles/virtue.module.scss";
+import styles from "./styles/virtue.module.scss";
 
 const VirtueListItem = (props) => {
   return (

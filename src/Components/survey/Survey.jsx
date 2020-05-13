@@ -7,7 +7,7 @@ import Search from "../search/Search";
 import VirtueBucketList from "../virtues/VirtueBucketList";
 import VirtueListItem from "../virtues/VirtueListItem";
 
-import styles from "../styles/survey.module.scss";
+import styles from "./styles/survey.module.scss";
 import Feedback from "./Feedback";
 
 const Survey = () => {

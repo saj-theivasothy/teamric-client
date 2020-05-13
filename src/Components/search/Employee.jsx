@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../styles/employee.css";
+import "./styles/employee.css";
 
 const Employee = (props) => {
   return (

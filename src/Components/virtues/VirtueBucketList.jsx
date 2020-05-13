@@ -2,7 +2,7 @@ import React from "react";
 
 import VirtueBucketListItem from "./VirtueBucketListItem";
 
-import styles from "../styles/virtue.module.scss";
+import styles from "./styles/virtue.module.scss";
 
 const VirtueBucketList = (props) => {
   const virtueBuckets = props.virtue_buckets.map((virtueBucket) => (
