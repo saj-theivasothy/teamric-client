@@ -4,10 +4,10 @@ import data from "../../data/sample.json";
 
 import Search from "../search/Search";
 
-import VirtueBucketList from "./VirtueBucketList";
-import VirtueListItem from "./VirtueListItem";
+import VirtueBucketList from "../virtues/VirtueBucketList";
+import VirtueListItem from "../virtues/VirtueListItem";
 
-import "../styles/survey.scss";
+import styles from "./styles/survey.module.scss";
 import Feedback from "./Feedback";
 
 const Survey = () => {
@@ -104,11 +104,11 @@ const Survey = () => {
         <h1>Feedback</h1>
       </header>
       <main>
-        <div className="search_container">
-          <Search className="search" onClick={selectEmployee} />
+        <div className={styles.search_container}>
+          <Search className={styles.search} onClick={selectEmployee} />
         </div>
-        <div className="survey_bucket_container">
-          <div className="virtue_categories">
+        <div className={styles.survey_bucket_container}>
+          <div className={styles.virtue_categories}>
             <h6>Select a Virtue Category</h6>
             <VirtueBucketList
               virtue_buckets={data.virtue_buckets}
@@ -116,11 +116,11 @@ const Survey = () => {
             />
           </div>
         </div>
-        <article className="dragzone_container">
+        <article className={styles.dragzone_container}>
           <h6>Select Virtues</h6>
-          <div className="virtues_container">{virtues}</div>
+          <div className={styles.virtues_container}>{virtues}</div>
         </article>
-        <div className="feedback_container">
+        <div className={styles.feedback_container}>
           <h6>Give your feedback</h6>
           <form onSubmit={handleSubmit}>
             {feedbacks}

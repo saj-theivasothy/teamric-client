@@ -5,7 +5,7 @@ import Results from "./Results";
 
 import data from "../../data/sample.json";
 
-import "../styles/search.css";
+import "./styles/search.css";
 
 const Search = (props) => {
   const [term, setTerm] = useState("");

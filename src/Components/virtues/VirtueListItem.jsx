@@ -1,11 +1,11 @@
 import React from "react";
 
-import "../styles/virtue-list-item.scss";
+import styles from "./styles/virtue.module.scss";
 
 const VirtueListItem = (props) => {
   return (
     <article
-      className="virtue_container"
+      className={styles.virtue_container}
       onClick={() => props.onClick(props.id)}
     >
       {props.name}

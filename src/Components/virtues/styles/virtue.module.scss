@@ -1,0 +1,66 @@
+.virtue_buckets_container {
+  div {
+    position: relative;
+    bottom: 6rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    width: fit-content;
+    margin: auto;
+  }
+}
+
+.bucket_item_container {
+  position: relative;
+  text-align: center;
+  width: fit-content;
+  bottom: -110px;
+  margin: 0.25rem;
+}
+
+.icon {
+  width: 1.75rem;
+  padding: 0.3rem;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #af3b4a;
+
+  &:hover {
+    background-color: #200122;
+    border: 2px solid #af3b4a;
+  }
+
+  &:focus {
+    background-color: #200122;
+    border: 2px solid #af3b4a;
+  }
+}
+
+article > p {
+  position: relative;
+  font-size: 0.5rem;
+  bottom: 0.5rem;
+  color: #00c6e1;
+}
+
+.virtue_container {
+  background-color: #af3b4a;
+  color: #00c6e1;
+  font-size: 0.5rem;
+  width: fit-content;
+  margin: 0.15rem;
+  padding: 0.2rem;
+  border-radius: 25px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #200122;
+    border: 2px solid #af3b4a;
+    padding: 0.1rem;
+  }
+
+  &:focus {
+    background-color: #200122;
+    border: 2px solid #af3b4a;
+  }
+}
