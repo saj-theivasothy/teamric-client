@@ -9,33 +9,33 @@ import BlurOnIcon from "@material-ui/icons/BlurOn";
 
 function Sidebar() {
   return (
-    <div class="sidenav">
-      <div class="logo">
+    <div className="sidenav">
+      <div className="logo">
         <h3>TeamRic</h3>
         <BlurOnIcon />
       </div>
-      <a>
-        <div class="button" href="#">
+      <a href="#">
+        <div className="button">
           <DashboardIcon />
-          <div class="button-title">Dashboard</div>
+          <div className="button-title">Dashboard</div>
         </div>
       </a>
-      <a>
-        <div class="button" href="#">
+      <a href="#">
+        <div className="button">
           <AddCircleOutlineIcon />
-          <div class="button-title">AddDot</div>
+          <div className="button-title">AddDot</div>
         </div>
       </a>
-      <a>
-        <div class="button" href="#">
+      <a href="#">
+        <div className="button">
           <GradeIcon />
-          <div class="button-title">Reviews</div>
+          <div className="button-title">Reviews</div>
         </div>
       </a>
-      <a>
-        <div class="button" href="#">
+      <a href="#">
+        <div className="button">
           <PeopleAltIcon />
-          <div class="button-title">Employees</div>
+          <div className="button-title">Employees</div>
         </div>
       </a>
 
