@@ -32,9 +32,15 @@ const Survey = () => {
 
   const selectVirtues = (id) => {
     const virtueById = getVirtuesById(id);
-    const updatedVirtues = [...selectedVirtues];
-    updatedVirtues.push(...virtueById);
-    setSelectedVirtues(updatedVirtues);
+    let updatedVirtues = [...selectedVirtues];
+
+    const existingVirtue = updatedVirtues.find((element) => element.id === id);
+    if (existingVirtue) {
+      alert(`You have already selected the virtue '${existingVirtue.name}'!`);
+    } else {
+      updatedVirtues.push(...virtueById);
+      setSelectedVirtues(updatedVirtues);
+    }
   };
 
   const getVirtuesById = (id) => {
