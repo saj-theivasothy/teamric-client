@@ -2,8 +2,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-<<<<<<< HEAD
-=======
   margin: 0;
 }
 
@@ -26,7 +24,6 @@
   width: 80%;
   margin: 1em auto;
   color: gray;
->>>>>>> 0fadb1e04ecaaefb024864e9e619614c0091c9e2
 }
 body {
   background: #20222f;
@@ -41,44 +38,16 @@ body {
 //   flex-direction: row;
 //   justify-content: space-between;
 
-<<<<<<< HEAD
-//   margin: 0 auto;
-// }
-
-.container-one {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-=======
 .stars {
   color: salmon;
   margin-top: 0.8em;
   width: 1.2em;
->>>>>>> 0fadb1e04ecaaefb024864e9e619614c0091c9e2
 }
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-<<<<<<< HEAD
-.card {
-  height: 40vh;
-  width: 22vw;
-  display: flex;
-  flex-direction: column;
-  background-color: #252b43;
-  flex: 1;
-  align-items: center;
-  justify-content: space-between;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
-  position: relative;
-}
-.card::after {
-=======
 html,
 body {
   height: 500px;
@@ -147,7 +116,6 @@ body {
   margin-top: 5px;
 }
 .card__ig::after {
->>>>>>> 0fadb1e04ecaaefb024864e9e619614c0091c9e2
   content: "";
   border-top: none;
   border-top-left-radius: 3px;
@@ -160,12 +128,9 @@ body {
   top: 0;
   left: 0;
   background: linear-gradient(90deg, #fac06c, #db4e93);
-<<<<<<< HEAD
-=======
 }
 .card__yt::after {
   border-top: 5px solid #c2042a;
->>>>>>> 0fadb1e04ecaaefb024864e9e619614c0091c9e2
 }
 
 @keyframes card {
@@ -174,26 +139,9 @@ body {
   }
   50% {
     background-position: 300%;
-<<<<<<< HEAD
   }
   100% {
     background-position: 0 0;
-  }
-}
-
-@media only screen and (min-width: 600px) {
-  body {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  .container {
-    margin: 0;
-    flex-direction: row;
-=======
-  }
-  100% {
-    background-position: 0 0;
->>>>>>> 0fadb1e04ecaaefb024864e9e619614c0091c9e2
   }
   .card,
   .card__ig,
@@ -208,8 +156,6 @@ body {
   background: red;
 }
 
-<<<<<<< HEAD
-=======
 .card-small {
   display: flex;
   flex-direction: row;
@@ -262,7 +208,6 @@ body {
 //   }
 // }
 
->>>>>>> 0fadb1e04ecaaefb024864e9e619614c0091c9e2
 @media only screen and (min-width: 1200px) {
   body {
     max-width: 1200px;
@@ -272,12 +217,7 @@ body {
   .card,
   .card__ig,
   .card__yt {
-<<<<<<< HEAD
-    margin: 5px;
-    flex: 0 40%;
-=======
     margin: 1%;
     flex: 0 30%;
->>>>>>> 0fadb1e04ecaaefb024864e9e619614c0091c9e2
   }
 }

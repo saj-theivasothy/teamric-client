@@ -62,34 +62,44 @@ body {
 
 /* css NEW */
 
-.gridcontainer {
+.gridContainer {
   display: grid;
-  grid-template-columns: 240px 1fr;
+  grid-template-columns: 200px 1fr;
   grid-template-rows: 50px 1fr 50px;
   grid-template-areas:
-    "sidenav header"
-    "sidenav main"
-    "sidenav footer";
+    "sidebar header"
+    "sidebar main"
+    "sidebar footer";
   height: 100vh;
+  padding: 0;
+  margin: 0;
 }
 
-/* Give every child element its grid name */
 .header {
   grid-area: header;
-  background-color: #648ca6;
+  background-color: #20222f;
 }
 
-.sidenav {
-  grid-area: sidenav;
-  background-color: #394263;
+.sidebar {
+  grid-area: sidebar;
+  background-color: #20222f;
 }
 
 .main {
   grid-area: main;
-  background-color: #8fd4d9;
+  background-color: #20222f;
 }
 
 .footer {
   grid-area: footer;
-  background-color: #648ca6;
+  background-color: #20222f;
+}
+
+.header,
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  background-color: #20222f;
 }
