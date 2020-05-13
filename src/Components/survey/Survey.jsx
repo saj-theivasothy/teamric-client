@@ -1,19 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import data from "../../data/sample.json";
 
 import Search from "../search/Search";
 
 import VirtueBucketList from "./VirtueBucketList";
-
 import VirtueListItem from "./VirtueListItem";
 
 import "../styles/survey.scss";
+import Feedback from "./Feedback";
 
 const Survey = () => {
   const [employee, setEmployee] = useState();
   const [virtueBucket, setVirtueBucket] = useState();
   const [selectedVirtues, setSelectedVirtues] = useState([]);
+  const [feedback, setFeedback] = useState([]);
+
+  useEffect(() => {
+    setVirtueBucket();
+    setSelectedVirtues([]);
+    setFeedback([]);
+  }, [employee]);
 
   const selectEmployee = (id) => {
     setEmployee(id);
@@ -23,10 +30,15 @@ const Survey = () => {
     setVirtueBucket(id);
   };
 
-  const selectVirtues = (id) => {};
+  const selectVirtues = (id) => {
+    const virtueById = getVirtuesById(id);
+    const updatedVirtues = [...selectedVirtues];
+    updatedVirtues.push(...virtueById);
+    setSelectedVirtues(updatedVirtues);
+  };
 
   const getVirtuesById = (id) => {
-    data.virtues.filter((virtue) => virtue.id === id);
+    return data.virtues.filter((virtue) => virtue.id === id);
   };
 
   const getVirtuesForBucketId = (id) => {
@@ -36,16 +48,49 @@ const Survey = () => {
     return virtues;
   };
 
+  const handleSetFeedback = (id, rating, description) => {
+    const newFeedback = {
+      skillId: id,
+      rating: rating,
+      description: description,
+    };
+
+    let updatedFeedback = [...feedback];
+
+    updatedFeedback = updatedFeedback.filter(
+      (element) => element.skillId !== id
+    );
+
+    updatedFeedback.push(newFeedback);
+
+    setFeedback(updatedFeedback);
+  };
+
   const virtuesForBucket = getVirtuesForBucketId(virtueBucket);
   const virtues = virtuesForBucket.map((virtue) => {
     return (
-      <VirtueListItem
-        key={virtue.id}
-        {...virtue}
-        onClick={setSelectedVirtues}
-      />
+      <VirtueListItem key={virtue.id} {...virtue} onClick={selectVirtues} />
     );
   });
+
+  const feedbacks = selectedVirtues.map((virtue) => (
+    <Feedback
+      key={virtue.id}
+      {...virtue}
+      handleSetFeedback={handleSetFeedback}
+    />
+  ));
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const data = {
+      [employee]: [feedback],
+    };
+
+    console.log(data);
+    //this is where post request goes
+    //once post request is successfull all states should be cleared
+  };
 
   return (
     <>
@@ -71,6 +116,10 @@ const Survey = () => {
         </article>
         <div className="feedback_container">
           <h6>Give your feedback</h6>
+          <form onSubmit={handleSubmit}>
+            {feedbacks}
+            <input type="submit" value="Submit" />
+          </form>
         </div>
       </main>
     </>
