@@ -23,7 +23,7 @@ function App() {
         <Header />
         <Sidebar onClick={getEmployeePage} onNavClick={setPage} />
         {/* <FeedbackSummary /> */}
-        <FeedbackContent />
+        {/* <FeedbackContent /> */}
         {/* <Profile /> */}
         <Footer />
       </section>
