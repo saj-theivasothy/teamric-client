@@ -1,5 +1,5 @@
 import React from "react";
-import Search from "./Search";
+import Search from "./search/Search";
 import "./styles/sidebar.scss";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import GradeIcon from "@material-ui/icons/Grade";
@@ -7,7 +7,7 @@ import PeopleAltIcon from "@material-ui/icons/PeopleAlt";
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
 import BlurOnIcon from "@material-ui/icons/BlurOn";
 
-function Sidebar() {
+function Sidebar(props) {
   return (
     <div className="sidenav">
       <div className="logo">
@@ -42,7 +42,6 @@ function Sidebar() {
         Add Dot
       </a>
       <Search onClick={props.onClick} />
-
     </div>
   );
 }
