@@ -1,6 +1,6 @@
 import React from "react";
 import Search from "./Search";
-import "./styles/Sidebar.scss";
+import "./styles/sidebar.scss";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import GradeIcon from "@material-ui/icons/Grade";
 import PeopleAltIcon from "@material-ui/icons/PeopleAlt";
