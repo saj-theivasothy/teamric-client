@@ -34,12 +34,13 @@ function FeedbackSummary() {
           <p>Designation</p>
         </div>
       </div>
-      <div class="score flex-row">
-        <div class="flex flex-column">
-          <p class="scorep">Average Score</p>
-          <div class="flex-row">
-            <h6 class="number">4.5</h6>
-            <div class="stars flex-row">
+      <div className="score flex-row">
+        <div className="flex flex-column">
+          <p className="scorep">Average Score</p>
+          <div className="flex-row">
+            <h6 className="number">4.5</h6>
+            <div className="stars flex-row">
+
               <StarIcon />
               <StarIcon />
               <StarIcon />
