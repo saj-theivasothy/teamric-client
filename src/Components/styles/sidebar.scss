@@ -1,10 +1,7 @@
-.sidenav__list_item a {
+.sidenav__list_item {
   font-size: 1em;
   color: gray;
   padding-bottom: 2em;
-}
-
-a {
   text-decoration: none;
 }
 
@@ -22,7 +19,7 @@ a {
   // color: #45444e;
 }
 
-a .button-title {
+.button-title {
   font-size: 1em;
   width: 0px;
   overflow: hidden;
