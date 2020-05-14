@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.body {
+  background: #0f0c29; /* fallback for old browsers */
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  grid-template-rows: 60px 1fr 50px;
+  grid-template-areas:
+    "sidenav header"
+    "sidenav main"
+    "sidenav footer";
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: #ece9e6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ece9e6,
+    #ffffff
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #d0d6ec, #e5dfee);
+}
+
+/* Give every child element its grid name */
+.header {
+  grid-area: header;
+  background: linear-gradient(to right, #d0d6ec, #e5dfee);
+  box-shadow: inset 10px 10px 6px rgba(255, 255, 255, 0.25);
+}
+
+.main {
+  grid-area: main;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.header,
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+/* side bar */
+.sidenav {
+  display: flex; /* Will be hidden on mobile */
+  flex-direction: column;
+  grid-area: sidenav;
+}
+
+.sidenav__list {
+  padding: 0;
+  margin-top: 85px;
+  list-style-type: none;
+}
+
+.sidenav__list-item {
+  padding: 20px 20px 20px 40px;
+  color: gray;
+}
+
+.sidenav__list-item:hover {
+  color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+.sidenav__list-item:active {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+/* Main styling here */
+
+.main-header {
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff;
+  color: gray;
+  border-radius: 5px;
+}
+
+.main {
+  display: grid;
+  grid-template-rows: 0.8fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.addchart {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+/* Boxshadow for cards */
+
+.effect2 {
+  position: relative;
+}
+.effect2:before,
+.effect2:after {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  left: 10px;
+  width: 50%;
+  top: 80%;
+  -webkit-box-shadow: 0 15px 10px #777;
+  -moz-box-shadow: 0 15px 10px #777;
+  box-shadow: 0 15px 10px #777;
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  -o-transform: rotate(-3deg);
+  -ms-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+}
+.effect2:after {
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  transform: rotate(3deg);
+  right: 10px;
+  left: auto;
+}
+
+.effect3 {
+  box-shadow: 10px 10px 5px rgba(33, 45, 88, 0.5);
+}
