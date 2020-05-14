@@ -7,13 +7,14 @@ import FeedbackContent from "./Components/FeedbackContent";
 import Profile from "./Components/Profile/Profile";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
+import LayoutStyles from "./Components/styles/layout.module.css";
 
 const getEmployeePage = (id) => {
   // This is where the axios request will go to get the employees feedback summary page
   console.log("hello", id);
 };
 
-function App() {
+function SubmitSurvey() {
   const [page, setPage] = useState("profile");
 
   return (
@@ -22,13 +23,10 @@ function App() {
       <section>
         <Header />
         <Sidebar onClick={getEmployeePage} onNavClick={setPage} />
-        {/* <FeedbackSummary /> */}
-        {/* <FeedbackContent /> */}
-        {/* <Profile /> */}
         <Footer />
       </section>
     </Fragment>
   );
 }
 
-export default App;
+export default SubmitSurvey;

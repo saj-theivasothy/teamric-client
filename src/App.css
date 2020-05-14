@@ -2,104 +2,24 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-body {
-  background: #20222f;
-  color: #fffffd;
-  font-family: "Lato", sans-serif;
-  /* background: #1f1c2c; fallback for old browsers */
-  /* background: -webkit-linear-gradient(
-    to right,
-    #1f1c2c,
-    #928dab */
-  /* Chrome 10-25, Safari 5.1-6 */
-}
-
-.sidenav {
-  height: 100%;
-  width: 12%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  overflow-x: hidden;
-  padding-top: 20px;
-}
-*/
-
-/* .sidenav a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-} */
-
-/* .sidenav a:hover {
-  color: #f1f1f1;
-} */
-
-/* .main {
-  margin-left: 160px;  */
-/* Same as the width of the sidenav */
-/* font-size: 28px;  */
-/* Increased text to enable scrolling */
-/* padding: 0px 10px;
-} */
-
-/* @media screen and (max-height: 450px) {
-  .sidenav {
-    padding-top: 15px;
-  }
-  .sidenav a {
-    font-size: 18px;
-  }
-}
-
-.block {
-  display: block;
-}
-
-/* css NEW */
-
-.gridContainer {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  grid-template-rows: 50px 1fr 50px;
-  grid-template-areas:
-    "sidebar header"
-    "sidebar main"
-    "sidebar footer";
-  height: 100vh;
-  padding: 0;
   margin: 0;
 }
 
-.header {
-  grid-area: header;
-  background-color: #20222f;
-}
-
-.sidebar {
-  grid-area: sidebar;
-  background-color: #20222f;
-}
-
-.main {
-  grid-area: main;
-  background-color: #20222f;
-}
-
-.footer {
-  grid-area: footer;
-  background-color: #20222f;
-}
-
-.header,
-.footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 16px;
-  background-color: #20222f;
+.grid_container {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  grid-template-rows: 60px 1fr 50px;
+  grid-template-areas:
+    "sidenav header"
+    "sidenav main"
+    "sidenav footer";
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: #ece9e6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ece9e6,
+    #ffffff
+  ); /* Chrome 10-25, Safari 5.1-6 */
 }

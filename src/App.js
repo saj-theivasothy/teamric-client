@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import Sidebar from "./Components/Sidebar";
-import Search from "./Components/Search";
+import LayoutStyles from "./Components/styles/layout.module.css";
 import Profile from "./Components/Profile/Profile";
 
 import FeedbackSummary from "./Components/FeedbackSummary";
@@ -11,16 +11,11 @@ import Footer from "./Components/Footer";
 
 function App() {
   return (
-    <div class="gridContainer">
-      <Header class="header" />
-      <Sidebar class="sidebar">
-        <Search />
-      </Sidebar>
-      <div class="main">
-        <FeedbackContent />
-        {/* <Profile /> */}
-      </div>
-      <Footer class="footer" />
+    <div className={LayoutStyles.grid_container}>
+      <Header />
+      <Sidebar />
+      <FeedbackContent className={LayoutStyles.main} />
+      <Footer />
     </div>
   );
 }

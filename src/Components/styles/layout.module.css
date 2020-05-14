@@ -5,13 +5,9 @@
   margin: 0;
 }
 
-.body {
-  background: #0f0c29; /* fallback for old browsers */
-}
-
-.grid-container {
+.grid_container {
   display: grid;
-  grid-template-columns: 240px 1fr;
+  grid-template-columns: 10% 1fr;
   grid-template-rows: 60px 1fr 50px;
   grid-template-areas:
     "sidenav header"
@@ -33,7 +29,8 @@
 .header {
   grid-area: header;
   background: linear-gradient(to right, #d0d6ec, #e5dfee);
-  box-shadow: inset 10px 10px 6px rgba(255, 255, 255, 0.25);
+  box-shadow: 3px 3px 6px rgba(255, 255, 255, 0.25);
+  border-bottom: #fff 1px solid;
 }
 
 .main {
@@ -42,6 +39,8 @@
 
 .footer {
   grid-area: footer;
+  position: absolute;
+  bottom: 0;
 }
 
 .header,
@@ -58,39 +57,44 @@
 .sidenav {
   display: flex; /* Will be hidden on mobile */
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   grid-area: sidenav;
 }
 
 .sidenav__list {
   padding: 0;
-  margin-top: 85px;
+
   list-style-type: none;
 }
 
-.sidenav__list-item {
-  padding: 20px 20px 20px 40px;
+.sidenav__list_item {
+  padding: 50px 20px 50px 40px;
   color: gray;
 }
 
-.sidenav__list-item:hover {
+.sidenav__list_item:hover {
   color: rgba(255, 255, 255, 0.2);
   cursor: pointer;
 }
-.sidenav__list-item:active {
+.sidenav__list_item:active {
   color: rgba(255, 255, 255, 0.2);
 }
 
 /* Main styling here */
-
-.main-header {
+/* //Blocks in App page */
+.main div {
   margin: 20px;
   padding: 20px;
   background-color: #fff;
   color: gray;
   border-radius: 5px;
+  -webkit-filter: drop-shadow(0px 5px px rgba(0, 0, 0, 0.8));
+  filter: drop-shadow(0px 5px 4px rgba(122, 98, 124, 0.8));
 }
 
 .main {
+  margin-top: 20px;
   display: grid;
   grid-template-rows: 0.8fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
@@ -136,4 +140,43 @@
 
 .effect3 {
   box-shadow: 10px 10px 5px rgba(33, 45, 88, 0.5);
+}
+
+.header_logo {
+  height: 3em;
+  margin-left: 1em;
+}
+
+.header_logo_name {
+  color: #ee5454;
+  font-size: 2em;
+  margin-left: 5px;
+}
+
+.header div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0px 3px 5px rgba(33, 45, 88, 0.5);
+}
+
+.main div:after {
+  content: "";
+  border-top: none;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  width: 100%;
+  height: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: -webkit-linear-gradient(
+    to left,
+    #614385,
+    #516395
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #614385, #516395);
 }

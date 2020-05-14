@@ -1,10 +1,9 @@
-body {
-  padding: 1.6em 2em 4em;
+/* body {
   letter-spacing: -0.011em;
   font-size: 16px;
   color: #34495e;
   background: #f1f3f5;
-}
+} */
 
 #root,
 .App {
