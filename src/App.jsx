@@ -4,9 +4,9 @@ import Sidebar from "./Components/Sidebar";
 import Survey from "./Components/survey/Survey";
 import FeedbackSummary from "./Components/FeedbackSummary";
 import FeedbackContent from "./Components/FeedbackContent";
-import Profile from "./Components/Profile/Profile";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
+import Graphic from "./Components/Profile/Graphic";
 
 const getEmployeePage = (id) => {
   // This is where the axios request will go to get the employees feedback summary page
@@ -18,13 +18,13 @@ function App() {
 
   return (
     <Fragment>
-      <div class="main">{page === "add dot" && <Survey />}</div>
+      <div className="main">{page === "add dot" && <Survey />}</div>
       <section>
         <Header />
         <Sidebar onClick={getEmployeePage} onNavClick={setPage} />
         {/* <FeedbackSummary /> */}
         {/* <FeedbackContent /> */}
-        {/* <Profile /> */}
+        <Graphic type="bar" xLabel="x" yLabel="y" title="Title" />
         <Footer />
       </section>
     </Fragment>

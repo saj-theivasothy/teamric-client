@@ -21,24 +21,23 @@ h1 {
   background: #ecf0f1;
 }
 
+.Graphic {
+  padding: 1.5rem;
+}
+
 .Timeline {
-  height: 300px;
-  min-width: 500px;
-  width: calc(100% + 1em);
-  margin-bottom: 2em;
+  height: 400px;
+  min-width: 250px;
 }
 
-.Histogram {
-  height: 500px;
-  flex: 1;
-  min-width: 500px;
-  overflow: hidden;
+.Bar {
+  height: 400px;
+  min-width: 250px;
 }
 
-.ScatterPlot {
-  height: 500px;
-  width: 500px;
-  margin-right: 2em;
+.Scatter {
+  height: 400px;
+  min-width: 250px;
 }
 
 .App__charts {

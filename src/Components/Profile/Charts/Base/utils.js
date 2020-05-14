@@ -10,7 +10,7 @@ export const combineChartDimensions = (dimensions) => {
     marginTop: 40,
     marginRight: 30,
     marginBottom: 40,
-    marginLeft: 75,
+    marginLeft: 95,
     ...dimensions,
   };
 
@@ -19,7 +19,7 @@ export const combineChartDimensions = (dimensions) => {
     marginTop: 40,
     marginRight: 30,
     marginBottom: 40,
-    marginLeft: 75,
+    marginLeft: 95,
     boundedHeight: Math.max(
       parsedDimensions.height -
         parsedDimensions.marginTop -
@@ -53,9 +53,9 @@ export const useChartDimensions = (passedSettings) => {
 
       const entry = entries[0];
 
-      if (width != entry.contentRect.width)
+      if (width !== entry.contentRect.width)
         changeWidth(entry.contentRect.width);
-      if (height != entry.contentRect.height)
+      if (height !== entry.contentRect.height)
         changeHeight(entry.contentRect.height);
     });
 
