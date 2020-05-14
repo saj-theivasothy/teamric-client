@@ -1,36 +1,39 @@
-.sidenav a {
+.sidenav__list_item a {
   font-size: 1em;
-  color: rgb(221, 220, 220);
-  display: flex;
-  justify-content: center;
+  color: gray;
   padding-bottom: 2em;
+}
+
+a {
+  text-decoration: none;
 }
 
 .button {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
+  color: #645aa2;
+  // #645aa2
+  // color: #f2c7c0;
+
+  // color: #fdf4f1;
+  // // text color
+  // color: #45444e;
 }
 
-.button-title {
+a .button-title {
   font-size: 1em;
   width: 0px;
   overflow: hidden;
   transition: all 1s;
 }
 
-.sidenav .logo {
-  padding: 15px auto;
-}
-
 .button:hover .button-title {
   width: 100px;
 }
 
-.logo {
-  font-size: 1.5em;
-  color: lightcyan;
-  display: flex;
-  justify-content: center;
-  padding-bottom: 2em;
+.icon {
+  font-size: 4em;
+  width: 4em;
 }

@@ -1,10 +1,9 @@
-body {
-  padding: 1.6em 2em 4em;
+/* body {
   letter-spacing: -0.011em;
   font-size: 16px;
   color: #34495e;
   background: #f1f3f5;
-}
+} */
 
 #root,
 .App {
@@ -21,23 +20,24 @@ h1 {
   background: #ecf0f1;
 }
 
-.Graphic {
-  padding: 1.5rem;
-}
-
 .Timeline {
-  height: 400px;
-  min-width: 250px;
+  height: 300px;
+  min-width: 500px;
+  width: calc(100% + 1em);
+  margin-bottom: 2em;
 }
 
-.Bar {
-  height: 400px;
-  min-width: 250px;
+.Histogram {
+  height: 500px;
+  flex: 1;
+  min-width: 500px;
+  overflow: hidden;
 }
 
-.Scatter {
-  height: 400px;
-  min-width: 250px;
+.ScatterPlot {
+  height: 500px;
+  width: 500px;
+  margin-right: 2em;
 }
 
 .App__charts {

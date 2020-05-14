@@ -94,7 +94,9 @@ const AxisVertical = ({
         <text
           className="Axis__label"
           style={{
-            transform: `translate(-56px, ${dimensions.boundedHeight / 2}px)`,
+            transform: `translate(-56px, ${
+              dimensions.boundedHeight / 2
+            }px) rotate(-90deg)`,
           }}
         >
           {label}
