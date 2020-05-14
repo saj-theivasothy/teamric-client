@@ -19,10 +19,13 @@ function SubmitSurvey() {
 
   return (
     <Fragment>
-      <div class="main">{page === "add dot" && <Survey />}</div>
+      <div className="main">{page === "add dot" && <Survey />}</div>
       <section>
         <Header />
         <Sidebar onClick={getEmployeePage} onNavClick={setPage} />
+        {/* <FeedbackSummary /> */}
+        {/* <FeedbackContent /> */}
+        <Graphic type="bar" xLabel="x" yLabel="y" title="Title" />
         <Footer />
       </section>
     </Fragment>
