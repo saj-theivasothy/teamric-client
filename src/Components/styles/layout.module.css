@@ -66,7 +66,6 @@
 
 .sidenav__list {
   padding: 0;
-
   list-style-type: none;
 }
 
@@ -86,8 +85,8 @@
 /* Main styling here */
 /* //Blocks in App page */
 .main section {
-  margin: 20px;
-  padding: 20px;
+  margin: 1em;
+  padding: 1em;
   background-color: #fff;
   color: gray;
   border-radius: 5px;

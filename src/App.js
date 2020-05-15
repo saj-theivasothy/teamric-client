@@ -7,7 +7,6 @@ import Survey from "./Components/survey/Survey";
 import Home from "./Components/Home";
 import Profile from "./Components/Profile";
 import Employees from "./Components/Employees";
-
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";

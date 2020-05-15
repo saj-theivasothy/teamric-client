@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from "react";
-
 import data from "../../data/sample.json";
-
 import Search from "../search/Search";
-
 import VirtueBucketList from "../virtues/VirtueBucketList";
 import VirtueListItem from "../virtues/VirtueListItem";
-
 import styles from "./styles/survey.module.scss";
 import Feedback from "./Feedback";
+import LayoutStyles from "../styles/layout.module.css";
 
 const Survey = () => {
   const [employee, setEmployee] = useState();
@@ -99,36 +96,31 @@ const Survey = () => {
   };
 
   return (
-    <>
-      <header>
-        <h1>Feedback</h1>
-      </header>
-      <main>
-        <div className={styles.search_container}>
-          <Search className={styles.search} onClick={selectEmployee} />
+    <main className={styles.main}>
+      <section>
+        <Search className={styles.search} onClick={selectEmployee} />
+      </section>
+      <section className={styles.survey_bucket_container}>
+        <div className={styles.virtue_categories}>
+          <h6>Select a Virtue Category</h6>
+          <VirtueBucketList
+            virtue_buckets={data.virtue_buckets}
+            onClick={selectVirtueBucket}
+          />
         </div>
-        <div className={styles.survey_bucket_container}>
-          <div className={styles.virtue_categories}>
-            <h6>Select a Virtue Category</h6>
-            <VirtueBucketList
-              virtue_buckets={data.virtue_buckets}
-              onClick={selectVirtueBucket}
-            />
-          </div>
-        </div>
-        <article className={styles.dragzone_container}>
-          <h6>Select Virtues</h6>
-          <div className={styles.virtues_container}>{virtues}</div>
-        </article>
-        <div className={styles.feedback_container}>
-          <h6>Give your feedback</h6>
-          <form onSubmit={handleSubmit}>
-            {feedbacks}
-            <input type="submit" value="Submit" />
-          </form>
-        </div>
-      </main>
-    </>
+      </section>
+      <section className={styles.dragzone_container}>
+        <h6>Select Virtues</h6>
+        <div className={styles.virtues_container}>{virtues}</div>
+      </section>
+      <section className={styles.feedback_container}>
+        <h6>Give your feedback</h6>
+        <form onSubmit={handleSubmit}>
+          {feedbacks}
+          <input type="submit" value="Submit" />
+        </form>
+      </section>
+    </main>
   );
 };
 
