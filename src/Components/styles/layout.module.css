@@ -7,7 +7,7 @@
 
 .grid_container {
   display: grid;
-  grid-template-columns: 150px 100%;
+  grid-template-columns: 150px calc(100%-150px);
   grid-template-rows: 40px 1fr 50px;
   grid-template-areas:
     "sidenav header"
@@ -137,10 +137,10 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  color: #777;
 }
 
-.header h2 {
+.header h2,
+.header h3 {
   color: white;
 }
 
