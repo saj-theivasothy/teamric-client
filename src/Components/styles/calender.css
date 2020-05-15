@@ -10,7 +10,7 @@
   text-align: center;
 } */
 
-ul {
+/* ul {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-gap: 1em;
@@ -71,4 +71,4 @@ ul.day-grid li:nth-child(35) {
     font-size: calc(16px + (26 - 16) * ((100vw - 300px) / (1600 - 300)));
     text-align: center;
   }
-}
+} */

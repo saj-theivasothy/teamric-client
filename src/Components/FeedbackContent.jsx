@@ -1,16 +1,39 @@
 import React from "react";
-import "./styles/feedback.scss";
+import Profile from "./Profile/Profile";
+import LayoutStyles from "./styles/layout.module.css";
 
 function FeedbackContent() {
   return (
-    <section>
-      <div className="container-one">
-        <div className="card"></div>
-
-        <div className="card card__ig"></div>
-        <div className="card card__yt"></div>
+    <main className={LayoutStyles.main}>
+      <div
+        className={LayoutStyles.effect2}
+        className={LayoutStyles.main_header}
+        className={LayoutStyles.heading}
+      >
+        Hello User
       </div>
-    </section>
+      <div
+        className={LayoutStyles.effect2}
+        className={LayoutStyles.main_header}
+        className={LayoutStyles.updates}
+      >
+        Recent Items
+      </div>
+      <div
+        className={LayoutStyles.effect2}
+        className={LayoutStyles.main_header}
+        className={LayoutStyles.chart}
+      >
+        Recent Items
+      </div>
+      <div
+        className={LayoutStyles.effect2}
+        className={LayoutStyles.main_header}
+        className={LayoutStyles.addchart}
+      >
+        Recent Items
+      </div>
+    </main>
   );
 }
 
