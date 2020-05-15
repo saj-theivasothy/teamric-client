@@ -5,34 +5,34 @@ import LayoutStyles from "./styles/layout.module.css";
 function FeedbackContent() {
   return (
     <main className={LayoutStyles.main}>
-      <div
+      <section
         className={LayoutStyles.effect2}
         className={LayoutStyles.main_header}
         className={LayoutStyles.heading}
       >
         Hello User
-      </div>
-      <div
+      </section>
+      <section
         className={LayoutStyles.effect2}
         className={LayoutStyles.main_header}
         className={LayoutStyles.updates}
       >
         Recent Items
-      </div>
-      <div
+      </section>
+      <section
         className={LayoutStyles.effect2}
         className={LayoutStyles.main_header}
         className={LayoutStyles.chart}
       >
         Recent Items
-      </div>
-      <div
+      </section>
+      <section
         className={LayoutStyles.effect2}
         className={LayoutStyles.main_header}
         className={LayoutStyles.addchart}
       >
         Recent Items
-      </div>
+      </section>
     </main>
   );
 }

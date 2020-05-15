@@ -12,14 +12,15 @@ function Sidebar(props) {
   return (
     <aside className={LayoutStyles.sidenav}>
       <ul className={LayoutStyles.sidenav__list}>
-        <Link to="/dashboard" style={{ textDecoration: "none" }}>
-          <li className={LayoutStyles.sidenav__list_item}>
+        <li className={LayoutStyles.sidenav__list_item}>
+          <Link to="/dashboard" style={{ textDecoration: "none" }}>
             <div className="button">
               <DashboardIcon fontSize="large" />
               <div className="button-title">Dashboard</div>
             </div>
-          </li>
-        </Link>
+          </Link>
+        </li>
+
         <Link to="/add-dot" style={{ textDecoration: "none" }}>
           <li className={LayoutStyles.sidenav__list_item}>
             <div className="button">

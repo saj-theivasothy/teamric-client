@@ -60,6 +60,7 @@
   align-items: center;
   justify-content: center;
   grid-area: sidenav;
+  position: fixed;
 }
 
 .sidenav__list {
@@ -75,7 +76,6 @@
 
 .sidenav__list_item:hover {
   color: rgba(255, 255, 255, 0.2);
-  cursor: pointer;
 }
 .sidenav__list_item:active {
   color: rgba(255, 255, 255, 0.2);
@@ -83,7 +83,7 @@
 
 /* Main styling here */
 /* //Blocks in App page */
-.main div {
+.main section {
   margin: 20px;
   padding: 20px;
   background-color: #fff;
