@@ -28,7 +28,7 @@ const ScatterChart = ({ data, xAccessor, yAccessor, xLabel, yLabel }) => {
   const keyAccessor = (d, i) => i;
 
   return (
-    <div className="ScatterPlot" ref={ref}>
+    <div className="Scatter" ref={ref}>
       <Chart dimensions={dimensions}>
         <Axis
           dimensions={dimensions}

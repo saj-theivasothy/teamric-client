@@ -6,7 +6,7 @@ import Chart from "./Base/Chart";
 import Circles from "./Base/Circles";
 import { useChartDimensions } from "./Base/utils";
 
-const QuandrantChart = ({ data, xAccessor, yAccessor, xLabel, yLabel }) => {
+const QuadrantChart = ({ data, xAccessor, yAccessor, xLabel, yLabel }) => {
   const [ref, dimensions] = useChartDimensions({
     marginBottom: 77,
   });
@@ -30,7 +30,7 @@ const QuandrantChart = ({ data, xAccessor, yAccessor, xLabel, yLabel }) => {
   const arrowColor = "#a9355a";
 
   return (
-    <div className="Scatter" ref={ref}>
+    <div className="Quadrant" ref={ref}>
       <Chart dimensions={dimensions}>
         <defs>
           <marker
@@ -139,4 +139,4 @@ const QuandrantChart = ({ data, xAccessor, yAccessor, xLabel, yLabel }) => {
   );
 };
 
-export default QuandrantChart;
+export default QuadrantChart;

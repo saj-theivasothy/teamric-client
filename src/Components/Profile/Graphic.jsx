@@ -7,7 +7,7 @@ import PieChart from "./Charts/PieChart";
 import TimelineChart from "./Charts/TimelineChart";
 import ScatterChart from "./Charts/ScatterChart";
 import CandleChart from "./Charts/CandleChart";
-import QuadrantChart from "./Charts/QuandrantChart";
+import QuadrantChart from "./Charts/Quadrant";
 import SwarmChart from "./Charts/SwarmChart";
 
 import {
@@ -101,7 +101,7 @@ const Graphic = ({ type, xLabel, yLabel, title }) => {
   return (
     <>
       <h1>{title}</h1>
-      <div className="Graphic">{graphic}</div>
+      {graphic}
     </>
   );
 };

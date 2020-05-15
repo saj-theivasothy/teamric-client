@@ -52,7 +52,7 @@ const SwarmChart = ({ data, xAccessor, yAccessor, xLabel, yLabel }) => {
   for (var i = 0; i < 120; ++i) simulation.tick();
 
   return (
-    <div className="Scatter" ref={ref}>
+    <div className="Swarm" ref={ref}>
       <Chart dimensions={dimensions}>
         <Axis
           dimensions={dimensions}
