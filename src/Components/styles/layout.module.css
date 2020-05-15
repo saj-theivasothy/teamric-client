@@ -75,7 +75,7 @@
 
 .sidenav__list_item:hover {
   color: rgba(255, 255, 255, 0.2);
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 .sidenav__list_item:active {
   color: rgba(255, 255, 255, 0.2);
