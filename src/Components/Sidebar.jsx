@@ -7,6 +7,19 @@ import PeopleAltIcon from "@material-ui/icons/PeopleAlt";
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
 import BlurOnIcon from "@material-ui/icons/BlurOn";
 import { Link } from "react-router-dom";
+import { makeStyles } from "@material-ui/core/styles";
+import Avatar from "@material-ui/core/Avatar";
+import PersonIcon from "@material-ui/icons/Person";
+import NotificationsActiveIcon from "@material-ui/icons/NotificationsActive";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: "flex",
+    "& > *": {
+      margin: theme.spacing(1),
+    },
+  },
+}));
 
 function Sidebar(props) {
   return (
@@ -15,15 +28,23 @@ function Sidebar(props) {
         <li className={LayoutStyles.sidenav__list_item}>
           <Link to="/dashboard" style={{ textDecoration: "none" }}>
             <div className="button">
-              <DashboardIcon fontSize="large" />
+              <DashboardIcon />
               <div className="button-title">Dashboard</div>
+            </div>
+          </Link>
+        </li>
+        <li className={LayoutStyles.sidenav__list_item}>
+          <Link to="/profile" style={{ textDecoration: "none" }}>
+            <div className="button">
+              <PersonIcon />
+              <div className="button-title">Profile</div>
             </div>
           </Link>
         </li>
         <li className={LayoutStyles.sidenav__list_item}>
           <Link to="/add-dot" style={{ textDecoration: "none" }}>
             <div className="button">
-              <AddCircleOutlineIcon fontSize="large" />
+              <AddCircleOutlineIcon />
               <div className="button-title">AddDot</div>
             </div>
           </Link>
@@ -31,16 +52,16 @@ function Sidebar(props) {
         <li className={LayoutStyles.sidenav__list_item}>
           <Link to="/profile" style={{ textDecoration: "none" }}>
             <div className="button">
-              <GradeIcon fontSize="large" />
-              <div className="button-title">Reviews</div>
+              <NotificationsActiveIcon />
+              <div className="button-title">Notification</div>
             </div>
           </Link>
         </li>
         <li className={LayoutStyles.sidenav__list_item}>
           <Link to="/employees" style={{ textDecoration: "none" }}>
             <div className="button">
-              <PeopleAltIcon fontSize="large" />
-              <div className="button-title">Employees</div>
+              <PeopleAltIcon />
+              <div className="button-title">Team</div>
             </div>
           </Link>
         </li>
