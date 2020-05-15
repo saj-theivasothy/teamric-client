@@ -28,7 +28,8 @@ const AxisHorizontal = ({
         <text
           key={tick}
           className="Axis__tick"
-          transform={`translate(${scale(tick)}, 25)`}
+          // Horizontal value on all graphs
+          transform={`translate(${scale(tick)}, 15)`}
         >
           {formatTick(tick)}
         </text>
@@ -37,7 +38,8 @@ const AxisHorizontal = ({
       {label && (
         <text
           className="Axis__label"
-          transform={`translate(${dimensions.boundedWidth / 2}, 60)`}
+          // X Axis Label on all graph
+          transform={`translate(${dimensions.boundedWidth / 2}, 30)`}
         >
           {label}
         </text>
@@ -85,7 +87,7 @@ const AxisVertical = ({
         <text
           className="Axis__label"
           style={{
-            transform: `translate(-56px, ${
+            transform: `translate(-30px, ${
               dimensions.boundedHeight / 2
             }px) rotate(-90deg)`,
           }}
