@@ -22,9 +22,10 @@ function App() {
           <Route path="/add-dot" component={Survey} />
           <Route path="/profile" component={Profile} />
           <Route path="/employees" component={Employees} />
+
           <Route path="/" exact component={Home} />
         </Switch>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </Router>
   );
