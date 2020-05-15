@@ -9,11 +9,6 @@ const AxisHorizontal = ({
   type = "numeric",
   ...props
 }) => {
-  console.log(label, "LABEL");
-  if (type !== "numeric") {
-    // doSomething
-  }
-
   const numberOfTicks =
     dimensions.boundedWidth < 600
       ? dimensions.boundedWidth / 100
@@ -62,10 +57,6 @@ const AxisVertical = ({
   let ticks;
   let offset = 0;
   if (type !== "numeric") {
-    console.log("############");
-    console.log(scale.domain());
-    console.log(scale.domain().map((x) => scale(x)));
-    console.log("############!!!!!");
     // doSomething
     ticks = scale.domain();
     offset = scale.bandwidth() / 2;
@@ -94,7 +85,9 @@ const AxisVertical = ({
         <text
           className="Axis__label"
           style={{
-            transform: `translate(-56px, ${dimensions.boundedHeight / 2}px)`,
+            transform: `translate(-56px, ${
+              dimensions.boundedHeight / 2
+            }px) rotate(-90deg)`,
           }}
         >
           {label}

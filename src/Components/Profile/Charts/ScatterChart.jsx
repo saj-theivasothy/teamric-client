@@ -11,8 +11,6 @@ const ScatterChart = ({ data, xAccessor, yAccessor, xLabel, yLabel }) => {
     marginBottom: 77,
   });
 
-  console.log(dimensions);
-
   const xScale = d3
     .scaleLinear()
     .domain(d3.extent(data, xAccessor))

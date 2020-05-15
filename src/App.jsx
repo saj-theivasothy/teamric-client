@@ -25,6 +25,12 @@ function App() {
         {/* <FeedbackSummary /> */}
         {/* <FeedbackContent /> */}
         <Graphic type="bar" xLabel="x" yLabel="y" title="Title" />
+        <Graphic type="scatter" xLabel="x" yLabel="y" title="Title" />
+        <Graphic type="timeline" xLabel="x" yLabel="y" title="Title" />
+        <Graphic type="pie" title="Title" />
+        <Graphic type="candle" title="Title" />
+        <Graphic type="quadrant" title="Title" />
+        <Graphic type="swarm" title="Title" />
         <Footer />
       </section>
     </Fragment>

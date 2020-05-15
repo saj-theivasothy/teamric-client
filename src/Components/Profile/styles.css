@@ -25,17 +25,14 @@ h1 {
   padding: 1.5rem;
 }
 
+.Scatter,
+.Pie,
+.Bar,
+.Radar,
+.Quadrant,
+.Swarm,
+.Candle,
 .Timeline {
-  height: 400px;
-  min-width: 250px;
-}
-
-.Bar {
-  height: 400px;
-  min-width: 250px;
-}
-
-.Scatter {
   height: 400px;
   min-width: 250px;
 }
@@ -45,12 +42,4 @@ h1 {
   align-items: center;
   flex-wrap: wrap;
   margin: -0.5em;
-}
-
-.Timeline,
-.ScatterPlot,
-.Histogram {
-  background: white;
-  padding: 0.6em 1em;
-  margin: 0.5em;
 }
