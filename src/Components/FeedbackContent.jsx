@@ -45,6 +45,9 @@ function FeedbackContent() {
         >
           <Graphic type="timeline" xLabel="x" yLabel="y" title="Title" />
         </section>
+        <section className={LayoutStyles.feed}>
+          <h3>Live Feed</h3>
+        </section>
       </main>
     </div>
   );

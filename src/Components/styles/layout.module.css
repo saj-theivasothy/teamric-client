@@ -7,8 +7,8 @@
 
 .grid_container {
   display: grid;
-  grid-template-columns: 160px 90%;
-  grid-template-rows: 60px 1fr 50px;
+  grid-template-columns: 150px 100%;
+  grid-template-rows: 40px 1fr 50px;
   grid-template-areas:
     "sidenav header"
     "sidenav main"
@@ -22,12 +22,14 @@
     #ece9e6,
     #ffffff
   ); /* Chrome 10-25, Safari 5.1-6 */
-  background: #fff;
+  background: rgb(224, 224, 224);
 }
 
 /* Give every child element its grid name */
 .header {
   grid-area: header;
+  background-color: rgb(20, 65, 82);
+  /* background-image: linear-gradient(315deg, #6e7679 0%, #8b939a 74%); */
 
   border-bottom: #fff 1px solid;
 }
@@ -60,6 +62,7 @@
   justify-content: center;
   grid-area: sidenav;
   background-color: teal;
+  background-image: linear-gradient(315deg, #00bfb2 0%, #028090 74%);
 }
 
 .sidenav__list {
@@ -93,20 +96,23 @@
 }
 
 .main {
-  margin-top: 10px;
+  margin-top: 0;
   display: grid;
   grid-template-rows: 40vh 50vh;
   grid-template-columns: 30vw 30vw 30vw;
 }
 
 .main_heading {
-  text-align: center;
   color: gray;
+}
+
+.main_heading h3 {
+  padding: 5px 2% 0 2%;
 }
 
 .addchart {
   grid-column-start: 1;
-  grid-column-end: 4;
+  grid-column-end: 3;
 }
 
 /* Boxshadow for cards */
@@ -155,5 +161,14 @@
     #614385,
     #516395
   ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, gray, #eaf6ff);
+  background: linear-gradient(
+    to right,
+    rgb(148, 147, 146),
+    rgb(219, 219, 219),
+    #9e9e9e
+  );
+}
+
+.livefeed {
+  border-radius: 10px;
 }
