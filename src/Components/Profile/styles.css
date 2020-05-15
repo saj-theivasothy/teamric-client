@@ -33,14 +33,12 @@ h1 {
 .Candle,
 .Timeline {
   height: 200px;
-  min-width: 200px;
-  width: 200;
-  margin-bottom: 2em;
+  min-width: 100px;
+  max-width: 200px;
 }
 
 .App__charts {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  margin: -0.5em;
 }
