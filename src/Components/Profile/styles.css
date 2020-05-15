@@ -20,37 +20,25 @@ h1 {
   background: #ecf0f1;
 }
 
+.Graphic {
+  padding: 1.5rem;
+}
+
+.Scatter,
+.Pie,
+.Bar,
+.Radar,
+.Quadrant,
+.Swarm,
+.Candle,
 .Timeline {
-  height: 300px;
-  min-width: 500px;
-  width: calc(100% + 1em);
-  margin-bottom: 2em;
-}
-
-.Histogram {
-  height: 500px;
-  flex: 1;
-  min-width: 500px;
-  overflow: hidden;
-}
-
-.ScatterPlot {
-  height: 500px;
-  width: 500px;
-  margin-right: 2em;
+  height: 200px;
+  min-width: 100px;
+  max-width: 200px;
 }
 
 .App__charts {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  margin: -0.5em;
-}
-
-.Timeline,
-.ScatterPlot,
-.Histogram {
-  background: white;
-  padding: 0.6em 1em;
-  margin: 0.5em;
 }

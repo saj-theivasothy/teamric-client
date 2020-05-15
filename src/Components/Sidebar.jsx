@@ -20,31 +20,30 @@ function Sidebar(props) {
             </div>
           </Link>
         </li>
-
-        <Link to="/add-dot" style={{ textDecoration: "none" }}>
-          <li className={LayoutStyles.sidenav__list_item}>
+        <li className={LayoutStyles.sidenav__list_item}>
+          <Link to="/add-dot" style={{ textDecoration: "none" }}>
             <div className="button">
               <AddCircleOutlineIcon fontSize="large" />
               <div className="button-title">AddDot</div>
             </div>
-          </li>
-        </Link>
-        <Link to="/profile" style={{ textDecoration: "none" }}>
-          <li className={LayoutStyles.sidenav__list_item}>
+          </Link>
+        </li>
+        <li className={LayoutStyles.sidenav__list_item}>
+          <Link to="/profile" style={{ textDecoration: "none" }}>
             <div className="button">
               <GradeIcon fontSize="large" />
               <div className="button-title">Reviews</div>
             </div>
-          </li>
-        </Link>
-        <Link to="/employees" style={{ textDecoration: "none" }}>
-          <li className={LayoutStyles.sidenav__list_item}>
+          </Link>
+        </li>
+        <li className={LayoutStyles.sidenav__list_item}>
+          <Link to="/employees" style={{ textDecoration: "none" }}>
             <div className="button">
               <PeopleAltIcon fontSize="large" />
               <div className="button-title">Employees</div>
             </div>
-          </li>
-        </Link>
+          </Link>
+        </li>
       </ul>
     </aside>
   );

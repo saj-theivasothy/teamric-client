@@ -1,4 +1,5 @@
 import React from "react";
+import Graphic from "./Profile";
 
 function Employees() {
   return (

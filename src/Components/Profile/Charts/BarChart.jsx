@@ -44,7 +44,7 @@ const BarChart = ({ data, xAccessor, yAccessor, xLabel, yLabel }) => {
   const keyAccessor = (d, i) => i;
 
   return (
-    <div className="Histogram" ref={ref}>
+    <div className="Bar" ref={ref}>
       <Chart dimensions={dimensions}>
         <Axis
           dimensions={dimensions}

@@ -11,8 +11,6 @@ const ScatterChart = ({ data, xAccessor, yAccessor, xLabel, yLabel }) => {
     marginBottom: 77,
   });
 
-  console.log(dimensions);
-
   const xScale = d3
     .scaleLinear()
     .domain(d3.extent(data, xAccessor))
@@ -30,7 +28,7 @@ const ScatterChart = ({ data, xAccessor, yAccessor, xLabel, yLabel }) => {
   const keyAccessor = (d, i) => i;
 
   return (
-    <div className="ScatterPlot" ref={ref}>
+    <div className="Scatter" ref={ref}>
       <Chart dimensions={dimensions}>
         <Axis
           dimensions={dimensions}
