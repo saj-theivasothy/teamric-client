@@ -100,7 +100,7 @@ const Graphic = ({ type, xLabel, yLabel, title }) => {
 
   return (
     <>
-      <h1>{title}</h1>
+      <h1 className="chart_h1">{title}</h1>
       {graphic}
     </>
   );

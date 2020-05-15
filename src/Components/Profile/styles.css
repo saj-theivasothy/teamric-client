@@ -10,9 +10,10 @@
   width: 100%;
 }
 
-h1 {
-  font-weight: 900;
-  margin: 0.4em 0 0.6em;
+.chart_h1 {
+  font-size: 0.8em;
+  margin: 0;
+  text-align: center;
 }
 
 /* placeholders */
@@ -32,9 +33,8 @@ h1 {
 .Swarm,
 .Candle,
 .Timeline {
-  height: 200px;
-  min-width: 100px;
-  max-width: 200px;
+  height: 90%;
+  min-width: 100%;
 }
 
 .App__charts {

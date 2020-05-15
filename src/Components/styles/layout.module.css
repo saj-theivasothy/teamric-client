@@ -60,7 +60,8 @@
   align-items: center;
   justify-content: center;
   grid-area: sidenav;
-  position: fixed;
+  position: absolute;
+  padding-top: 10%;
 }
 
 .sidenav__list {
@@ -97,8 +98,8 @@
 .main {
   margin-top: 10px;
   display: grid;
-  grid-template-rows: 0.8fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 40vh 50vh;
+  grid-template-columns: 30% 30% 30%;
 }
 
 .addchart {

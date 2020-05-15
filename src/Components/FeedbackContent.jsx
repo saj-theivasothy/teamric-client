@@ -26,21 +26,21 @@ function FeedbackContent() {
         className={LayoutStyles.main_header}
         className={LayoutStyles.updates}
       >
-        Recent Items
+        <Graphic type="scatter" xLabel="x" yLabel="y" title="Title" />
       </section>
       <section
         className={LayoutStyles.effect2}
         className={LayoutStyles.main_header}
         className={LayoutStyles.chart}
       >
-        Recent Items
+        <Graphic type="candle" title="Title" />
       </section>
       <section
         className={LayoutStyles.effect2}
         className={LayoutStyles.main_header}
         className={LayoutStyles.addchart}
       >
-        Recent Items
+        <Graphic type="timeline" xLabel="x" yLabel="y" title="Title" />
       </section>
     </main>
   );

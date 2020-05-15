@@ -7,19 +7,19 @@ export const accessedData = (accessor, d, i) =>
 
 export const combineChartDimensions = (dimensions) => {
   let parsedDimensions = {
-    marginTop: 40,
-    marginRight: 30,
-    marginBottom: 40,
-    marginLeft: 75,
+    marginTop: 0,
+    marginRight: 20,
+    marginBottom: 20,
+    marginLeft: 25,
     ...dimensions,
   };
 
   return {
     ...dimensions,
-    marginTop: 40,
-    marginRight: 30,
-    marginBottom: 40,
-    marginLeft: 75,
+    marginTop: 0,
+    marginRight: 20,
+    marginBottom: 20,
+    marginLeft: 20,
     boundedHeight: Math.max(
       parsedDimensions.height -
         parsedDimensions.marginTop -
