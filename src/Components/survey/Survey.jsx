@@ -6,15 +6,27 @@ import VirtueListItem from "../virtues/VirtueListItem";
 import styles from "./styles/survey.module.scss";
 import Feedback from "./Feedback";
 import LayoutStyles from "../styles/layout.module.css";
+import axios from "axios";
 
 const Survey = () => {
   const [employee, setEmployee] = useState();
-  const [virtueBucket, setVirtueBucket] = useState();
+  const [selectedVirtueBucket, setSelectedVirtueBucket] = useState();
   const [selectedVirtues, setSelectedVirtues] = useState([]);
   const [feedback, setFeedback] = useState([]);
+  const [virtuesData, setVirtuesData] = useState([]);
+  const [virtueBucketsData, setVirtueBucketsData] = useState([]);
 
   useEffect(() => {
-    setVirtueBucket();
+    Promise.all([axios.get("/virtues"), axios.get("/virtues/buckets")]).then(
+      (all) => {
+        setVirtuesData(all[0].data);
+        setVirtueBucketsData(all[1].data);
+      }
+    );
+  }, []);
+
+  useEffect(() => {
+    setSelectedVirtueBucket();
     setSelectedVirtues([]);
     setFeedback([]);
   }, [employee]);
@@ -24,7 +36,7 @@ const Survey = () => {
   };
 
   const selectVirtueBucket = (id) => {
-    setVirtueBucket(id);
+    setSelectedVirtueBucket(id);
   };
 
   const selectVirtues = (id) => {
@@ -41,11 +53,11 @@ const Survey = () => {
   };
 
   const getVirtuesById = (id) => {
-    return data.virtues.filter((virtue) => virtue.id === id);
+    return virtuesData.filter((virtue) => virtue.id === id);
   };
 
   const getVirtuesForBucketId = (id) => {
-    const virtues = data.virtues.filter(
+    const virtues = virtuesData.filter(
       (virtue) => virtue.virtue_bucket_id === id
     );
     return virtues;
@@ -69,7 +81,7 @@ const Survey = () => {
     setFeedback(updatedFeedback);
   };
 
-  const virtuesForBucket = getVirtuesForBucketId(virtueBucket);
+  const virtuesForBucket = getVirtuesForBucketId(selectedVirtueBucket);
   const virtues = virtuesForBucket.map((virtue) => {
     return (
       <VirtueListItem key={virtue.id} {...virtue} onClick={selectVirtues} />
@@ -86,11 +98,25 @@ const Survey = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    const reviewerId = Math.floor(Math.random() * 100);
     const data = {
-      [employee]: [feedback],
+      reviewerId: reviewerId,
+      receiverId: employee,
+      createdAt: new Date(),
+      feedback: feedback,
     };
 
     console.log(data);
+    axios
+      .post("/surveys", { data })
+      .then((res) => {
+        alert("Thank you, your feedback has been submitted!");
+        setSelectedVirtueBucket();
+        setSelectedVirtues([]);
+        setFeedback([]);
+        setEmployee();
+      })
+      .catch((err) => console.log(err));
     //this is where post request goes
     //once post request is successfull all states should be cleared
   };
@@ -101,11 +127,13 @@ const Survey = () => {
         <Search className={styles.search} onClick={selectEmployee} />
       </section>
       <section className={styles.survey_bucket_container}>
-        <h6>Select a Virtue Category</h6>
-        <VirtueBucketList
-          virtue_buckets={data.virtue_buckets}
-          onClick={selectVirtueBucket}
-        />
+        <div className={styles.virtue_categories}>
+          <h6>Select a Virtue Category</h6>
+          <VirtueBucketList
+            virtue_buckets={virtueBucketsData}
+            onClick={selectVirtueBucket}
+          />
+        </div>
       </section>
       <section className={styles.dragzone_container}>
         <h6>Select Virtues</h6>

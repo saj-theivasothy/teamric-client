@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 import SearchBar from "./SearchBar";
 import Results from "./Results";
-
-import data from "../../data/sample.json";
 
 import "./styles/search.css";
 
 const Search = (props) => {
   const [term, setTerm] = useState("");
-  const [results, setResults] = useState(data.employees);
-  const [searchResults, setSearchResults] = useState(data.employees);
+  const [results, setResults] = useState([]);
+  const [searchResults, setSearchResults] = useState([]);
+
+  useEffect(() => {
+    axios.get("/employees").then((res) => {
+      setResults(res.data);
+      setSearchResults(res.data);
+    });
+  }, []);
 
   useEffect(() => {
     const liveResults = results.filter(

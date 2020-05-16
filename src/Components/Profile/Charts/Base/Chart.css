@@ -12,13 +12,13 @@
 
 .Line--type-line {
   fill: none;
-  stroke: #9980fa;
+  stroke: #07b5f9;
   stroke-width: 3px;
   stroke-linecap: round;
 }
 
 .Line--type-area {
-  fill: rgba(152, 128, 250, 0.185);
+  fill: #eaf6ff;
   stroke-width: 0;
 }
 
@@ -47,12 +47,13 @@
 }
 
 .Circles__circle {
-  fill: #9980fa;
+  fill: #196b69;
   transition: all 0.3s ease-out;
 }
 
 .Bars__rect {
-  fill: #9980fa;
+  fill: #ffbcbc;
+  height: 2em;
   transition: all 0.3s ease-out;
 }
 
