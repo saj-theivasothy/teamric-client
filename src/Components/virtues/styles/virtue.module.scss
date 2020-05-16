@@ -13,27 +13,28 @@
 .bucket_item_container {
   position: relative;
   text-align: center;
-  width: fit-content;
-  bottom: -110px;
-  margin: 0.25rem;
+
+  p {
+    display: inline-block;
+  }
 }
 
 .icon {
   width: 1.75rem;
   padding: 0.3rem;
   border-radius: 50%;
-  cursor: pointer;
-  background-color: #af3b4a;
+  // cursor: pointer;
+  // background-color: #af3b4a;
 
-  &:hover {
-    background-color: #200122;
-    border: 2px solid #af3b4a;
-  }
+  // &:hover {
+  //   background-color: #200122;
+  //   border: 2px solid #af3b4a;
+  // }
 
-  &:focus {
-    background-color: #200122;
-    border: 2px solid #af3b4a;
-  }
+  // &:focus {
+  //   background-color: #200122;
+  //   border: 2px solid #af3b4a;
+  // }
 }
 
 article > p {

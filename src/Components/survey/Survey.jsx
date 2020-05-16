@@ -101,13 +101,11 @@ const Survey = () => {
         <Search className={styles.search} onClick={selectEmployee} />
       </section>
       <section className={styles.survey_bucket_container}>
-        <div className={styles.virtue_categories}>
-          <h6>Select a Virtue Category</h6>
-          <VirtueBucketList
-            virtue_buckets={data.virtue_buckets}
-            onClick={selectVirtueBucket}
-          />
-        </div>
+        <h6>Select a Virtue Category</h6>
+        <VirtueBucketList
+          virtue_buckets={data.virtue_buckets}
+          onClick={selectVirtueBucket}
+        />
       </section>
       <section className={styles.dragzone_container}>
         <h6>Select Virtues</h6>
