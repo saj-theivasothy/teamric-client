@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import LayoutStyles from "./styles/layout.module.css";
 import Graphic from "./Profile/Graphic";
-import axios from "axios";
 
 {
   /* <Graphic type="scatter" xLabel="x" yLabel="y" title="Title" />
@@ -13,14 +12,6 @@ import axios from "axios";
 }
 
 function FeedbackContent() {
-  const [surveys, setSurveys] = useState([]);
-
-  useEffect(() => {
-    axios.get("/surveys").then((res) => {
-      setSurveys(res);
-    });
-  }, []);
-
   return (
     <div className={LayoutStyles.main_heading}>
       <h3>DASHBOARD</h3>

@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./styles.css";
 import * as d3 from "d3";
+import axios from "axios";
+
+import { getFeedbacks } from "../Helpers/getters";
 
 import BarChart from "./Charts/BarChart";
 import PieChart from "./Charts/PieChart";
@@ -22,18 +25,35 @@ import {
 
 const parseDate = d3.timeParse("%m/%d/%Y");
 
-const getData = () => ({
-  bar: getBarData(),
-  timeline: getTimeLineData(),
-  scatter: getScatterData(),
-  pie: getPieData(),
-  candle: getCandleData(),
-  quadrant: getQuadrantData(),
-  swarm: getSwarmData(),
+const getData = (data) => ({
+  bar: getBarData(data),
+  timeline: getTimeLineData(data),
+  scatter: getScatterData(data),
+  pie: getPieData(data),
+  candle: getCandleData(data),
+  quadrant: getQuadrantData(data),
+  swarm: getSwarmData(data),
 });
 
-const Graphic = ({ type, xLabel, yLabel, title }) => {
+const Graphic = ({ type, xLabel, yLabel, title }, props) => {
   const [data, setData] = useState(getData());
+  const [surveys, setSurveys] = useState([]);
+  const [virtues, setVirtues] = useState([]);
+  const [virtueBuckets, setVirtueBuckets] = useState([]);
+
+  useEffect(() => {
+    Promise.all([
+      axios.get("/surveys"),
+      axios.get("/virtues"),
+      axios.get("/virtues/buckets"),
+    ]).then((all) => {
+      setSurveys(all[0]);
+      setVirtues(all[1]);
+      setVirtueBuckets(all[2]);
+    });
+  }, []);
+
+  // const feedbacks = getFeedbacks(surveys, virtues, virtueBuckets);
 
   const mapper = {
     bar: (

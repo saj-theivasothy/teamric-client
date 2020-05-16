@@ -1,4 +1,4 @@
-const getBarData = (data) => [
+const getBarData = (survey) => [
   { x: 6.8, y: "Cat 1" },
   { x: 8.8, y: "Cat 2" },
   { x: 7.8, y: "Cat 3" },
@@ -6,7 +6,7 @@ const getBarData = (data) => [
   { x: 3.7, y: "Cat 5" },
 ];
 
-const getScatterData = () => [
+const getScatterData = (data) => [
   { x: 56.3, y: 20.4 },
   { x: 46.9, y: 24.4 },
   { x: 50.6, y: 19.4 },
@@ -14,7 +14,7 @@ const getScatterData = () => [
   { x: 68.9, y: 24.6 },
 ];
 
-const getTimeLineData = () => [
+const getTimeLineData = (data) => [
   { x: "02/04/2020", y: 61.1 },
   { x: "02/05/2020", y: 40.6 },
   { x: "02/06/2020", y: 52.0 },
@@ -22,7 +22,7 @@ const getTimeLineData = () => [
   { x: "02/08/2020", y: 76.1 },
 ];
 
-const getCandleData = () => [
+const getCandleData = (data) => [
   {
     date: "02/04/2020",
     high: 46,
@@ -50,7 +50,7 @@ const getCandleData = () => [
   },
 ];
 
-const getSwarmData = () => [
+const getSwarmData = (data) => [
   { id: 1, name: "James", val: 3, attr: "Virtue1" },
   { id: 1, name: "James", val: 3, attr: "Virtue2" },
   { id: 2, name: "Janine", val: 5, attr: "Virtue1" },
@@ -59,7 +59,7 @@ const getSwarmData = () => [
   { id: 3, name: "Chris", val: 3, attr: "Virtue2" },
 ];
 
-const getPieData = () => [
+const getPieData = (data) => [
   { x: 30, y: "Reviewer 1" },
   { x: 25, y: "Reviewer 2" },
   { x: 15, y: "Reviewer 3" },
@@ -67,7 +67,7 @@ const getPieData = () => [
   { x: 20, y: "Others" },
 ];
 
-const getQuadrantData = () => [
+const getQuadrantData = (data) => [
   { x: 0.28, y: 0.22, label: "Logan" },
   { x: 0.38, y: 0.23, label: "Michael" },
   { x: 0.21, y: 0.35, label: "Avery" },

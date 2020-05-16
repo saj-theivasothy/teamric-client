@@ -22,22 +22,22 @@ const BarChart = ({ data, xAccessor, yAccessor, xLabel, yLabel }) => {
     .range([0, dimensions.boundedHeight])
     .padding(0.1);
 
-  console.log(dimensions, "dimensions");
+  // console.log(dimensions, "dimensions");
 
-  console.log(yScale.domain());
-  console.log(yScale.range());
+  // console.log(yScale.domain());
+  // console.log(yScale.range());
 
-  console.log(dimensions.boundedHeight, "boundedHeight");
+  // console.log(dimensions.boundedHeight, "boundedHeight");
 
-  console.log(yScale("Cat 1"));
-  console.log(yScale("Cat 2"));
+  // console.log(yScale("Cat 1"));
+  // console.log(yScale("Cat 2"));
 
   // since we already specified padding
 
   const xAccessorScaled = (d) => xScale(0);
   const yAccessorScaled = (d) => yScale(yAccessor(d));
 
-  console.log(yAccessorScaled, "yAccessorScaled");
+  // console.log(yAccessorScaled, "yAccessorScaled");
 
   const widthAccessorScaled = (d) => xScale(xAccessor(d));
   const heightAccessorScaled = (d) => yScale.bandwidth();
