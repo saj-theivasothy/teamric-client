@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import LayoutStyles from "./styles/layout.module.css";
 import Graphic from "./Profile/Graphic";
+import axios from "axios";
+
+import { getFeedbacks } from "./Helpers/getters";
 
 {
   /* <Graphic type="scatter" xLabel="x" yLabel="y" title="Title" />
@@ -12,6 +15,30 @@ import Graphic from "./Profile/Graphic";
 }
 
 function FeedbackContent() {
+  const [surveys, setSurveys] = useState([]);
+  const [virtues, setVirtues] = useState([]);
+  const [virtueBuckets, setVirtueBuckets] = useState([]);
+  const [employees, setEmployees] = useState([]);
+
+  useEffect(() => {
+    Promise.all([
+      axios.get("/surveys"),
+      axios.get("/virtues"),
+      axios.get("/virtues/buckets"),
+      axios.get("/employees"),
+    ]).then((all) => {
+      setSurveys(all[0].data);
+      setVirtues(all[1].data);
+      setVirtueBuckets(all[2].data);
+      setEmployees(all[3].data);
+    });
+  }, []);
+
+  let feedbacks = [];
+  if (surveys.length > 0) {
+    feedbacks = getFeedbacks(surveys, virtues, virtueBuckets, employees);
+  }
+
   return (
     <div className={LayoutStyles.main_heading}>
       <h3>DASHBOARD</h3>
@@ -21,21 +48,39 @@ function FeedbackContent() {
           className={LayoutStyles.main_header}
           className={LayoutStyles.heading}
         >
-          <Graphic type="bar" xLabel="x" yLabel="y" title="Title" />
+          {feedbacks.length > 0 && (
+            <Graphic
+              type="bar"
+              xLabel="x"
+              yLabel="y"
+              title="Title"
+              feedbacks={feedbacks}
+            />
+          )}
         </section>
         <section
           className={LayoutStyles.effect2}
           className={LayoutStyles.main_header}
           className={LayoutStyles.updates}
         >
-          <Graphic type="scatter" xLabel="x" yLabel="y" title="Title" />
+          {feedbacks.length > 0 && (
+            <Graphic
+              type="scatter"
+              xLabel="x"
+              yLabel="y"
+              title="Title"
+              feedbacks={feedbacks}
+            />
+          )}
         </section>
         <section
           className={LayoutStyles.effect2}
           className={LayoutStyles.main_header}
           className={LayoutStyles.chart}
         >
-          <Graphic type="candle" title="Title" />
+          {feedbacks.length > 0 && (
+            <Graphic type="candle" title="Title" feedbacks={feedbacks} />
+          )}
         </section>
 
         <section
@@ -43,7 +88,15 @@ function FeedbackContent() {
           className={LayoutStyles.main_header}
           className={LayoutStyles.addchart}
         >
-          <Graphic type="timeline" xLabel="x" yLabel="y" title="Title" />
+          {feedbacks.length > 0 && (
+            <Graphic
+              type="timeline"
+              xLabel="x"
+              yLabel="y"
+              title="Title"
+              feedbacks={feedbacks}
+            />
+          )}
         </section>
         <section className={LayoutStyles.feed}>
           <h3>Live Feed</h3>

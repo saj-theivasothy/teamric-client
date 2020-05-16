@@ -1,22 +1,35 @@
 const dataForBar = (data) => {
-  const generatedData = {};
+  if (data.length === 0) {
+    return [];
+  } else {
+    const generatedData = {};
 
-  data.forEach((feedback) => {
-    const virtueBucket = feedback.virtueBucket;
+    data.forEach((feedback) => {
+      const virtueBucket = feedback.virtueBucket;
 
-    if (virtueBucket in generatedData) {
-      const sum = generatedData[virtueBucket].sum + feedback.rating;
-      const count = generatedData[virtueBucket].count + 1;
-      const average = Math.floor((sum / count) * 10) / 10;
+      if (virtueBucket in generatedData) {
+        const sum = generatedData[virtueBucket].sum + feedback.rating;
+        const count = generatedData[virtueBucket].count + 1;
+        const average = Math.floor((sum / count) * 10) / 10;
 
-      generatedData[virtueBucket] = { sum, count, average };
-    } else {
-      const sum = feedback.rating;
-      generatedData[virtueBucket] = { sum, count: 1, average: sum };
+        generatedData[virtueBucket] = { sum, count, average };
+      } else {
+        const sum = feedback.rating;
+        generatedData[virtueBucket] = { sum, count: 1, average: sum };
+      }
+    });
+
+    const plotData = [];
+    for (const virtueBucket in generatedData) {
+      const x = generatedData[virtueBucket].average;
+      const y = virtueBucket;
+      plotData.push({
+        x: x,
+        y: y,
+      });
     }
-  });
-
-  return generatedData;
+    return plotData;
+  }
 };
 
 const data = [
@@ -141,4 +154,6 @@ const data = [
   },
 ];
 
-console.log(dataForBar(data));
+// console.log(dataForBar(data));
+
+export { dataForBar };

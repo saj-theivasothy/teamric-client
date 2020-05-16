@@ -98,7 +98,7 @@ const Survey = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const reviewerId = Math.floor(Math.random() * 100);
+    const reviewerId = Math.floor(Math.random() * 100) + 1;
     const data = {
       reviewerId: reviewerId,
       receiverId: employee,

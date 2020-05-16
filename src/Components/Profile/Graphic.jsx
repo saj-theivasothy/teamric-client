@@ -4,6 +4,7 @@ import * as d3 from "d3";
 import axios from "axios";
 
 import { getFeedbacks } from "../Helpers/getters";
+import { dataForBar } from "./utils/analyseData";
 
 import BarChart from "./Charts/BarChart";
 import PieChart from "./Charts/PieChart";
@@ -35,25 +36,8 @@ const getData = (data) => ({
   swarm: getSwarmData(data),
 });
 
-const Graphic = ({ type, xLabel, yLabel, title }, props) => {
-  const [data, setData] = useState(getData());
-  const [surveys, setSurveys] = useState([]);
-  const [virtues, setVirtues] = useState([]);
-  const [virtueBuckets, setVirtueBuckets] = useState([]);
-
-  useEffect(() => {
-    Promise.all([
-      axios.get("/surveys"),
-      axios.get("/virtues"),
-      axios.get("/virtues/buckets"),
-    ]).then((all) => {
-      setSurveys(all[0]);
-      setVirtues(all[1]);
-      setVirtueBuckets(all[2]);
-    });
-  }, []);
-
-  // const feedbacks = getFeedbacks(surveys, virtues, virtueBuckets);
+const Graphic = ({ type, xLabel, yLabel, title, feedbacks }) => {
+  const [data, setData] = useState(getData(feedbacks));
 
   const mapper = {
     bar: (

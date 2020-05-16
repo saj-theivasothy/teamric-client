@@ -1,10 +1,45 @@
-const getBarData = (survey) => [
-  { x: 6.8, y: "Cat 1" },
-  { x: 8.8, y: "Cat 2" },
-  { x: 7.8, y: "Cat 3" },
-  { x: 3.1, y: "Cat 4" },
-  { x: 3.7, y: "Cat 5" },
-];
+// const getBarData = (data) => [
+//   { x: 6.8, y: "Cat 1" },
+//   { x: 8.8, y: "Cat 2" },
+//   { x: 7.8, y: "Cat 3" },
+//   { x: 3.1, y: "Cat 4" },
+//   { x: 3.7, y: "Cat 5" },
+// ];
+
+const getBarData = (data) => {
+  if (data.length === 0) {
+    return [];
+  } else {
+    const generatedData = {};
+
+    data.forEach((feedback) => {
+      const virtueBucket = feedback.virtueBucket;
+
+      if (virtueBucket in generatedData) {
+        const sum = generatedData[virtueBucket].sum + feedback.rating;
+        const count = generatedData[virtueBucket].count + 1;
+        const average = Math.floor((sum / count) * 10) / 10;
+
+        generatedData[virtueBucket] = { sum, count, average };
+      } else {
+        const sum = feedback.rating;
+        generatedData[virtueBucket] = { sum, count: 1, average: sum };
+      }
+    });
+
+    const plotData = [];
+    for (const virtueBucket in generatedData) {
+      const x = generatedData[virtueBucket].average;
+      const y = virtueBucket;
+      plotData.push({
+        x: x,
+        y: y,
+      });
+    }
+    console.log(plotData);
+    return plotData;
+  }
+};
 
 const getScatterData = (data) => [
   { x: 56.3, y: 20.4 },
