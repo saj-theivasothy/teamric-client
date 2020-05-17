@@ -1,12 +1,35 @@
-const getBarData = (data) => [
-  { x: 6.8, y: "Cat 1" },
-  { x: 8.8, y: "Cat 2" },
-  { x: 7.8, y: "Cat 3" },
-  { x: 3.1, y: "Cat 4" },
-  { x: 3.7, y: "Cat 5" },
-];
+const getBarData = (data, settings) => {
+  const generatedData = {};
 
-const getScatterData = () => [
+  data.forEach((feedback) => {
+    const virtueBucket = feedback.virtueBucket;
+
+    if (virtueBucket in generatedData) {
+      const sum = generatedData[virtueBucket].sum + feedback.rating;
+      const count = generatedData[virtueBucket].count + 1;
+      const average = Math.floor((sum / count) * 10) / 10;
+
+      generatedData[virtueBucket] = { sum, count, average };
+    } else {
+      const sum = feedback.rating;
+      generatedData[virtueBucket] = { sum, count: 1, average: sum };
+    }
+  });
+
+  const plotData = [];
+  for (const virtueBucket in generatedData) {
+    const x = generatedData[virtueBucket].average;
+    const y = virtueBucket;
+    plotData.push({
+      x: x,
+      y: y,
+    });
+  }
+
+  return plotData;
+};
+
+const getScatterData = (data, settings) => [
   { x: 56.3, y: 20.4 },
   { x: 46.9, y: 24.4 },
   { x: 50.6, y: 19.4 },
@@ -14,15 +37,45 @@ const getScatterData = () => [
   { x: 68.9, y: 24.6 },
 ];
 
-const getTimeLineData = () => [
-  { x: "02/04/2020", y: 61.1 },
-  { x: "02/05/2020", y: 40.6 },
-  { x: "02/06/2020", y: 52.0 },
-  { x: "02/07/2020", y: 55.1 },
-  { x: "02/08/2020", y: 76.1 },
-];
+const getTimeLineData = (data, settings) => {
+  const generatedData = {};
 
-const getCandleData = () => [
+  const selectedVirtueBucket = settings.timeline[1];
+  const selectedYear = settings.timeline[0];
+
+  data.forEach((feedback) => {
+    const { rating, createdAt, virtueBucket } = feedback;
+
+    const date = `${createdAt.getMonth() + 1}/02/${createdAt.getFullYear()}`;
+    if (date in generatedData && virtueBucket === selectedVirtueBucket) {
+      const sum = generatedData[date].sum + rating;
+      const count = generatedData[date].count + 1;
+      const average = Math.floor((sum / count) * 10) / 10;
+
+      generatedData[date] = { sum, count, average };
+    } else if (
+      createdAt.getFullYear() === selectedYear &&
+      virtueBucket === selectedVirtueBucket
+    ) {
+      const sum = rating;
+      generatedData[date] = { sum, count: 1, average: sum };
+    }
+  });
+
+  const plotData = [];
+  for (const date in generatedData) {
+    const x = `${date}`;
+    const y = generatedData[date].average;
+    plotData.push({
+      x,
+      y,
+    });
+  }
+
+  return plotData;
+};
+
+const getCandleData = (data, settings) => [
   {
     date: "02/04/2020",
     high: 46,
@@ -50,24 +103,75 @@ const getCandleData = () => [
   },
 ];
 
-const getSwarmData = () => [
-  { id: 1, name: "James", val: 3, attr: "Virtue1" },
-  { id: 1, name: "James", val: 3, attr: "Virtue2" },
-  { id: 2, name: "Janine", val: 5, attr: "Virtue1" },
-  { id: 2, name: "Janine", val: 3, attr: "Virtue2" },
-  { id: 3, name: "Chris", val: 3, attr: "Virtue1" },
-  { id: 3, name: "Chris", val: 3, attr: "Virtue2" },
-];
+const getSwarmData = (data, settings) => {
+  const generatedData = {};
 
-const getPieData = () => [
-  { x: 30, y: "Reviewer 1" },
-  { x: 25, y: "Reviewer 2" },
-  { x: 15, y: "Reviewer 3" },
-  { x: 10, y: "Reviewer 4" },
-  { x: 20, y: "Others" },
-];
+  data.forEach((feedback) => {
+    const { name, virtueBucket, rating } = feedback;
 
-const getQuadrantData = () => [
+    if (virtueBucket in generatedData && name in generatedData) {
+      const sum = generatedData[name].sum + rating;
+      const count = generatedData[virtueBucket].count + 1;
+      const average = Math.floor((sum / count) * 10) / 10;
+
+      generatedData[name] = { sum, count, average, virtueBucket };
+    } else {
+      const sum = rating;
+      generatedData[name] = { sum, count: 1, average: sum, virtueBucket };
+    }
+  });
+
+  const plotData = [];
+  for (const name in generatedData) {
+    const average = generatedData[name].average;
+    const virtueBucket = generatedData[name].virtueBucket;
+    plotData.push({
+      name,
+      val: average,
+      virtueBucket,
+    });
+  }
+
+  return plotData;
+};
+
+const getPieData = (data, settings) => {
+  const generatedData = [];
+
+  const dataForUser = data.filter(
+    (feedback) =>
+      feedback.receiver === "Sara Barnes" &&
+      ((settings.pie[0] === "Positive" && feedback.rating >= 3) ||
+        (settings.pie[0] === "Negative" && feedback.rating < 3)) &&
+      feedback.virtueBucket === settings.pie[1]
+  );
+
+  dataForUser.forEach((feedback) => {
+    const { virtue } = feedback;
+    let count;
+
+    const matchedData = generatedData.find(({ y }, index) => {
+      let deletedItem;
+      if (virtue === y) {
+        deletedItem = generatedData.splice(index, 1);
+      }
+
+      return deletedItem;
+    });
+
+    if (matchedData) {
+      count = matchedData.x + 1;
+    } else {
+      count = 1;
+    }
+
+    generatedData.push({ x: count, y: virtue });
+  });
+
+  return generatedData;
+};
+
+const getQuadrantData = (data) => [
   { x: 0.28, y: 0.22, label: "Logan" },
   { x: 0.38, y: 0.23, label: "Michael" },
   { x: 0.21, y: 0.35, label: "Avery" },
