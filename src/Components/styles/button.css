@@ -1,0 +1,77 @@
+a.animated-button:link:after,
+a.animated-button:visited:after {
+  content: "";
+  position: absolute;
+  height: 0%;
+  left: 0;
+  top: 0;
+  width: 0;
+  z-index: -1;
+  -webkit-transition: all 0.75s ease 0s;
+  -moz-transition: all 0.75s ease 0s;
+  -o-transition: all 0.75s ease 0s;
+  transition: all 0.75s ease 0s;
+}
+a.animated-button:link:hover,
+a.animated-button:visited:hover {
+  color: #fff;
+  text-shadow: none;
+}
+a.animated-button:link:hover:after,
+a.animated-button:visited:hover:after {
+  height: 450%;
+}
+a.animated-button:link,
+a.animated-button:visited {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 5px 8px;
+  color: #fff;
+  font-size: 0.7em;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  /* letter-spacing: 0.08em; */
+  border-radius: 4px;
+  margin: 0px 10px;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+a.animated-button.thar-three {
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  border: 2px solid #fdfdfd;
+  transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+}
+a.animated-button.thar-three:hover {
+  color: #000 !important;
+  background-color: transparent;
+  text-shadow: nthree;
+}
+a.animated-button.thar-three:hover:before {
+  left: 0%;
+  right: auto;
+  width: 100%;
+}
+a.animated-button.thar-three:before {
+  display: block;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 100%;
+  width: 0px;
+  z-index: -1;
+  content: "";
+  color: #000 !important;
+  background: #fafaf9;
+  transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+}
