@@ -49,7 +49,7 @@ function FeedbackContent() {
   ) {
     feedbacks = getFeedbacks(surveys, virtues, virtueBuckets, employees);
   }
-
+  console.log(feedbacks);
   return (
     <div className={LayoutStyles.main_heading}>
       <h3>DASHBOARD</h3>
@@ -64,7 +64,7 @@ function FeedbackContent() {
               type="bar"
               xLabel="x"
               yLabel="y"
-              title="Title"
+              title="Feedback"
               feedbacks={feedbacks}
               settings={graphSettings}
             />
@@ -77,7 +77,7 @@ function FeedbackContent() {
         >
           {feedbacks.length > 0 && (
             <Graphic
-              type="scatter"
+              type="pie"
               xLabel="x"
               yLabel="y"
               title="Title"

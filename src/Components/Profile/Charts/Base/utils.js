@@ -10,7 +10,7 @@ export const combineChartDimensions = (dimensions) => {
     marginTop: 0,
     marginRight: 20,
     marginBottom: 20,
-    marginLeft: 25,
+    marginLeft: 30,
     ...dimensions,
   };
 
@@ -19,7 +19,7 @@ export const combineChartDimensions = (dimensions) => {
     marginTop: 0,
     marginRight: 20,
     marginBottom: 20,
-    marginLeft: 20,
+    marginLeft: 30,
     boundedHeight: Math.max(
       parsedDimensions.height -
         parsedDimensions.marginTop -
