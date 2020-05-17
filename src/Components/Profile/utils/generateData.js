@@ -1,33 +1,33 @@
-const getBarData = (data, settings) => {
-  const generatedData = {};
+// const getBarData = (data, settings) => {
+//   const generatedData = {};
 
-  data.forEach((feedback) => {
-    const virtueBucket = feedback.virtueBucket;
+//   data.forEach((feedback) => {
+//     const virtueBucket = feedback.virtueBucket;
 
-    if (virtueBucket in generatedData) {
-      const sum = generatedData[virtueBucket].sum + feedback.rating;
-      const count = generatedData[virtueBucket].count + 1;
-      const average = Math.floor((sum / count) * 10) / 10;
+//     if (virtueBucket in generatedData) {
+//       const sum = generatedData[virtueBucket].sum + feedback.rating;
+//       const count = generatedData[virtueBucket].count + 1;
+//       const average = Math.floor((sum / count) * 10) / 10;
 
-      generatedData[virtueBucket] = { sum, count, average };
-    } else {
-      const sum = feedback.rating;
-      generatedData[virtueBucket] = { sum, count: 1, average: sum };
-    }
-  });
+//       generatedData[virtueBucket] = { sum, count, average };
+//     } else {
+//       const sum = feedback.rating;
+//       generatedData[virtueBucket] = { sum, count: 1, average: sum };
+//     }
+//   });
 
-  const plotData = [];
-  for (const virtueBucket in generatedData) {
-    const x = generatedData[virtueBucket].average;
-    const y = virtueBucket;
-    plotData.push({
-      x: x,
-      y: y,
-    });
-  }
+//   const plotData = [];
+//   for (const virtueBucket in generatedData) {
+//     const x = generatedData[virtueBucket].average;
+//     const y = virtueBucket;
+//     plotData.push({
+//       x: x,
+//       y: y,
+//     });
+//   }
 
-  return plotData;
-};
+//   return plotData;
+// };
 
 const getScatterData = (data, settings) => [
   { x: 56.3, y: 20.4 },
@@ -142,6 +142,42 @@ const getPieData = (data, settings) => [
   { x: 10, y: "Reviewer 4" },
   { x: 20, y: "Others" },
 ];
+
+const getBarData = (data, settings) => {
+  const generatedData = [];
+
+  const dataForUser = data.filter(
+    (feedback) =>
+      feedback.receiver === "Sara Barnes" &&
+      ((settings.pie[0] === "Positive" && feedback.rating >= 3) ||
+        (settings.pie[0] === "Negative" && feedback.rating < 3)) &&
+      feedback.virtueBucket === settings.pie[1]
+  );
+
+  dataForUser.forEach((feedback) => {
+    const { virtue } = feedback;
+    let count;
+
+    const matchedData = generatedData.find(({ y }, index) => {
+      let deletedItem;
+      if (virtue === y) {
+        deletedItem = generatedData.splice(index, 1);
+      }
+
+      return deletedItem;
+    });
+
+    if (matchedData) {
+      count = matchedData.x + 1;
+    } else {
+      count = 1;
+    }
+
+    generatedData.push({ x: count, y: virtue });
+  });
+  console.log(generatedData);
+  return generatedData;
+};
 
 const getQuadrantData = (data) => [
   { x: 0.28, y: 0.22, label: "Logan" },

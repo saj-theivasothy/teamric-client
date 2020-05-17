@@ -21,6 +21,7 @@ function FeedbackContent() {
   const [employees, setEmployees] = useState([]);
   const [graphSettings, setGraphSettings] = useState({
     timeline: [2018, "Knowledge"],
+    pie: ["Negative", "Execution"],
   });
 
   useEffect(() => {
