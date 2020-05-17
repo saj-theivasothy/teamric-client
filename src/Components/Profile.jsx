@@ -10,7 +10,7 @@ function Profile() {
       <h3>PROFILE</h3>
       <main className={ProfileStyles.main}>
         <section className={ProfileStyles.box1}>
-          <Graphic type="pie" title="Title" />
+          {/* <Graphic type="pie" title="Title" /> */}
         </section>
         <section className={ProfileStyles.box2}>
           {/* Box 1 orange color */}
@@ -35,7 +35,7 @@ function Profile() {
           <Cloud />
         </section>
         <section className={ProfileStyles.box9}>
-          <Graphic type="quadrant" title="Title" />
+          {/* <Graphic type="quadrant" title="Title" /> */}
         </section>
       </main>
     </div>

@@ -53,7 +53,7 @@
 
 .Bars__rect {
   fill: #ffbcbc;
-  height: 2em;
+
   transition: all 0.3s ease-out;
 }
 
