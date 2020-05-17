@@ -1,33 +1,33 @@
-// const getBarData = (data, settings) => {
-//   const generatedData = {};
+const getBarData = (data, settings) => {
+  const generatedData = {};
 
-//   data.forEach((feedback) => {
-//     const virtueBucket = feedback.virtueBucket;
+  data.forEach((feedback) => {
+    const virtueBucket = feedback.virtueBucket;
 
-//     if (virtueBucket in generatedData) {
-//       const sum = generatedData[virtueBucket].sum + feedback.rating;
-//       const count = generatedData[virtueBucket].count + 1;
-//       const average = Math.floor((sum / count) * 10) / 10;
+    if (virtueBucket in generatedData) {
+      const sum = generatedData[virtueBucket].sum + feedback.rating;
+      const count = generatedData[virtueBucket].count + 1;
+      const average = Math.floor((sum / count) * 10) / 10;
 
-//       generatedData[virtueBucket] = { sum, count, average };
-//     } else {
-//       const sum = feedback.rating;
-//       generatedData[virtueBucket] = { sum, count: 1, average: sum };
-//     }
-//   });
+      generatedData[virtueBucket] = { sum, count, average };
+    } else {
+      const sum = feedback.rating;
+      generatedData[virtueBucket] = { sum, count: 1, average: sum };
+    }
+  });
 
-//   const plotData = [];
-//   for (const virtueBucket in generatedData) {
-//     const x = generatedData[virtueBucket].average;
-//     const y = virtueBucket;
-//     plotData.push({
-//       x: x,
-//       y: y,
-//     });
-//   }
+  const plotData = [];
+  for (const virtueBucket in generatedData) {
+    const x = generatedData[virtueBucket].average;
+    const y = virtueBucket;
+    plotData.push({
+      x: x,
+      y: y,
+    });
+  }
 
-//   return plotData;
-// };
+  return plotData;
+};
 
 const getScatterData = (data, settings) => [
   { x: 56.3, y: 20.4 },
@@ -135,15 +135,7 @@ const getSwarmData = (data, settings) => {
   return plotData;
 };
 
-const getPieData = (data, settings) => [
-  { x: 30, y: "Reviewer 1" },
-  { x: 25, y: "Reviewer 2" },
-  { x: 15, y: "Reviewer 3" },
-  { x: 10, y: "Reviewer 4" },
-  { x: 20, y: "Others" },
-];
-
-const getBarData = (data, settings) => {
+const getPieData = (data, settings) => {
   const generatedData = [];
 
   const dataForUser = data.filter(
@@ -175,7 +167,7 @@ const getBarData = (data, settings) => {
 
     generatedData.push({ x: count, y: virtue });
   });
-  console.log(generatedData);
+
   return generatedData;
 };
 
