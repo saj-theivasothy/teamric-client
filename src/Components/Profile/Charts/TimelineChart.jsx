@@ -16,9 +16,9 @@ const TimelineChart = ({ data, xAccessor, yAccessor, xLabel, yLabel }) => {
     .domain(d3.extent(data, xAccessor))
     .range([0, dimensions.boundedWidth]);
 
-  console.log(data[0]);
-  console.log(xAccessor);
-  console.log(xAccessor(data[0]));
+  // console.log(data[0]);
+  // console.log(xAccessor);
+  // console.log(xAccessor(data[0]));
 
   const yScale = d3
     .scaleLinear()

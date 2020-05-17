@@ -1,6 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./styles.css";
 import * as d3 from "d3";
+import axios from "axios";
+
+import { getFeedbacks } from "../Helpers/getters";
+import { dataForBar } from "./utils/analyseData";
 
 import BarChart from "./Charts/BarChart";
 import PieChart from "./Charts/PieChart";
@@ -22,18 +26,18 @@ import {
 
 const parseDate = d3.timeParse("%m/%d/%Y");
 
-const getData = () => ({
-  bar: getBarData(),
-  timeline: getTimeLineData(),
-  scatter: getScatterData(),
-  pie: getPieData(),
-  candle: getCandleData(),
-  quadrant: getQuadrantData(),
-  swarm: getSwarmData(),
+const getData = (data, settings) => ({
+  bar: getBarData(data, settings),
+  timeline: getTimeLineData(data, settings),
+  scatter: getScatterData(data, settings),
+  pie: getPieData(data, settings),
+  candle: getCandleData(data, settings),
+  quadrant: getQuadrantData(data, settings),
+  swarm: getSwarmData(data, settings),
 });
 
-const Graphic = ({ type, xLabel, yLabel, title }) => {
-  const [data, setData] = useState(getData());
+const Graphic = ({ type, xLabel, yLabel, title, feedbacks, settings }) => {
+  const [data, setData] = useState(getData(feedbacks, settings));
 
   const mapper = {
     bar: (
