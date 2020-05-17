@@ -22,6 +22,8 @@ function FeedbackContent() {
   const [graphSettings, setGraphSettings] = useState({
     timeline: [2018, "Knowledge"],
     pie: ["Negative", "Execution"],
+    quadrant: [2019, "Execution"],
+    scatter: [2019],
   });
 
   useEffect(() => {
