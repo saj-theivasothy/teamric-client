@@ -26,18 +26,18 @@ import {
 
 const parseDate = d3.timeParse("%m/%d/%Y");
 
-const getData = (data) => ({
-  bar: getBarData(data),
-  timeline: getTimeLineData(data),
-  scatter: getScatterData(data),
-  pie: getPieData(data),
-  candle: getCandleData(data),
-  quadrant: getQuadrantData(data),
-  swarm: getSwarmData(data),
+const getData = (data, settings) => ({
+  bar: getBarData(data, settings),
+  timeline: getTimeLineData(data, settings),
+  scatter: getScatterData(data, settings),
+  pie: getPieData(data, settings),
+  candle: getCandleData(data, settings),
+  quadrant: getQuadrantData(data, settings),
+  swarm: getSwarmData(data, settings),
 });
 
-const Graphic = ({ type, xLabel, yLabel, title, feedbacks }) => {
-  const [data, setData] = useState(getData(feedbacks));
+const Graphic = ({ type, xLabel, yLabel, title, feedbacks, settings }) => {
+  const [data, setData] = useState(getData(feedbacks, settings));
 
   const mapper = {
     bar: (

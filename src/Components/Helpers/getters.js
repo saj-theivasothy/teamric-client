@@ -11,10 +11,11 @@ const getFeedbacks = (surveys, virtues, virtueBuckets, employees) => {
       const reviewer = employees.find(({ id }) => id === b.reviewerId);
       const receiver = employees.find(({ id }) => id === b.receiverId);
 
+      const date = new Date(b.createdAt);
       const details = {
         reviewer: reviewer.name,
         receiver: receiver.name,
-        createdAt: b.createdAt,
+        createdAt: date,
       };
 
       const updatedFeedback = [];
@@ -39,6 +40,9 @@ const getFeedbacks = (surveys, virtues, virtueBuckets, employees) => {
       };
 
       newSurveys.push(updatedSurvey);
+    });
+    newSurveys.sort((a, b) => {
+      return a.createdAt - b.createdAt;
     });
     return newSurveys;
   }

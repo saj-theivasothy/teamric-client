@@ -19,6 +19,9 @@ function FeedbackContent() {
   const [virtues, setVirtues] = useState([]);
   const [virtueBuckets, setVirtueBuckets] = useState([]);
   const [employees, setEmployees] = useState([]);
+  const [graphSettings, setGraphSettings] = useState({
+    timeline: [2018, "Knowledge"],
+  });
 
   useEffect(() => {
     Promise.all([
@@ -35,7 +38,12 @@ function FeedbackContent() {
   }, []);
 
   let feedbacks = [];
-  if (surveys.length > 0) {
+  if (
+    surveys.length > 0 &&
+    virtues.length > 0 &&
+    virtueBuckets.length > 0 &&
+    employees.length > 0
+  ) {
     feedbacks = getFeedbacks(surveys, virtues, virtueBuckets, employees);
   }
 
@@ -55,6 +63,7 @@ function FeedbackContent() {
               yLabel="y"
               title="Title"
               feedbacks={feedbacks}
+              settings={graphSettings}
             />
           )}
         </section>
@@ -70,6 +79,7 @@ function FeedbackContent() {
               yLabel="y"
               title="Title"
               feedbacks={feedbacks}
+              settings={graphSettings}
             />
           )}
         </section>
@@ -79,7 +89,12 @@ function FeedbackContent() {
           className={LayoutStyles.chart}
         >
           {feedbacks.length > 0 && (
-            <Graphic type="candle" title="Title" feedbacks={feedbacks} />
+            <Graphic
+              type="candle"
+              title="Title"
+              feedbacks={feedbacks}
+              settings={graphSettings}
+            />
           )}
         </section>
 
@@ -95,6 +110,7 @@ function FeedbackContent() {
               yLabel="y"
               title="Title"
               feedbacks={feedbacks}
+              settings={graphSettings}
             />
           )}
         </section>
