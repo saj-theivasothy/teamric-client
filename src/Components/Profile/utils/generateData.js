@@ -107,17 +107,17 @@ const getSwarmData = (data, settings) => {
   const generatedData = {};
 
   data.forEach((feedback) => {
-    const { name, virtueBucket, rating } = feedback;
+    const { receiver, virtueBucket, rating } = feedback;
 
-    if (virtueBucket in generatedData && name in generatedData) {
-      const sum = generatedData[name].sum + rating;
-      const count = generatedData[virtueBucket].count + 1;
+    if (virtueBucket in generatedData && receiver in generatedData) {
+      const sum = generatedData[receiver].sum + rating;
+      const count = generatedData[receiver].count + 1;
       const average = Math.floor((sum / count) * 10) / 10;
 
-      generatedData[name] = { sum, count, average, virtueBucket };
+      generatedData[receiver] = { sum, count, average, virtueBucket };
     } else {
       const sum = rating;
-      generatedData[name] = { sum, count: 1, average: sum, virtueBucket };
+      generatedData[receiver] = { sum, count: 1, average: sum, virtueBucket };
     }
   });
 
@@ -131,7 +131,6 @@ const getSwarmData = (data, settings) => {
       virtueBucket,
     });
   }
-
   return plotData;
 };
 
@@ -171,21 +170,58 @@ const getPieData = (data, settings) => {
   return generatedData;
 };
 
-const getQuadrantData = (data) => [
-  { x: 0.28, y: 0.22, label: "Logan" },
-  { x: 0.38, y: 0.23, label: "Michael" },
-  { x: 0.21, y: 0.35, label: "Avery" },
-  { x: 0.31, y: 0.46, label: "Carter" },
-  { x: 0.36, y: 0.52, label: "Julian" },
-  { x: 0.26, y: 0.64, label: "Riley" },
-  { x: 0.62, y: 0.75, label: "Ryna" },
-  { x: 0.61, y: 0.71, label: "Madison" },
-  { x: 0.69, y: 0.7, label: "Hunter" },
-  { x: 0.75, y: 0.64, label: "Landon" },
-  { x: 0.62, y: 0.59, label: "Caleb" },
-  { x: 0.68, y: 0.61, label: "Olivia" },
-  { x: 0.58, y: 0.48, label: "Liam" },
-];
+// const getQuadrantData = (data) => [
+//   { x: "totalFeedbacks", y: "averageRagting", label: "Logan" },
+//   { x: 0.38, y: 0.23, label: "Michael" },
+//   { x: 0.21, y: 0.35, label: "Avery" },
+//   { x: 0.31, y: 0.46, label: "Carter" },
+//   { x: 0.36, y: 0.52, label: "Julian" },
+//   { x: 0.26, y: 0.64, label: "Riley" },
+//   { x: 0.62, y: 0.75, label: "Ryna" },
+//   { x: 0.61, y: 0.71, label: "Madison" },
+//   { x: 0.69, y: 0.7, label: "Hunter" },
+//   { x: 0.75, y: 0.64, label: "Landon" },
+//   { x: 0.62, y: 0.59, label: "Caleb" },
+//   { x: 0.68, y: 0.61, label: "Olivia" },
+//   { x: 0.58, y: 0.48, label: "Liam" },
+// ];
+
+const getQuadrantData = (data, settings) => {
+  const generatedData = {};
+
+  const dataForSkillAndYear = data.filter(
+    (feedback) =>
+      feedback.virtueBucket === settings.quadrant[1] &&
+      feedback.createdAt.getFullYear() === settings.quadrant[0]
+  );
+
+  dataForSkillAndYear.forEach((feedback) => {
+    const { receiver, virtueBucket, rating } = feedback;
+
+    if (receiver in generatedData) {
+      const sum = generatedData[receiver].sum + rating;
+      const count = generatedData[receiver].count + 1;
+      const average = Math.floor((sum / count) * 10) / 10;
+
+      generatedData[receiver] = { sum, count, average };
+    } else {
+      const sum = rating;
+      generatedData[receiver] = { sum, count: 1, average: sum, virtueBucket };
+    }
+  });
+
+  const plotData = [];
+  for (const name in generatedData) {
+    const average = generatedData[name].average;
+    const count = generatedData[name].count;
+    plotData.push({
+      x: count,
+      y: average,
+      label: name,
+    });
+  }
+  return plotData;
+};
 
 const getRadarData = () => {};
 
