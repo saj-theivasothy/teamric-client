@@ -28,7 +28,8 @@
 /* Give every child element its grid name */
 .header {
   grid-area: header;
-  background-color: rgb(20, 65, 82);
+  background-color: #338191;
+
   /* background-image: linear-gradient(315deg, #6e7679 0%, #8b939a 74%); */
 
   border-bottom: #fff 1px solid;
@@ -98,7 +99,7 @@
 .main {
   margin-top: 0;
   display: grid;
-  grid-template-rows: 40vh 50vh;
+  grid-template-rows: 40vh 45vh;
   grid-template-columns: 30vw 30vw 30vw;
 }
 
