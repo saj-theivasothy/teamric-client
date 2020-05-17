@@ -29,13 +29,42 @@ const getBarData = (data, settings) => {
   return plotData;
 };
 
-const getScatterData = (data, settings) => [
-  { x: 56.3, y: 20.4 },
-  { x: 46.9, y: 24.4 },
-  { x: 50.6, y: 19.4 },
-  { x: 58.5, y: 22.5 },
-  { x: 68.9, y: 24.6 },
-];
+const getScatterData = (data, settings) => {
+  const generatedData = {};
+
+  const dataForUser = data.filter(
+    (feedback) =>
+      feedback.receiver === "Sara Barnes" &&
+      feedback.createdAt.getFullYear() === settings.scatter[0]
+  );
+
+  dataForUser.forEach((feedback) => {
+    const virtueBucket = feedback.virtueBucket;
+
+    if (virtueBucket in generatedData) {
+      const sum = generatedData[virtueBucket].sum + feedback.rating;
+      const count = generatedData[virtueBucket].count + 1;
+      const average = Math.floor((sum / count) * 10) / 10;
+
+      generatedData[virtueBucket] = { sum, count, average };
+    } else {
+      const sum = feedback.rating;
+      generatedData[virtueBucket] = { sum, count: 1, average: sum };
+    }
+  });
+
+  const plotData = [];
+  for (const virtueBucket in generatedData) {
+    const x = virtueBucket;
+    const y = generatedData[virtueBucket].average;
+    plotData.push({
+      x: x,
+      y: y,
+    });
+  }
+
+  return plotData;
+};
 
 const getTimeLineData = (data, settings) => {
   const generatedData = {};
@@ -169,22 +198,6 @@ const getPieData = (data, settings) => {
 
   return generatedData;
 };
-
-// const getQuadrantData = (data) => [
-//   { x: "totalFeedbacks", y: "averageRagting", label: "Logan" },
-//   { x: 0.38, y: 0.23, label: "Michael" },
-//   { x: 0.21, y: 0.35, label: "Avery" },
-//   { x: 0.31, y: 0.46, label: "Carter" },
-//   { x: 0.36, y: 0.52, label: "Julian" },
-//   { x: 0.26, y: 0.64, label: "Riley" },
-//   { x: 0.62, y: 0.75, label: "Ryna" },
-//   { x: 0.61, y: 0.71, label: "Madison" },
-//   { x: 0.69, y: 0.7, label: "Hunter" },
-//   { x: 0.75, y: 0.64, label: "Landon" },
-//   { x: 0.62, y: 0.59, label: "Caleb" },
-//   { x: 0.68, y: 0.61, label: "Olivia" },
-//   { x: 0.58, y: 0.48, label: "Liam" },
-// ];
 
 const getQuadrantData = (data, settings) => {
   const generatedData = {};
