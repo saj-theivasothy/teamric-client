@@ -104,34 +104,6 @@ const getTimeLineData = (data, settings) => {
   return plotData;
 };
 
-const getCandleData = (data, settings) => [
-  {
-    date: "02/04/2020",
-    high: 46,
-    low: 41,
-  },
-  {
-    date: "02/05/2020",
-    high: 39,
-    low: 37,
-  },
-  {
-    date: "02/06/2020",
-    high: 43,
-    low: 39,
-  },
-  {
-    date: "2/07/2020",
-    high: 52,
-    low: 34,
-  },
-  {
-    date: "2/08/2020",
-    high: 33,
-    low: 27,
-  },
-];
-
 const getSwarmData = (data, settings) => {
   const generatedData = {};
 
@@ -163,9 +135,40 @@ const getSwarmData = (data, settings) => {
   return plotData;
 };
 
+const getCandleData = (data, settings) => {
+  const filteredData = data.filter(
+    (feedback) =>
+      feedback.receiver === settings.candle[2] &&
+      feedback.createdAt.getFullYear() === settings.candle[0] &&
+      feedback.virtueBucket === settings.candle[1]
+  );
+
+  const generatedData = {};
+  const plotData = Object.values(
+    filteredData.reduce((acc, { createdAt, rating }, index, arr) => {
+      const month = createdAt.getMonth() + 1;
+      const date = `${createdAt.getMonth() + 1}/02/${createdAt.getFullYear()}`;
+
+      if (!generatedData[month]) {
+        generatedData[month] = { date, high: rating, low: rating };
+        acc.push(generatedData[month]);
+      } else if (rating > generatedData[month].high) {
+        generatedData[month].high = rating;
+      } else if (rating < generatedData[month].low) {
+        generatedData[month].low = rating;
+      }
+      return acc;
+    }, [])
+  );
+
+  return plotData;
+};
+
 const getPieData = (data, settings) => {
   const dataForUser = data.filter(
-    (feedback) => feedback.receiver === settings.pie[0]
+    (feedback) =>
+      feedback.createdAt.getFullYear() === settings.pie[0] &&
+      feedback.receiver === settings.pie[1]
   );
 
   let generatedData = Object.values(
@@ -179,13 +182,12 @@ const getPieData = (data, settings) => {
   let sum = 0;
   const total = dataForUser.length;
 
-  const filteredData = generatedData.filter((data) => {
-    if (data.x > 5) {
-      data.x = Math.round((data.x / total) * 100);
-      return data;
-    } else {
+  const filteredData = generatedData.filter((data) => data.x > 5);
+  generatedData.filter((data) => {
+    if (data.x <= 5) {
       sum += data.x;
     }
+    return sum;
   });
 
   const sumPercentage = Math.round((sum / total) * 100);
@@ -254,7 +256,6 @@ const getQuadrantData = (data, settings) => {
     return a;
   }, []);
 
-  console.log(updatedResult);
   const plotData = [];
   let xAverage = 0;
   let yAverage = 0;
@@ -284,7 +285,7 @@ const getQuadrantData = (data, settings) => {
   }
 
   plotData.sort((a, b) => a.label.localeCompare(b.label));
-  console.log(plotData);
+
   return plotData;
 };
 

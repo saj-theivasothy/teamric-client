@@ -20,10 +20,11 @@ function FeedbackContent() {
   const [virtueBuckets, setVirtueBuckets] = useState([]);
   const [employees, setEmployees] = useState([]);
   const [graphSettings, setGraphSettings] = useState({
-    timeline: [2018, "Knowledge"],
-    pie: ["Mary Tyler"],
+    timeline: [2018, "Execution"],
+    pie: [2018, "Stephen Khan"],
     quadrant: [2019],
     scatter: [2019],
+    candle: [2019, "Execution", "Stephen Khan"],
   });
 
   useEffect(() => {
@@ -77,9 +78,9 @@ function FeedbackContent() {
         >
           {feedbacks.length > 0 && (
             <Graphic
-              type="quadrant"
-              xLabel="x"
-              yLabel="y"
+              type="pie"
+              // xLabel="x"
+              // yLabel="y"
               title="Title"
               feedbacks={feedbacks}
               settings={graphSettings}
