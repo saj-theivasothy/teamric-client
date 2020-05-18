@@ -1,7 +1,6 @@
 import React from "react";
 import ProfileStyles from "./styles/profile.module.css";
 import Graphic from "./Profile/Graphic";
-import axios from "axios";
 import Cloud from "./WordCloud/Cloud";
 
 function Profile() {

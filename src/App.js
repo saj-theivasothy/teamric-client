@@ -53,6 +53,19 @@ function App() {
     feedbacks = getFeedbacks(surveys, virtues, virtueBuckets, employees);
   }
 
+  const yearOptions = [2017, 2018, 2019, 2020];
+  const virtueBucketOptions = [...virtueBuckets].map((data) => data.name);
+
+  const handleChange = (chart, event, bucket = false) => {
+    const temp = [...graphSettings[chart]];
+
+    bucket
+      ? temp.splice(1, 1, event.target.getAttribute("value"))
+      : temp.splice(0, 1, event.target.value);
+
+    setGraphSettings({ ...graphSettings, [chart]: temp });
+  };
+
   return (
     <Router>
       <div className={LayoutStyles.grid_container}>
@@ -68,14 +81,34 @@ function App() {
                 {...{
                   feedbacks,
                   graphSettings,
-                  virtueBuckets,
-                  setGraphSettings,
+                  handleChange,
+                  yearOptions,
+                  virtueBucketOptions,
                 }}
               />
             )}
           />
-          <Route path="/add-dot" render={(props) => <Survey />} />
-          <Route path="/profile" render={(props) => <Profile />} />
+          <Route
+            path="/add-dot"
+            render={(props) => (
+              <Survey {...props} {...{ virtues, virtueBuckets }} />
+            )}
+          />
+          <Route
+            path="/profile"
+            render={(props) => (
+              <Profile
+                {...props}
+                {...{
+                  feedbacks,
+                  graphSettings,
+                  handleChange,
+                  yearOptions,
+                  virtueBucketOptions,
+                }}
+              />
+            )}
+          />
           <Route path="/employees" render={(props) => <Employees />} />
         </Switch>
         {/* <Footer /> */}

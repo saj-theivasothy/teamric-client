@@ -13,20 +13,13 @@ import Dropdown from "./Dropdown";
 }
 
 function FeedbackContent(props) {
-  console.log(props);
-  const { feedbacks, virtueBuckets, graphSettings, setGraphSettings } = props;
-  const yearOptions = [2017, 2018, 2019, 2020];
-  const virtueBucketOptions = [...props.virtueBuckets].map((data) => data.name);
-
-  const handleChange = (chart, event, bucket = false) => {
-    const temp = [...graphSettings[chart]];
-
-    bucket
-      ? temp.splice(1, 1, event.target.getAttribute("value"))
-      : temp.splice(0, 1, event.target.value);
-
-    setGraphSettings({ ...graphSettings, [chart]: temp });
-  };
+  const {
+    feedbacks,
+    graphSettings,
+    handleChange,
+    yearOptions,
+    virtueBucketOptions,
+  } = props;
 
   return (
     <div className={LayoutStyles.main_heading}>
@@ -64,19 +57,10 @@ function FeedbackContent(props) {
             onClick={(event) => handleChange("quadrant", event)}
           />
           {feedbacks.length > 0 && (
-            // <Graphic
-            //   type="pie"
-            //   xLabel="x"
-            //   yLabel="y"
-            //   title="Title"
-            //   feedbacks={feedbacks}
-            //   settings={graphSettings}
-            // />
             <Graphic
               type="quadrant"
               xLabel="x"
               yLabel="y"
-              type="radar"
               title="Title"
               feedbacks={feedbacks}
               settings={graphSettings}
