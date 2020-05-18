@@ -10,11 +10,15 @@ import Employees from "./Components/Employees";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import RadarChart from "./Components/Profile/Charts/RadarChart";
+
+import { getRadarData } from "./Components/Profile/utils/generateData";
 
 function App() {
   return (
     <Router>
       <div className={LayoutStyles.grid_container}>
+        <RadarChart data={getRadarData()} />
         <Header />
         <Sidebar />
         <Switch>

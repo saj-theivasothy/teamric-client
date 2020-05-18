@@ -29,6 +29,39 @@ const getBarData = (data, settings) => {
   return plotData;
 };
 
+const getRadarData = (data, settings) => [
+  {
+    name: "James",
+    knowledge: 3,
+    execution: 3,
+    courage: 4,
+    humanity: 2,
+    transcendence: 3,
+    temperance: 4,
+    justice: 5,
+  },
+  {
+    name: "Cynthia",
+    knowledge: 1,
+    execution: 3,
+    courage: 2,
+    humanity: 2,
+    transcendence: 1,
+    temperance: 3,
+    justice: 5,
+  },
+  {
+    name: "Ines",
+    knowledge: 3,
+    execution: 4,
+    courage: 4,
+    humanity: 3,
+    transcendence: 1,
+    temperance: 2,
+    justice: 4,
+  },
+];
+
 const getScatterData = (data, settings) => {
   const generatedData = {};
 
@@ -62,7 +95,7 @@ const getScatterData = (data, settings) => {
       y: y,
     });
   }
-  console.log("plot", plotData)
+  console.log("plot", plotData);
   return plotData;
 };
 
@@ -235,8 +268,6 @@ const getQuadrantData = (data, settings) => {
   }
   return plotData;
 };
-
-const getRadarData = () => {};
 
 export {
   getBarData,
