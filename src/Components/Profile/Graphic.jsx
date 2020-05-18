@@ -3,9 +3,6 @@ import "./styles.css";
 import * as d3 from "d3";
 import axios from "axios";
 
-import { getFeedbacks } from "../Helpers/getters";
-import { dataForBar } from "./utils/analyseData";
-
 import BarChart from "./Charts/BarChart";
 import PieChart from "./Charts/PieChart";
 import TimelineChart from "./Charts/TimelineChart";
@@ -38,6 +35,10 @@ const getData = (data, settings) => ({
 
 const Graphic = ({ type, xLabel, yLabel, title, feedbacks, settings }) => {
   const [data, setData] = useState(getData(feedbacks, settings));
+
+  useEffect(() => {
+    setData(getData(feedbacks, settings));
+  }, [settings]);
 
   const mapper = {
     bar: (

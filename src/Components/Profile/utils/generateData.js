@@ -1,7 +1,10 @@
 const getBarData = (data, settings) => {
   const generatedData = {};
+  const dataForYear = data.filter(
+    (feedback) => feedback.createdAt.getFullYear() === settings.bar[0]
+  );
 
-  data.forEach((feedback) => {
+  dataForYear.forEach((feedback) => {
     const virtueBucket = feedback.virtueBucket;
 
     if (virtueBucket in generatedData) {
