@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./styles.css";
 import * as d3 from "d3";
-import axios from "axios";
 
 import BarChart from "./Charts/BarChart";
 import PieChart from "./Charts/PieChart";
