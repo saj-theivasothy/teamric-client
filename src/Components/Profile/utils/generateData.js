@@ -62,7 +62,7 @@ const getScatterData = (data, settings) => {
       y: y,
     });
   }
-  console.log("plot", plotData)
+
   return plotData;
 };
 
@@ -164,75 +164,127 @@ const getSwarmData = (data, settings) => {
 };
 
 const getPieData = (data, settings) => {
-  const generatedData = [];
-
   const dataForUser = data.filter(
-    (feedback) =>
-      feedback.receiver === "Sara Barnes" &&
-      ((settings.pie[0] === "Positive" && feedback.rating >= 3) ||
-        (settings.pie[0] === "Negative" && feedback.rating < 3)) &&
-      feedback.virtueBucket === settings.pie[1]
+    (feedback) => feedback.receiver === settings.pie[0]
   );
 
-  dataForUser.forEach((feedback) => {
-    const { virtue } = feedback;
-    let count;
+  let generatedData = Object.values(
+    dataForUser.reduce((feedback, { reviewer }) => {
+      feedback[reviewer] = feedback[reviewer] || { x: 0, y: reviewer };
+      feedback[reviewer].x++;
+      return feedback;
+    }, {})
+  );
 
-    const matchedData = generatedData.find(({ y }, index) => {
-      let deletedItem;
-      if (virtue === y) {
-        deletedItem = generatedData.splice(index, 1);
-      }
+  let sum = 0;
+  const total = dataForUser.length;
 
-      return deletedItem;
-    });
-
-    if (matchedData) {
-      count = matchedData.x + 1;
+  const filteredData = generatedData.filter((data) => {
+    if (data.x > 5) {
+      data.x = Math.round((data.x / total) * 100);
+      return data;
     } else {
-      count = 1;
+      sum += data.x;
     }
-
-    generatedData.push({ x: count, y: virtue });
   });
 
-  return generatedData;
+  const sumPercentage = Math.round((sum / total) * 100);
+  filteredData.push({ x: sumPercentage, y: "Other" });
+  return filteredData;
 };
 
 const getQuadrantData = (data, settings) => {
-  const generatedData = {};
-
-  const dataForSkillAndYear = data.filter(
-    (feedback) =>
-      feedback.virtueBucket === settings.quadrant[1] &&
-      feedback.createdAt.getFullYear() === settings.quadrant[0]
+  const dataForYear = data.filter(
+    (feedback) => feedback.createdAt.getFullYear() === settings.quadrant[0]
   );
 
-  dataForSkillAndYear.forEach((feedback) => {
-    const { receiver, virtueBucket, rating } = feedback;
-
-    if (receiver in generatedData) {
-      const sum = generatedData[receiver].sum + rating;
-      const count = generatedData[receiver].count + 1;
-      const average = Math.floor((sum / count) * 10) / 10;
-
-      generatedData[receiver] = { sum, count, average };
+  const generatedData = {};
+  const result = dataForYear.reduce((a, b) => {
+    let key = b.receiver;
+    let axis;
+    if (
+      b.virtueBucket === "Humanity" ||
+      b.virtueBucket === "Transcendence" ||
+      b.virtueBucket === "Temperence" ||
+      b.virtueBucket === "Justice"
+    ) {
+      key += `-Humanity-Transcendence-Temperence-Justice`;
+      axis = "x";
     } else {
-      const sum = rating;
-      generatedData[receiver] = { sum, count: 1, average: sum, virtueBucket };
+      key += `-Knowledge-Execution-Courage`;
+      axis = "y";
     }
-  });
 
+    if (!generatedData[key]) {
+      const {
+        createdAt,
+        description,
+        rating,
+        reviewer,
+        skillId,
+        virtue,
+        ...obj
+      } = b;
+      obj["sum"] = b.rating;
+      obj["count"] = 1;
+      obj["average"] = b.rating;
+      obj["axis"] = axis;
+      generatedData[key] = obj;
+      a.push(generatedData[key]);
+    } else {
+      generatedData[key].sum += b.rating;
+      generatedData[key].count += 1;
+      const average =
+        Math.floor((generatedData[key].sum / generatedData[key].count) * 10) /
+        10;
+      generatedData[key].average = average;
+    }
+    return a;
+  }, []);
+
+  const helper = {};
+  const updatedResult = result.reduce((a, { receiver }, index) => {
+    if (!helper[receiver]) {
+      helper[receiver] = [result[index]];
+      a.push(helper[receiver]);
+    } else {
+      helper[receiver].push(result[index]);
+    }
+
+    return a;
+  }, []);
+
+  console.log(updatedResult);
   const plotData = [];
-  for (const name in generatedData) {
-    const average = generatedData[name].average;
-    const count = generatedData[name].count;
+  let xAverage = 0;
+  let yAverage = 0;
+
+  for (const key in updatedResult) {
+    if (updatedResult[key].length === 2) {
+      if (updatedResult[key][0].axis === "x") {
+        xAverage = updatedResult[key][0].average;
+        yAverage = updatedResult[key][1].average;
+      } else {
+        xAverage = updatedResult[key][1].average;
+        yAverage = updatedResult[key][0].average;
+      }
+    } else {
+      if (updatedResult[key][0].axis === "x") {
+        xAverage = updatedResult[key][0].average;
+      } else {
+        yAverage = updatedResult[key][0].average;
+      }
+    }
+
     plotData.push({
-      x: count,
-      y: average,
-      label: name,
+      x: xAverage,
+      y: yAverage,
+      label: updatedResult[key][0].receiver,
     });
   }
+
+  plotData.sort((a, b) => a.label.localeCompare(b.label));
+  console.log(plotData);
   return plotData;
 };
 
