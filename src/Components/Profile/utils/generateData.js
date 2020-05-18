@@ -62,7 +62,7 @@ const getScatterData = (data, settings) => {
       y: y,
     });
   }
-
+  console.log("plot", plotData)
   return plotData;
 };
 
