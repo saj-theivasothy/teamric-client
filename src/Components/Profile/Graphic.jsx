@@ -19,6 +19,7 @@ import {
   getCandleData,
   getQuadrantData,
   getSwarmData,
+  getRadarData,
 } from "./utils/generateData";
 
 const parseDate = d3.timeParse("%m/%d/%Y");
@@ -31,6 +32,7 @@ const getData = (data, settings) => ({
   candle: getCandleData(data, settings),
   quadrant: getQuadrantData(data, settings),
   swarm: getSwarmData(data, settings),
+  radar: getRadarData(data, settings),
 });
 
 const Graphic = ({ type, xLabel, yLabel, title, feedbacks, settings }) => {

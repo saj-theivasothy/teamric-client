@@ -71,7 +71,7 @@ function FeedbackContent() {
 
     setGraphSettings({ ...graphSettings, [chart]: temp });
   };
-
+  
   return (
     <div className={LayoutStyles.main_heading}>
       <h3>DASHBOARD</h3>
@@ -108,10 +108,22 @@ function FeedbackContent() {
             onClick={(event) => handleYearChange("quadrant", event)}
           />
           {feedbacks.length > 0 && (
+            // <Graphic
+            //   type="pie"
+            //   xLabel="x"
+            //   yLabel="y"
+            //   title="Title"
+            //   feedbacks={feedbacks}
+            //   settings={graphSettings}
+            // />
             <Graphic
+
               type="quadrant"
               xLabel="x"
               yLabel="y"
+
+              type="radar"
+
               title="Title"
               feedbacks={feedbacks}
               settings={graphSettings}

@@ -15,7 +15,7 @@ const VirtueBucketList = (props) => {
 
   return (
     <article className={styles.virtue_buckets_container}>
-      <div>{virtueBuckets}</div>
+      {virtueBuckets}
     </article>
   );
 };
