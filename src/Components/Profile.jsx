@@ -2,14 +2,37 @@ import React from "react";
 import ProfileStyles from "./styles/profile.module.css";
 import Graphic from "./Profile/Graphic";
 import Cloud from "./WordCloud/Cloud";
+import Dropdown from "./Dropdown";
 
-function Profile() {
+function Profile(props) {
+  const {
+    feedbacks,
+    graphSettings,
+    handleChange,
+    yearOptions,
+    virtueBucketOptions,
+  } = props;
+
   return (
     <div className={ProfileStyles.main_heading}>
       <h3>PROFILE</h3>
       <main className={ProfileStyles.main}>
         <section className={ProfileStyles.box1}>
-          {/* <Graphic type="pie" title="Title" /> */}
+          <Dropdown
+            title="Select Year"
+            options={yearOptions}
+            onClick={(event) => handleChange("bar", event)}
+          />
+          {feedbacks.length > 0 && (
+            <Graphic
+              type="pie"
+              xLabel="x"
+              yLabel="y"
+              title="Feedback"
+              feedbacks={feedbacks}
+              settings={graphSettings}
+            />
+          )}
         </section>
         <section className={ProfileStyles.box2}>
           {/* Box 1 orange color */}
@@ -23,6 +46,24 @@ function Profile() {
         </section>
         <section className={ProfileStyles.box5}>
           <h1>box5</h1>
+          {/* <Dropdown
+            title="Select Year"
+            options={yearOptions}
+            onClick={(event) => handleChange("candle", event)}
+          />
+          <Dropdown
+            title="Select Virtue Bucket"
+            options={virtueBucketOptions}
+            onClick={(event) => handleChange("candle", event, true)}
+          />
+          {feedbacks.length > 0 && (
+            <Graphic
+              type="candle"
+              title="Title"
+              feedbacks={feedbacks}
+              settings={graphSettings}
+            />
+          )} */}
         </section>
         <section className={ProfileStyles.box6}>
           <h1>Box6</h1>
@@ -34,7 +75,21 @@ function Profile() {
           <Cloud />
         </section>
         <section className={ProfileStyles.box9}>
-          {/* <Graphic type="quadrant" title="Title" /> */}
+          <Dropdown
+            title="Select Year"
+            options={yearOptions}
+            onClick={(event) => handleChange("radar", event)}
+          />
+          {feedbacks.length > 0 && (
+            <Graphic
+              type="radar"
+              xLabel="x"
+              yLabel="y"
+              title="Feedback"
+              feedbacks={feedbacks}
+              settings={graphSettings}
+            />
+          )}
         </section>
       </main>
     </div>

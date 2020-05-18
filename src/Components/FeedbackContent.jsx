@@ -75,16 +75,13 @@ function FeedbackContent(props) {
           <Dropdown
             title="Select Year"
             options={yearOptions}
-            onClick={(event) => handleChange("candle", event)}
-          />
-          <Dropdown
-            title="Select Virtue Bucket"
-            options={virtueBucketOptions}
-            onClick={(event) => handleChange("candle", event, true)}
+            onClick={(event) => handleChange("swarm", event)}
           />
           {feedbacks.length > 0 && (
             <Graphic
-              type="candle"
+              type="swarm"
+              xLabel="x"
+              yLabel="y"
               title="Title"
               feedbacks={feedbacks}
               settings={graphSettings}

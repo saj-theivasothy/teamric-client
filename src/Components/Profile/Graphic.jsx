@@ -9,6 +9,7 @@ import ScatterChart from "./Charts/ScatterChart";
 import CandleChart from "./Charts/CandleChart";
 import QuadrantChart from "./Charts/Quadrant";
 import SwarmChart from "./Charts/SwarmChart";
+import RadarChart from "./Charts/RadarChart";
 
 import {
   getBarData,
@@ -100,6 +101,7 @@ const Graphic = ({ type, xLabel, yLabel, title, feedbacks, settings }) => {
         yLabel="Y"
       />
     ),
+    radar: <RadarChart data={getRadarData()} />,
   };
 
   const graphic = mapper[type];

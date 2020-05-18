@@ -9,11 +9,8 @@ import Employees from "./Components/Employees";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import RadarChart from "./Components/Profile/Charts/RadarChart";
 import { getFeedbacks } from "./Components/Helpers/getters";
 import axios from "axios";
-
-import { getRadarData } from "./Components/Profile/utils/generateData";
 
 function App() {
   const [surveys, setSurveys] = useState([]);
@@ -22,11 +19,12 @@ function App() {
   const [employees, setEmployees] = useState([]);
   const [graphSettings, setGraphSettings] = useState({
     timeline: [2020, "Courage"],
-    pie: [2018, "Stephen Khan"],
-    quadrant: [2019],
-    scatter: [2019],
-    candle: [2019, "Execution", "Stephen Khan"],
+    pie: [2020, "Stephen Khan"],
+    quadrant: [2020],
+    scatter: [2020],
+    candle: [2020, "Execution", "Stephen Khan"],
     bar: [2020],
+    swarm: [2020],
   });
 
   useEffect(() => {
@@ -69,7 +67,6 @@ function App() {
   return (
     <Router>
       <div className={LayoutStyles.grid_container}>
-        <RadarChart data={getRadarData()} />
         <Header />
         <Sidebar />
         <Switch>
