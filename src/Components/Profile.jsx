@@ -76,7 +76,7 @@ function Profile(props) {
           />
           {feedbacks.length > 0 && (
             <Graphic
-              type="bar"
+              type="pie"
               xLabel="x"
               yLabel="y"
               title="Feedback"
