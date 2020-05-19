@@ -1,13 +1,11 @@
 .virtue_buckets_container {
-  div {
-    position: relative;
-    bottom: 6rem;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    width: fit-content;
-    margin: auto;
-  }
+  position: relative;
+  top: 1rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  width: fit-content;
+  margin: auto;
 }
 
 .bucket_item_container {
@@ -15,44 +13,46 @@
   text-align: center;
 
   p {
-    display: inline-block;
+    display: flex;
   }
 }
 
 .icon {
-  width: 1.75rem;
+  width: 2.5rem;
   padding: 0.3rem;
+  margin-bottom: 0.5rem;
   border-radius: 50%;
-  // cursor: pointer;
-  // background-color: #af3b4a;
+  cursor: pointer;
+  background-color: grey;
 
-  // &:hover {
-  //   background-color: #200122;
-  //   border: 2px solid #af3b4a;
-  // }
+  &:hover {
+    background-color: #200122;
+    border: 2px solid #af3b4a;
+  }
 
-  // &:focus {
-  //   background-color: #200122;
-  //   border: 2px solid #af3b4a;
-  // }
+  &:focus {
+    background-color: #200122;
+    border: 2px solid #af3b4a;
+  }
 }
 
 article > p {
   position: relative;
-  font-size: 0.5rem;
+  font-size: 1em;
   bottom: 0.5rem;
-  color: #00c6e1;
 }
 
 .virtue_container {
-  background-color: #af3b4a;
-  color: #00c6e1;
-  font-size: 0.5rem;
+  background-color: grey;
+  font-size: 1rem;
   width: fit-content;
   margin: 0.15rem;
-  padding: 0.2rem;
+  padding: 0.3rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   border-radius: 25px;
   cursor: pointer;
+  color: #018e98;
 
   &:hover {
     background-color: #200122;
@@ -60,7 +60,7 @@ article > p {
     padding: 0.1rem;
   }
 
-  &:focus {
+  &:active {
     background-color: #200122;
     border: 2px solid #af3b4a;
   }
