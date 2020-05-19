@@ -1,12 +1,16 @@
 .container {
   position: relative;
   margin-top: 0.5rem;
-  left: 0.5rem;
+  bottom: 1em;
 }
 
 .results_container {
+  position: relative;
   overflow: hidden;
   overflow-y: scroll;
   padding: 5px;
-  height: 10rem;
+  height: 15rem;
+  left: 1em;
+  bottom: 1em;
+  width: 18em;
 }

@@ -6,10 +6,13 @@
   border-bottom: 1px solid grey;
   outline: none;
   color: grey;
+  width: 16em;
+  height: 2em;
+  font-size: 1em;
 }
 
 .search_bar::placeholder {
-  font-size: 0.45rem;
+  font-size: 1em;
   color: grey;
 }
 

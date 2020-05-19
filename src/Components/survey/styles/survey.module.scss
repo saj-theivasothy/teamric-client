@@ -116,3 +116,43 @@
 .main {
   grid-area: main;
 }
+
+.search_container {
+  height: 20em;
+}
+
+.survey_bucket_container {
+  position: relative;
+  height: 20em;
+
+  h6 {
+    font-size: 1.5em;
+  }
+}
+
+.virtues_container {
+  height: 20em;
+
+  .virtues {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    top: 1em;
+  }
+
+  h6 {
+    font-size: 1.5em;
+  }
+}
+
+.feedback_container {
+  position: relative;
+  width: 70em;
+  top: 5em;
+  min-height: 20em;
+  overflow-y: auto;
+
+  h6 {
+    font-size: 1.5em;
+  }
+}

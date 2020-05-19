@@ -98,7 +98,6 @@ const Survey = (props) => {
       feedback: feedback,
     };
 
-    console.log(data);
     axios
       .post("/surveys", { data })
       .then((res) => {
@@ -113,29 +112,28 @@ const Survey = (props) => {
 
   return (
     <main className={styles.main}>
-      <section>
+      <section className={styles.search_container}>
         <Search className={styles.search} onClick={selectEmployee} />
       </section>
       <section className={styles.survey_bucket_container}>
-        <div className={styles.virtue_categories}>
-          <h6>Select a Virtue Category</h6>
-          {virtueBucketsData && (
-            <VirtueBucketList
-              virtue_buckets={virtueBucketsData}
-              onClick={selectVirtueBucket}
-            />
-          )}
-        </div>
+        <h6>Select a Virtue Category</h6>
+        {virtueBucketsData && (
+          <VirtueBucketList
+            virtue_buckets={virtueBucketsData}
+            onClick={selectVirtueBucket}
+            bucketState={selectedVirtueBucket}
+          />
+        )}
       </section>
-      <section className={styles.dragzone_container}>
+      <section className={styles.virtues_container}>
         <h6>Select Virtues</h6>
-        <div className={styles.virtues_container}>{virtues}</div>
+        <div className={styles.virtues}>{virtues}</div>
       </section>
       <section className={styles.feedback_container}>
         <h6>Give your feedback</h6>
         <form onSubmit={handleSubmit}>
           {feedbacks}
-          <input type="submit" value="Submit" />
+          {feedbacks.length > 0 && <input type="submit" value="Submit" />}
         </form>
       </section>
     </main>
