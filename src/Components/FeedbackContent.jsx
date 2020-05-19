@@ -38,9 +38,9 @@ function FeedbackContent(props) {
           {feedbacks.length > 0 && (
             <Graphic
               type="bar"
-              xLabel="x"
-              yLabel="y"
-              title="Feedback"
+              xLabel="Average Rating"
+              yLabel="Vitue Bucket"
+              title="Average Rating for Virtue Bucket"
               feedbacks={feedbacks}
               settings={graphSettings}
             />
@@ -59,9 +59,9 @@ function FeedbackContent(props) {
           {feedbacks.length > 0 && (
             <Graphic
               type="quadrant"
-              xLabel="x"
-              yLabel="y"
-              title="Title"
+              xLabel="Completeness of Vision"
+              yLabel="Ability to Execute"
+              title="Magic Quadrant for Workplace"
               feedbacks={feedbacks}
               settings={graphSettings}
             />
@@ -80,9 +80,9 @@ function FeedbackContent(props) {
           {feedbacks.length > 0 && (
             <Graphic
               type="swarm"
-              xLabel="x"
-              yLabel="y"
-              title="Title"
+              xLabel="Category"
+              yLabel="Average Rating"
+              title="Average Rating of the Team"
               feedbacks={feedbacks}
               settings={graphSettings}
             />
@@ -107,9 +107,9 @@ function FeedbackContent(props) {
           {feedbacks.length > 0 && (
             <Graphic
               type="timeline"
-              xLabel="x"
-              yLabel="y"
-              title="Title"
+              xLabel="Timeline"
+              yLabel="Average Rating"
+              title="Average Performance Overtime"
               feedbacks={feedbacks}
               settings={graphSettings}
             />
