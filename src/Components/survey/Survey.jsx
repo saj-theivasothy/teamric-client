@@ -131,10 +131,12 @@ const Survey = (props) => {
       </section>
       <section className={styles.feedback_container}>
         <h6>Give your feedback</h6>
-        <form onSubmit={handleSubmit}>
-          {feedbacks}
-          {feedbacks.length > 0 && <input type="submit" value="Submit" />}
-        </form>
+        <div className={styles.feedbacks}>
+          <form onSubmit={handleSubmit}>
+            {feedbacks}
+            {feedbacks.length > 0 && <input type="submit" value="Submit" />}
+          </form>
+        </div>
       </section>
     </main>
   );

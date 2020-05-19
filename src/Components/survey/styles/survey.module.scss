@@ -149,10 +149,23 @@
   position: relative;
   width: 70em;
   top: 5em;
-  min-height: 20em;
-  overflow-y: auto;
+  height: 15em;
 
   h6 {
     font-size: 1.5em;
+  }
+
+  .feedbacks {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: left;
+    overflow-y: auto;
+    height: 12em;
+  }
+
+  .feedback {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
   }
 }

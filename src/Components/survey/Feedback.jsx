@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import Rating from "./Rating";
 import Details from "./Details";
+import styles from "./styles/survey.module.scss";
 
 function Feedback(props) {
   const [rating, setRating] = useState(0);
@@ -14,11 +15,14 @@ function Feedback(props) {
   }, [id, rating, description]);
 
   return (
-    <div>
+    <>
       <div>{props.name}</div>
-      <Rating onRate={setRating} />
-      <Details onChange={setDescription} details={description} />
-    </div>
+      <div className={styles.feedback}>
+        <p>Rating:</p>
+        <Rating onRate={setRating} className={rating} />
+        <Details onChange={setDescription} details={description} />
+      </div>
+    </>
   );
 }
 
