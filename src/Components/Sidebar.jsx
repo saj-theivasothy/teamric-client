@@ -29,7 +29,9 @@ function Sidebar(props) {
           <Link to="/dashboard" style={{ textDecoration: "none" }}>
             <div className="button">
               <DashboardIcon />
-              <div className="button-title">Dashboard</div>
+              <div className="button-title" style={{ fontSize: "0.6em" }}>
+                DASHBOARD
+              </div>
             </div>
           </Link>
         </li>
@@ -37,7 +39,7 @@ function Sidebar(props) {
           <Link to="/profile" style={{ textDecoration: "none" }}>
             <div className="button">
               <PersonIcon />
-              <div className="button-title">Profile</div>
+              <div className="button-title">PROFILE</div>
             </div>
           </Link>
         </li>
@@ -45,7 +47,7 @@ function Sidebar(props) {
           <Link to="/add-dot" style={{ textDecoration: "none" }}>
             <div className="button">
               <AddCircleOutlineIcon />
-              <div className="button-title">AddDot</div>
+              <div className="button-title">ADD DOT</div>
             </div>
           </Link>
         </li>
@@ -53,7 +55,7 @@ function Sidebar(props) {
           <Link to="/profile" style={{ textDecoration: "none" }}>
             <div className="button">
               <NotificationsActiveIcon />
-              <div className="button-title">Notification</div>
+              <div className="button-title">NOTIFICATION</div>
             </div>
           </Link>
         </li>
@@ -61,7 +63,7 @@ function Sidebar(props) {
           <Link to="/employees" style={{ textDecoration: "none" }}>
             <div className="button">
               <PeopleAltIcon />
-              <div className="button-title">Team</div>
+              <div className="button-title">TEAM</div>
             </div>
           </Link>
         </li>

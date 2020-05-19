@@ -8,7 +8,7 @@ import { useChartDimensions } from "./Base/utils";
 
 const ScatterChart = ({ data, xAccessor, yAccessor, xLabel, yLabel }) => {
   const [ref, dimensions] = useChartDimensions({
-    marginBottom: 77,
+    marginBottom: 20,
   });
 
   const xScale = d3

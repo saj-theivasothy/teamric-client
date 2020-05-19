@@ -64,6 +64,7 @@
   grid-area: sidenav;
   background-color: teal;
   background-image: linear-gradient(315deg, #00bfb2 0%, #028090 74%);
+  text-transform: capitalize;
 }
 
 .sidenav__list {
@@ -145,7 +146,7 @@
   color: white;
 }
 
-.main div:after {
+.main section:after {
   content: "";
   border-top: none;
   border-top-left-radius: 3px;
@@ -157,11 +158,6 @@
   position: absolute;
   top: 0;
   left: 0;
-  background: -webkit-linear-gradient(
-    to left,
-    #614385,
-    #516395
-  ); /* Chrome 10-25, Safari 5.1-6 */
   background: #f1ced6;
 }
 

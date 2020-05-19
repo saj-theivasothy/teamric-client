@@ -8,7 +8,7 @@ import { useChartDimensions } from "./Base/utils";
 
 const SwarmChart = ({ data, xAccessor, yAccessor, xLabel, yLabel }) => {
   const [ref, dimensions] = useChartDimensions({
-    marginBottom: 77,
+    marginBottom: 20,
   });
 
   //   { id: 1, name: "James", virtues: { attr1: 3, attr2: 4 } },
