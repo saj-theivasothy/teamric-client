@@ -48,8 +48,8 @@ const Graphic = ({ type, xLabel, yLabel, title, feedbacks, settings }) => {
         data={data.bar}
         xAccessor={(d) => d.x}
         yAccessor={(d) => d.y}
-        xLabel="X"
-        yLabel="Y"
+        xLabel={xLabel}
+        yLabel={yLabel}
       />
     ),
     scatter: (
@@ -57,8 +57,8 @@ const Graphic = ({ type, xLabel, yLabel, title, feedbacks, settings }) => {
         data={data.scatter}
         xAccessor={(d) => d.x}
         yAccessor={(d) => d.y}
-        xLabel="X"
-        yLabel="Y"
+        xLabel={xLabel}
+        yLabel={yLabel}
       />
     ),
     timeline: (
@@ -66,8 +66,8 @@ const Graphic = ({ type, xLabel, yLabel, title, feedbacks, settings }) => {
         data={data.timeline}
         xAccessor={(d) => parseDate(d.x)}
         yAccessor={(d) => d.y}
-        xLabel="X"
-        yLabel="Y"
+        xLabel={xLabel}
+        yLabel={yLabel}
       />
     ),
     pie: (
@@ -79,8 +79,8 @@ const Graphic = ({ type, xLabel, yLabel, title, feedbacks, settings }) => {
         xAccessor={(d) => parseDate(d.date)}
         yLowAccessor={(d) => d.low}
         yHighAccessor={(d) => d.high}
-        xLabel="X"
-        yLabel="Y"
+        xLabel={xLabel}
+        yLabel={yLabel}
       />
     ),
     quadrant: (
@@ -88,8 +88,8 @@ const Graphic = ({ type, xLabel, yLabel, title, feedbacks, settings }) => {
         data={data.quadrant}
         xAccessor={(d) => d.x}
         yAccessor={(d) => d.y}
-        xLabel="X"
-        yLabel="Y"
+        xLabel={xLabel}
+        yLabel={yLabel}
       />
     ),
     swarm: (
@@ -97,8 +97,8 @@ const Graphic = ({ type, xLabel, yLabel, title, feedbacks, settings }) => {
         xAccessor={(d) => d.val}
         yAccessor={(d) => d.attr}
         data={data.swarm}
-        xLabel="X"
-        yLabel="Y"
+        xLabel={xLabel}
+        yLabel={yLabel}
       />
     ),
     radar: <RadarChart data={getRadarData()} />,

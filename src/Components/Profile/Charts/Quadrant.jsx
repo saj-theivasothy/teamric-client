@@ -105,9 +105,38 @@ const QuadrantChart = ({ data, xAccessor, yAccessor, xLabel, yLabel }) => {
           dominantBaseline="central"
           x={dimensions.boundedWidth - 50}
           y={50}
-          style={{ fill: "gray" }}
+          style={{ fill: "#FFBCBC" }}
         >
-          Leaders
+          Leader
+        </text>
+        <text
+          textAnchor="middle"
+          dominantBaseline="central"
+          x={50}
+          y={50}
+          style={{ fill: "#FFBCBC" }}
+        >
+          Executor
+        </text>
+
+        <text
+          textAnchor="middle"
+          dominantBaseline="central"
+          x={50}
+          y={dimensions.boundedHeight - 50}
+          style={{ fill: "#FFBCBC" }}
+        >
+          Novice
+        </text>
+
+        <text
+          textAnchor="middle"
+          dominantBaseline="central"
+          x={dimensions.boundedWidth - 50}
+          y={dimensions.boundedHeight - 50}
+          style={{ fill: "#FFBCBC" }}
+        >
+          Analyst
         </text>
         <Circles
           data={data}

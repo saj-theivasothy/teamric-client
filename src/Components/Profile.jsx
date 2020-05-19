@@ -72,11 +72,11 @@ function Profile(props) {
           <Dropdown
             title="Select Year"
             options={yearOptions}
-            onClick={(event) => handleChange("bar", event)}
+            onClick={(event) => handleChange("pie", event)}
           />
           {feedbacks.length > 0 && (
             <Graphic
-              type="bar"
+              type="pie"
               xLabel="x"
               yLabel="y"
               title="Feedback"
