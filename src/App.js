@@ -18,7 +18,7 @@ function App() {
   return (
     <Router>
       <div className={LayoutStyles.grid_container}>
-        <RadarChart data={getRadarData()} />
+        {/* <RadarChart data={getRadarData()} /> */}
         <Header />
         <Sidebar />
         <Switch>

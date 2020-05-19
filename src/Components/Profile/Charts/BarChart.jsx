@@ -8,7 +8,7 @@ import { useChartDimensions } from "./Base/utils";
 
 const BarChart = ({ data, xAccessor, yAccessor, xLabel, yLabel }) => {
   const [ref, dimensions] = useChartDimensions({
-    marginBottom: 77,
+    marginBottom: 35,
   });
 
   const xScale = d3
