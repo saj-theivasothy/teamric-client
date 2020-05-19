@@ -8,7 +8,7 @@ import { useChartDimensions } from "./Base/utils";
 
 const QuadrantChart = ({ data, xAccessor, yAccessor, xLabel, yLabel }) => {
   const [ref, dimensions] = useChartDimensions({
-    marginBottom: 77,
+    marginBottom: 20,
   });
 
   const xScale = d3
@@ -105,7 +105,7 @@ const QuadrantChart = ({ data, xAccessor, yAccessor, xLabel, yLabel }) => {
           dominantBaseline="central"
           x={dimensions.boundedWidth - 50}
           y={50}
-          style={{ fill: "black" }}
+          style={{ fill: "gray" }}
         >
           Leaders
         </text>
@@ -114,7 +114,7 @@ const QuadrantChart = ({ data, xAccessor, yAccessor, xLabel, yLabel }) => {
           keyAccessor={keyAccessor}
           xAccessor={xAccessorScaled}
           yAccessor={yAccessorScaled}
-          radius={5}
+          radius={4}
         />
         <line
           x1={dimensions.boundedWidth / 2}
@@ -123,7 +123,7 @@ const QuadrantChart = ({ data, xAccessor, yAccessor, xLabel, yLabel }) => {
           y2={dimensions.boundedHeight}
           strokeWidth="1"
           strokeDasharray="2"
-          stroke="black"
+          stroke="#f6bbbc"
         />
         <line
           x1={0}
@@ -132,7 +132,7 @@ const QuadrantChart = ({ data, xAccessor, yAccessor, xLabel, yLabel }) => {
           y2={dimensions.boundedHeight / 2}
           strokeWidth="1"
           strokeDasharray="2"
-          stroke="black"
+          stroke="#f6bbbc"
         />
       </Chart>
     </div>

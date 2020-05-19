@@ -67,10 +67,6 @@ function App() {
   return (
     <Router>
       <div className={LayoutStyles.grid_container}>
-<<<<<<< HEAD
-        {/* <RadarChart data={getRadarData()} /> */}
-=======
->>>>>>> e7a360063bdc4e6c3b190a7e6e3d4021ddcf8d2f
         <Header />
         <Sidebar />
         <Switch>

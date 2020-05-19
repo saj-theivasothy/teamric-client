@@ -6,7 +6,7 @@ import { useChartDimensions } from "./Base/utils";
 
 const BarChart = ({ data, xAccessor, yAccessor, xLabel, yLabel }) => {
   const [ref, dimensions] = useChartDimensions({
-    marginBottom: 77,
+    marginBottom: 20,
   });
 
   const pie = d3.pie().value(function (d) {

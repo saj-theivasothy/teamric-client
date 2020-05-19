@@ -30,9 +30,9 @@ const cfg = {
 
 const RadarChart = ({ data }) => {
   const [ref, dimensions] = useChartDimensions({
-    marginBottom: 10,
-    marginLeft: 50,
-    marginRight: 50,
+    marginBottom: 20,
+    marginLeft: 70,
+    marginRight: 10,
     marginTop: 30,
   });
 

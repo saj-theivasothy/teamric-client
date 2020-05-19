@@ -10,11 +10,12 @@
   color: #7fcec5;
 }
 
-.button-title {
-  font-size: 0.8em;
+.button .button-title {
+  font-size: 0.6em;
   padding-top: 0.7em;
 
   color: white;
+  text-transform: capitalize;
 }
 
 // .sidenav .logo {

@@ -16,7 +16,7 @@
   grid-template-columns: 25vw 25vw 20vw 20vw;
 }
 
-.box1 {
+.main .box1 {
   grid-column-start: 3;
   grid-column-end: 5;
   grid-row-start: 1;
@@ -29,8 +29,12 @@
 }
 
 .main .box3 {
-  background-color: #96c8fb;
-  background-image: linear-gradient(315deg, #96c8fb 0%, #ddbdfc 74%);
+  /* background-color: #96c8fb;
+  background-image: linear-gradient(315deg, #96c8fb 0%, #ddbdfc 74%); */
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
 }
 
 .main .box6 {
@@ -43,8 +47,7 @@
   background-image: linear-gradient(315deg, #2b1331 0%, #b9abcf 74%);
 }
 
-.main .box4,
-.main .box5 {
+.main .box4 {
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 3;
@@ -56,4 +59,71 @@
   grid-column-end: 3;
   grid-row-start: 3;
   grid-row-end: 5;
+}
+
+.radar_info {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 3rem 1rem 0;
+  font-size: 0.9rem;
+}
+
+.radar_info ul {
+  text-decoration: none;
+}
+
+.radar_info ul h4 {
+  border-bottom: 1px solid gray;
+  font-size: 1rem;
+}
+
+.radar_info ul li {
+  margin: 40% 0;
+  color: teal;
+  list-style-type: none;
+}
+
+.radar_info ul .l2 {
+  color: #c25b90;
+}
+
+.radar_info ul .l3 {
+  color: #ba9cc2;
+}
+
+.box8 h5 {
+  text-align: center;
+}
+
+.main .box2 {
+  background-color: #f9d1b7;
+  background-image: linear-gradient(315deg, #f9d1b7 0%, #f894a4 74%);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  /* grid-area: profile; */
+}
+
+.main .box2 > img {
+  object-fit: cover;
+  width: 50%;
+  max-height: 100%;
+}
+
+.bio {
+  padding-left: 1em;
+  background-color: black;
+  opacity: 55%;
+  width: 100%;
+  height: 100%;
+  color: white;
+  line-height: 2rem;
+}
+
+.tagname {
+  text-align: center;
+  color: gray;
+  margin-top: 1em;
 }

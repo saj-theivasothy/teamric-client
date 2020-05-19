@@ -3,7 +3,7 @@ import * as d3 from "d3";
 
 import Axis from "./Base/Axis";
 import Chart from "./Base/Chart";
-import Line from "./Base/Line";
+
 import Circles from "./Base/Circles";
 import { useChartDimensions } from "./Base/utils";
 
@@ -16,7 +16,7 @@ const CandleChart = ({
   yLabel,
 }) => {
   const [ref, dimensions] = useChartDimensions({
-    marginBottom: 77,
+    marginBottom: 20,
   });
 
   const xScale = d3
