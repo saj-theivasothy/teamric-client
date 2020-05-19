@@ -8,22 +8,14 @@ import Feedback from "./Feedback";
 import LayoutStyles from "../styles/layout.module.css";
 import axios from "axios";
 
-const Survey = () => {
+const Survey = (props) => {
   const [employee, setEmployee] = useState();
   const [selectedVirtueBucket, setSelectedVirtueBucket] = useState();
   const [selectedVirtues, setSelectedVirtues] = useState([]);
   const [feedback, setFeedback] = useState([]);
-  const [virtuesData, setVirtuesData] = useState([]);
-  const [virtueBucketsData, setVirtueBucketsData] = useState([]);
 
-  useEffect(() => {
-    Promise.all([axios.get("/virtues"), axios.get("/virtues/buckets")]).then(
-      (all) => {
-        setVirtuesData(all[0].data);
-        setVirtueBucketsData(all[1].data);
-      }
-    );
-  }, []);
+  const virtuesData = props.virtues;
+  const virtueBucketsData = props.virtueBuckets;
 
   useEffect(() => {
     setSelectedVirtueBucket();
@@ -117,8 +109,6 @@ const Survey = () => {
         setEmployee();
       })
       .catch((err) => console.log(err));
-    //this is where post request goes
-    //once post request is successfull all states should be cleared
   };
 
   return (
@@ -129,10 +119,12 @@ const Survey = () => {
       <section className={styles.survey_bucket_container}>
         <div className={styles.virtue_categories}>
           <h6>Select a Virtue Category</h6>
-          <VirtueBucketList
-            virtue_buckets={virtueBucketsData}
-            onClick={selectVirtueBucket}
-          />
+          {virtueBucketsData && (
+            <VirtueBucketList
+              virtue_buckets={virtueBucketsData}
+              onClick={selectVirtueBucket}
+            />
+          )}
         </div>
       </section>
       <section className={styles.dragzone_container}>

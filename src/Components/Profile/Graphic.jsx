@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./styles.css";
 import * as d3 from "d3";
-import axios from "axios";
 
 import BarChart from "./Charts/BarChart";
 import PieChart from "./Charts/PieChart";
@@ -10,6 +9,7 @@ import ScatterChart from "./Charts/ScatterChart";
 import CandleChart from "./Charts/CandleChart";
 import QuadrantChart from "./Charts/Quadrant";
 import SwarmChart from "./Charts/SwarmChart";
+import RadarChart from "./Charts/RadarChart";
 
 import {
   getBarData,
@@ -101,6 +101,7 @@ const Graphic = ({ type, xLabel, yLabel, title, feedbacks, settings }) => {
         yLabel="Y"
       />
     ),
+    radar: <RadarChart data={getRadarData()} />,
   };
 
   const graphic = mapper[type];

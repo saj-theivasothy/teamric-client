@@ -1588,6 +1588,4 @@ const employees = [
   },
 ];
 
-// console.log(getFeedbacks(surveys, virtues, virtueBuckets, employees));
-
 export { getFeedbacks };

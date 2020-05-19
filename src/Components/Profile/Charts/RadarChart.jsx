@@ -90,8 +90,6 @@ const RadarChart = ({ data }) => {
   const axisLines = [];
   const axisLabels = [];
 
-  console.log(numVirtues, "num");
-
   virtueList.forEach((d, i) => {
     axisLines.push({
       x1: squareDim.boundedWidth / 2,
@@ -168,8 +166,6 @@ const RadarChart = ({ data }) => {
       color,
     };
   });
-
-  console.log(polygonCoords, "YO MAINE");
 
   const polygonG = polygonCoords.map((person, i) => {
     return (

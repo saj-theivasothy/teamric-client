@@ -142,7 +142,11 @@ const getTimeLineData = (data, settings) => {
 const getSwarmData = (data, settings) => {
   const generatedData = {};
 
-  data.forEach((feedback) => {
+  const dataForYear = data.filter(
+    (feedback) => feedback.createdAt.getFullYear() === settings.swarm[0]
+  );
+
+  dataForYear.forEach((feedback) => {
     const { receiver, virtueBucket, rating } = feedback;
 
     if (virtueBucket in generatedData && receiver in generatedData) {
@@ -205,7 +209,6 @@ const getPieData = (data, settings) => {
       feedback.createdAt.getFullYear() === settings.pie[0] &&
       feedback.receiver === settings.pie[1]
   );
-
   let generatedData = Object.values(
     dataForUser.reduce((feedback, { reviewer }) => {
       feedback[reviewer] = feedback[reviewer] || { x: 0, y: reviewer };
@@ -224,9 +227,9 @@ const getPieData = (data, settings) => {
     }
     return sum;
   });
-
   const sumPercentage = Math.round((sum / total) * 100);
   filteredData.push({ x: sumPercentage, y: "Other" });
+
   return filteredData;
 };
 
