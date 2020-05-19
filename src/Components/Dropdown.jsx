@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./styles/dropdown.css";
 var FontAwesome = require("react-fontawesome");
 
 const Dropdown = (props) => {

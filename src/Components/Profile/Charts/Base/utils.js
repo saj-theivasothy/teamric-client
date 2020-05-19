@@ -7,7 +7,7 @@ export const accessedData = (accessor, d, i) =>
 
 export const combineChartDimensions = (dimensions) => {
   let parsedDimensions = {
-    marginTop: 0,
+    marginTop: 30,
     marginRight: 20,
     marginBottom: 20,
     marginLeft: 30,

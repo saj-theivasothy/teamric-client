@@ -93,6 +93,27 @@ export default [
     text: "excruciating",
     value: 10,
   },
+
+  {
+    text: "hospital",
+    value: 11,
+  },
+  {
+    text: "eye",
+    value: 13,
+  },
+  {
+    text: "therapy",
+    value: 29,
+  },
+  {
+    text: "injury",
+    value: 20,
+  },
+  {
+    text: "excruciating",
+    value: 10,
+  },
   {
     text: "chronic",
     value: 13,
