@@ -9,7 +9,8 @@ const VirtueBucketList = (props) => {
     <VirtueBucketListItem
       key={virtueBucket.id}
       {...virtueBucket}
-      onClick={() => props.onClick(virtueBucket.id)}
+      onClick={props.onClick}
+      bucketState={props.bucketState}
     />
   ));
 
