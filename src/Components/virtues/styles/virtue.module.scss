@@ -1,6 +1,4 @@
 .virtue_buckets_container {
-  position: relative;
-  top: 1rem;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
@@ -23,16 +21,16 @@
   margin-bottom: 0.5rem;
   border-radius: 50%;
   cursor: pointer;
-  background-color: grey;
+  background-color: rgb(241, 241, 241);
 
   &:hover {
-    background-color: #200122;
-    border: 2px solid #af3b4a;
+    background-color: teal;
+    border: 2px solid white;
   }
 
   &:focus {
-    background-color: #200122;
-    border: 2px solid #af3b4a;
+    background-color: teal;
+    border: 2px solid white;
   }
 }
 
@@ -43,7 +41,7 @@ article > p {
 }
 
 .virtue_container {
-  background-color: grey;
+  background-color: rgb(241, 241, 241);
   font-size: 1rem;
   width: fit-content;
   margin: 0.15rem;
@@ -55,13 +53,14 @@ article > p {
   color: #018e98;
 
   &:hover {
-    background-color: #200122;
-    border: 2px solid #af3b4a;
-    padding: 0.1rem;
+    background-color: teal;
+    border: 2px solid white;
+    color: white;
   }
 
   &:active {
-    background-color: #200122;
-    border: 2px solid #af3b4a;
+    background-color: teal;
+    border: 2px solid white;
+    color: white;
   }
 }

@@ -22,7 +22,7 @@ function Employees() {
       <Header />
       <Sidebar />
       <div className="main_heading">
-        <h3>PROFILE</h3>
+        <h3 className="center">TEAM</h3>
         <main className="main">
           <section className="box1"></section>
           <section className="box2">

@@ -34,7 +34,7 @@ function Profile(props) {
       <Header />
       <Sidebar />
       <div className={ProfileStyles.main_heading}>
-        <h3 className={ProfileStyles.tagname}>PROFILE</h3>
+        <h3 className="center">PROFILE</h3>
         <main className={ProfileStyles.main}>
           <section className={ProfileStyles.box1}>
             <Dropdown

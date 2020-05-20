@@ -116,34 +116,38 @@ const Survey = (props) => {
     <div className={LayoutStyles.grid_container}>
       <Header />
       <Sidebar />
-      <main className={styles.main}>
-        <section className={styles.search_container}>
-          <Search className={styles.search} onClick={selectEmployee} />
-        </section>
-        <section className={styles.survey_bucket_container}>
-          <h6>Select a Virtue Category</h6>
-          {virtueBucketsData && (
-            <VirtueBucketList
-              virtue_buckets={virtueBucketsData}
-              onClick={selectVirtueBucket}
-              bucketState={selectedVirtueBucket}
-            />
-          )}
-        </section>
-        <section className={styles.virtues_container}>
-          <h6>Select Virtues</h6>
-          <div className={styles.virtues}>{virtues}</div>
-        </section>
-        <section className={styles.feedback_container}>
-          <h6>Give your feedback</h6>
-          <div className={styles.feedbacks}>
-            <form onSubmit={handleSubmit}>
-              {feedbacks}
-              {feedbacks.length > 0 && <input type="submit" value="Submit" />}
-            </form>
-          </div>
-        </section>
-      </main>
+      <div>
+        <h3 className="center">ADD A DOT</h3>
+
+        <main className={styles.main}>
+          <section className={styles.search_container}>
+            <Search className={styles.search} onClick={selectEmployee} />
+          </section>
+          <section className={styles.survey_bucket_container}>
+            <h6 className={styles.h6}>Select a Virtue Category</h6>
+            {virtueBucketsData && (
+              <VirtueBucketList
+                virtue_buckets={virtueBucketsData}
+                onClick={selectVirtueBucket}
+                bucketState={selectedVirtueBucket}
+              />
+            )}
+          </section>
+          <section className={styles.virtues_container}>
+            <h6 className={styles.h6}>Select Virtues</h6>
+            <div className={styles.virtues}>{virtues}</div>
+          </section>
+          <section className={styles.feedback_container}>
+            <h6 className={styles.h6}>Give your feedback</h6>
+            <div className={styles.feedbacks}>
+              <form onSubmit={handleSubmit}>
+                {feedbacks}
+                {feedbacks.length > 0 && <input type="submit" value="Submit" />}
+              </form>
+            </div>
+          </section>
+        </main>
+      </div>
     </div>
   );
 };

@@ -30,3 +30,9 @@
   flex-direction: row;
   justify-content: flex-start;
 }
+
+.center {
+  text-align: center;
+  color: rgb(77, 75, 75);
+  padding-top: 0.5em;
+}

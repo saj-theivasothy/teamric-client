@@ -39,7 +39,7 @@ function FeedbackContent(props) {
       <Header />
       <Sidebar />
       <div className={LayoutStyles.main_heading}>
-        <h3>DASHBOARD</h3>
+        <h3 className="center">DASHBOARD</h3>
         <main className={LayoutStyles.main}>
           <section
             className={LayoutStyles.effect2}
