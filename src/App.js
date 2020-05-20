@@ -20,10 +20,10 @@ function App() {
   const [employees, setEmployees] = useState([]);
   const [graphSettings, setGraphSettings] = useState({
     timeline: [2020, "Courage"],
-    pie: [2018, "John Cooley"],
+    pie: [2020, "Stephen Khan"],
     quadrant: [2020],
     scatter: [2020],
-    candle: [2020, "Execution", "John Cooley"],
+    candle: [2020, "Execution", "Stephen Khan"],
     bar: [2020],
     swarm: [2020],
   });

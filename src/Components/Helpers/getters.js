@@ -136,7 +136,7 @@ const getAverageRatings = (feedbacks) => {
       helper[key].average = average;
     });
   });
-  console.log(Object.values(helper));
+
   return Object.values(helper);
 };
 

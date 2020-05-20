@@ -16,7 +16,7 @@ function Employees(props) {
   useEffect(() => {
     setResults(props.employees);
     setSearchResults(props.employees);
-  });
+  }, [props.employees]);
 
   useEffect(() => {
     const liveResults = results.filter(
