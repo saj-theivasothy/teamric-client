@@ -1,5 +1,8 @@
 import React from "react";
 import "./styles/employees.css";
+import Header from "./Header";
+import Sidebar from "./Sidebar";
+import LayoutStyles from "./styles/layout.module.css";
 
 function EmployeeCard(props) {
   return (
@@ -15,26 +18,30 @@ function EmployeeCard(props) {
 
 function Employees() {
   return (
-    <div className="main_heading">
-      <h3>PROFILE</h3>
-      <main className="main">
-        <section className="box1"></section>
-        <section className="box2">
-          {/* Box 1 orange color */}
-          <h1>Box2</h1>
-        </section>
+    <div className={LayoutStyles.grid_container}>
+      <Header />
+      <Sidebar />
+      <div className="main_heading">
+        <h3>PROFILE</h3>
+        <main className="main">
+          <section className="box1"></section>
+          <section className="box2">
+            {/* Box 1 orange color */}
+            <h1>Box2</h1>
+          </section>
 
-        {/* <h1>Box3</h1> */}
+          {/* <h1>Box3</h1> */}
 
-        <EmployeeCard name="John Doe" />
-        <EmployeeCard name="John Doe" />
-        <EmployeeCard name="John Doe" />
-        <EmployeeCard name="John Doe" />
-        <EmployeeCard name="John Doe" />
-        <EmployeeCard name="John Doe" />
-        <EmployeeCard name="John Doe" />
-        <EmployeeCard name="John Doe" />
-      </main>
+          <EmployeeCard name="John Doe" />
+          <EmployeeCard name="John Doe" />
+          <EmployeeCard name="John Doe" />
+          <EmployeeCard name="John Doe" />
+          <EmployeeCard name="John Doe" />
+          <EmployeeCard name="John Doe" />
+          <EmployeeCard name="John Doe" />
+          <EmployeeCard name="John Doe" />
+        </main>
+      </div>
     </div>
   );
 }

@@ -11,6 +11,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
 import PersonIcon from "@material-ui/icons/Person";
 import NotificationsActiveIcon from "@material-ui/icons/NotificationsActive";
+import Logo from "./images/logo_teamric.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
 function Sidebar(props) {
   return (
     <aside className={LayoutStyles.sidenav}>
+      {/* <img className={LayoutStyles.logo} src={Logo} alt="Teamric Logo" /> */}
       <ul className={LayoutStyles.sidenav__list}>
         <li className={LayoutStyles.sidenav__list_item}>
           <Link to="/dashboard" style={{ textDecoration: "none" }}>

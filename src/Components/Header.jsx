@@ -1,7 +1,7 @@
 import React from "react";
 import LayoutStyles from "./styles/layout.module.css";
-import Logo from "./images/Logo.png";
-// import Button from "./Button";
+
+import Button from "./Button";
 
 function Header() {
   return (
@@ -12,8 +12,7 @@ function Header() {
         <span className={LayoutStyles.header_logo_name}></span>
       </div>
       <div>
-        {/* <Button /> */}
-        <h3>Username</h3>
+        <Button />
       </div>
     </header>
   );
