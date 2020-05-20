@@ -1,23 +1,26 @@
-.employee {
+/* .employee {
   position: relative;
   top: 0.25rem;
-}
+} */
 
 .employee_avatar {
-  position: relative;
   border-radius: 50%;
-  margin-bottom: -1rem;
-  height: 55px;
-  width: 55px;
+  width: 40px;
   cursor: pointer;
   border: 1px solid grey;
 }
 
 .employee_name {
-  position: relative;
-  left: 2.5rem;
-  bottom: 1.15rem;
   color: grey;
-  font-size: 1rem;
+  font-size: 0.9rem;
   cursor: pointer;
+  margin-left: 0.5em;
+}
+
+.employee {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0.4rem;
 }

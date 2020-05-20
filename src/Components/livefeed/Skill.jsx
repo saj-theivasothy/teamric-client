@@ -5,9 +5,11 @@ import styles from "./styles/livefeed.module.scss";
 
 const Skill = (props) => {
   return (
-    <div>
-      <span>{props.name}</span>
-      <Rater total={5} rating={props.rating} interactive={false} />
+    <div className={styles.skill_row}>
+      <div className={styles.center}>
+        <span>{props.name}</span>
+        <Rater total={5} rating={props.rating} interactive={false} />
+      </div>
       <div>{props.description}</div>
     </div>
   );

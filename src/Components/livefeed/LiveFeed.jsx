@@ -3,7 +3,6 @@ import Review from "./Review";
 import styles from "./styles/livefeed.module.scss";
 
 const LiveFeed = (props) => {
-  console.log("props in livefeed", props);
   const results = props.results.map((result) => {
     return (
       <Review
