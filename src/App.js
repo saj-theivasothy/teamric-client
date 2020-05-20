@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Component } from "react";
+import Page from "react-page-loading";
 import "./App.css";
 import Sidebar from "./Components/Sidebar";
 import LayoutStyles from "./Components/styles/layout.module.css";
@@ -66,9 +67,10 @@ function App() {
 
   return (
     <Router>
-      <div className={LayoutStyles.grid_container}>
-        <Header />
-        <Sidebar />
+      <Page loader={"bubble-spin"} color={"teal"} size={20}>
+        {/* <div className={LayoutStyles.grid_container}>
+          <Header />
+          <Sidebar/> */}
         <Switch>
           <Route
             path="/dashboard"
@@ -123,7 +125,8 @@ function App() {
           />
         </Switch>
         {/* <Footer /> */}
-      </div>
+        {/* </div> */}
+      </Page>
     </Router>
   );
 }

@@ -8,7 +8,7 @@
 .grid_container {
   display: grid;
   grid-template-columns: 150px calc(100%-150px);
-  grid-template-rows: 40px 1fr 50px;
+  grid-template-rows: 40px calc(100% - 90px) 50px;
   grid-template-areas:
     "sidenav header"
     "sidenav main"
@@ -28,11 +28,9 @@
 /* Give every child element its grid name */
 .header {
   grid-area: header;
-  background-color: #338191;
+  background-color: #028090;
 
   /* background-image: linear-gradient(315deg, #6e7679 0%, #8b939a 74%); */
-
-  border-bottom: #fff 1px solid;
 }
 
 .main {
@@ -55,6 +53,19 @@
   grid-column-end: 3;
   z-index: 1;
 }
+
+.loader {
+  background-color: teal;
+}
+
+/* .logo {
+  width: 3em;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-top: -17em;
+} */
 
 /* side bar */
 .sidenav {
@@ -138,7 +149,7 @@
 .header_logo_name {
   color: #ee5454;
   font-size: 2em;
-  margin-left: 5px;
+  margin-left: 7px;
 }
 
 .header div {
@@ -150,6 +161,7 @@
 
 .header h2,
 .header h3 {
+  margin: 0.2em;
   color: white;
 }
 

@@ -21,6 +21,7 @@
     "react-dynamic-charts": "^1.0.5",
     "react-fontawesome": "^1.7.1",
     "react-onclickoutside": "^6.9.0",
+    "react-page-loading": "^1.0.2",
     "react-rater": "^5.1.1",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
