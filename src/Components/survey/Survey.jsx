@@ -11,13 +11,14 @@ import Header from "../Header";
 import Sidebar from "../Sidebar";
 
 const Survey = (props) => {
-  const [employee, setEmployee] = useState();
   const [selectedVirtueBucket, setSelectedVirtueBucket] = useState();
   const [selectedVirtues, setSelectedVirtues] = useState([]);
   const [feedback, setFeedback] = useState([]);
 
   const virtuesData = props.virtues;
   const virtueBucketsData = props.virtueBuckets;
+
+  const { employee, setEmployee } = props;
 
   useEffect(() => {
     setSelectedVirtueBucket();

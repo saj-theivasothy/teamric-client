@@ -18,6 +18,7 @@ function App() {
   const [virtues, setVirtues] = useState([]);
   const [virtueBuckets, setVirtueBuckets] = useState([]);
   const [employees, setEmployees] = useState([]);
+  const [employee, setEmployee] = useState();
   const [graphSettings, setGraphSettings] = useState({
     timeline: [2020, "Courage"],
     pie: [2020, "Stephen Khan"],
@@ -93,7 +94,10 @@ function App() {
           <Route
             path="/add-dot"
             render={(props) => (
-              <Survey {...props} {...{ virtues, virtueBuckets }} />
+              <Survey
+                {...props}
+                {...{ virtues, virtueBuckets, employee, setEmployee }}
+              />
             )}
           />
           <Route
@@ -107,6 +111,7 @@ function App() {
                   handleChange,
                   yearOptions,
                   virtueBucketOptions,
+                  setEmployee,
                 }}
               />
             )}
