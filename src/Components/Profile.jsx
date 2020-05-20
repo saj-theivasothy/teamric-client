@@ -1,7 +1,11 @@
 import React from "react";
 import ProfileStyles from "./styles/profile.module.css";
+<<<<<<< HEAD
+import Graphic from "./styles/Profile/Graphic";
+=======
 import LayoutStyles from "./styles/layout.module.css";
 import Graphic from "./Profile/Graphic";
+>>>>>>> master
 import Cloud from "./WordCloud/Cloud";
 import Dropdown from "./Dropdown";
 import ProfileImage from "./images/profile.jpg";

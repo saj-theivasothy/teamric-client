@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Component } from "react";
 
 import LayoutStyles from "./styles/layout.module.css";
-import Graphic from "./Profile/Graphic";
+import Graphic from "./styles/Profile/Graphic";
 import Dropdown from "./Dropdown";
 import { getResults } from "./Helpers/getters";
 import LiveFeed from "./livefeed/LiveFeed";

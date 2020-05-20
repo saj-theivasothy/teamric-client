@@ -20,8 +20,11 @@ const Review = (props) => {
             <Employee {...props.reviewer} />
           </div>
           <div className={styles.flex_row}>
+          {props.receiver && (
+          <>
             <p>Receiver:</p>
             <Employee {...props.receiver} />
+          </>
           </div>
         </div>
       </div>
