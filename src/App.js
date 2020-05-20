@@ -19,10 +19,10 @@ function App() {
   const [employees, setEmployees] = useState([]);
   const [graphSettings, setGraphSettings] = useState({
     timeline: [2020, "Courage"],
-    pie: [2020, "Stephen Khan"],
+    pie: [2018, "John Cooley"],
     quadrant: [2020],
     scatter: [2020],
-    candle: [2020, "Execution", "Stephen Khan"],
+    candle: [2020, "Execution", "John Cooley"],
     bar: [2020],
     swarm: [2020],
   });
@@ -50,7 +50,7 @@ function App() {
   ) {
     feedbacks = getFeedbacks(surveys, virtues, virtueBuckets, employees);
   }
-
+  console.log(feedbacks);
   const yearOptions = [2017, 2018, 2019, 2020];
   const virtueBucketOptions = [...virtueBuckets].map((data) => data.name);
 

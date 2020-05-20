@@ -52,7 +52,7 @@ function Sidebar(props) {
           </Link>
         </li>
         <li className={LayoutStyles.sidenav__list_item}>
-          <Link to="/profile" style={{ textDecoration: "none" }}>
+          <Link to="/notifications" style={{ textDecoration: "none" }}>
             <div className="button">
               <NotificationsActiveIcon />
               <div className="button-title">NOTIFICATION</div>

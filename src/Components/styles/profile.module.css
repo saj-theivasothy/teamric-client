@@ -126,3 +126,47 @@
   color: gray;
   margin-top: 1em;
 }
+
+.main .box3,
+.main .box9 {
+  background: #ffffff50;
+}
+
+.main .box9 {
+  background: #5cc5d350;
+  color: teal;
+}
+
+h4 {
+  text-align: center;
+  font-size: 0.8em;
+}
+
+.pending_review {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3px;
+}
+
+.button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: teal;
+  align-items: center;
+}
+
+.button:hover {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 1px;
+}
+
+.button .button_title {
+  font-size: 0.6em;
+  padding-top: 0.7em;
+  color: teal;
+  text-transform: capitalize;
+}

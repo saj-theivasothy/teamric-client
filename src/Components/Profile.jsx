@@ -4,6 +4,8 @@ import Graphic from "./styles/Profile/Graphic";
 import Cloud from "./WordCloud/Cloud";
 import Dropdown from "./Dropdown";
 import ProfileImage from "./images/profile.jpg";
+import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
+import { Link } from "react-router-dom";
 
 function Profile(props) {
   const {
@@ -39,7 +41,7 @@ function Profile(props) {
               type="radar"
               xLabel="x"
               yLabel="y"
-              title="Feedback"
+              title="AVERAGE RATINGS FOR YOUR TEAM"
               feedbacks={feedbacks}
               settings={graphSettings}
             />
@@ -51,7 +53,7 @@ function Profile(props) {
                 John Doe
                 <span></span>
               </li>
-              <li className={ProfileStyles.l2}>Amanda Bernard</li>
+              <li className={ProfileStyles.l2}>Debra Guereca</li>
               <li className={ProfileStyles.l3}>James Clark</li>
             </ul>
           </div>
@@ -61,7 +63,7 @@ function Profile(props) {
           {/* Box 1 orange color */}
           <img src={ProfileImage} alt="John Doe" />
           <div className={ProfileStyles.bio}>
-            <h3>Amanda Bernard</h3>
+            <h3>Debra Guereca</h3>
             <hr></hr>
             <h4>Software Developer</h4>
             <p>"An avid reader with a deep passion in photography!"</p>
@@ -79,35 +81,35 @@ function Profile(props) {
               type="pie"
               xLabel="x"
               yLabel="y"
-              title="Feedback"
+              title="YOUR TOP REVIEWERS"
               feedbacks={feedbacks}
               settings={graphSettings}
             />
           )}
         </section>
-        <section className={ProfileStyles.box4}>
+        {/* <section className={ProfileStyles.box4}>
           <h4>Box4</h4>
-        </section>
+        </section> */}
         <section className={ProfileStyles.box5}>
           {/* <h1>box5</h1> */}
-          {/* <Dropdown
+          <Dropdown
             title="Select Year"
             options={yearOptions}
             onClick={(event) => handleChange("candle", event)}
           />
-          <Dropdown
+          {/* <Dropdown
             title="Select Virtue Bucket"
             options={virtueBucketOptions}
             onClick={(event) => handleChange("candle", event, true)}
-          />
+          /> */}
           {feedbacks.length > 0 && (
             <Graphic
               type="candle"
-              title="Title"
+              title="YOUR AVERAGE PERFORMANCE OVERTIME"
               feedbacks={feedbacks}
               settings={graphSettings}
             />
-          )} */}
+          )}
         </section>
         <section className={ProfileStyles.box6}>
           <div className={ProfileStyles.bio}>
@@ -120,10 +122,33 @@ function Profile(props) {
         </section>
 
         <section className={ProfileStyles.box8}>
-          <h5>Word Cloud</h5>
+          <h4>WORD CLOUD</h4>
           <Cloud />
         </section>
-        <section className={ProfileStyles.box9}></section>
+        <section className={ProfileStyles.box9}>
+          <h4>PENDING FEEDBACK</h4>
+          <br />
+          <div className={ProfileStyles.pending_review}>
+            <div>Review Meeting #105064</div>
+            <Link to="/add-dot" style={{ textDecoration: "none" }}>
+              <div className={ProfileStyles.button}>
+                <AddCircleOutlineIcon />
+                <div className={ProfileStyles.button_title}>ADD DOT</div>
+              </div>
+            </Link>
+          </div>
+          <hr />
+          <div className={ProfileStyles.pending_review}>
+            <div>Review Meeting #122335</div>
+            <Link to="/add-dot" style={{ textDecoration: "none" }}>
+              <div className={ProfileStyles.button}>
+                <AddCircleOutlineIcon />
+                <div className={ProfileStyles.button_title}>ADD DOT</div>
+              </div>
+            </Link>
+          </div>
+          <hr />
+        </section>
       </main>
     </div>
   );

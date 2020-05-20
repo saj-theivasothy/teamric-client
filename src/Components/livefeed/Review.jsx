@@ -11,20 +11,26 @@ const Review = (props) => {
 
   const date = new Date(props.date).toDateString();
   return (
-    <section>
+    <>
       <div className={styles.review}>
         <div className={styles.date}>{date}</div>
-        <p>Reviewer:</p>
-        <Employee {...props.reviewer} />
-        {props.receiver && (
+        <div className={styles.flex_row_begin}>
+          <div className={styles.flex_row}>
+            <p>Reviewer:</p>
+            <Employee {...props.reviewer} />
+          </div>
+          <div className={styles.flex_row}>
+          {props.receiver && (
           <>
             <p>Receiver:</p>
             <Employee {...props.receiver} />
           </>
-        )}
+          </div>
+        </div>
       </div>
-      <div>{skills}</div>
-    </section>
+      <div className={styles.skills}>{skills}</div>
+      <hr />
+    </>
   );
 };
 
