@@ -220,7 +220,12 @@ const getPieData = (data, settings) => {
   let sum = 0;
   const total = dataForUser.length;
 
-  const filteredData = generatedData.filter((data) => data.x > 5);
+  const filteredData = generatedData.filter((data) => {
+    if (data.x > 5) {
+      data.x = Math.round((data.x / total) * 100);
+      return data.x;
+    }
+  });
   generatedData.filter((data) => {
     if (data.x <= 5) {
       sum += data.x;
