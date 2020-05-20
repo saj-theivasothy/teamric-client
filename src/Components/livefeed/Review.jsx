@@ -20,8 +20,12 @@ const Review = (props) => {
             <Employee {...props.reviewer} />
           </div>
           <div className={styles.flex_row}>
-            <p>Receiver:</p>
-            <Employee {...props.receiver} />
+            {props.receiver && (
+              <>
+                <p>Receiver:</p>
+                <Employee {...props.receiver} />
+              </>
+            )}
           </div>
         </div>
       </div>

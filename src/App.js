@@ -6,8 +6,7 @@ import LayoutStyles from "./Components/styles/layout.module.css";
 import Dashboard from "./Components/FeedbackContent";
 import Survey from "./Components/survey/Survey";
 import Profile from "./Components/Profile";
-import Notifications from "./Components/Notifications";
-import Employees from "./Components/Employees";
+import Employees from "./Components/team/Employees";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -21,10 +20,10 @@ function App() {
   const [employees, setEmployees] = useState([]);
   const [graphSettings, setGraphSettings] = useState({
     timeline: [2020, "Courage"],
-    pie: [2018, "John Cooley"],
+    pie: [2020, "Stephen Khan"],
     quadrant: [2020],
     scatter: [2020],
-    candle: [2020, "Execution", "John Cooley"],
+    candle: [2020, "Execution", "Stephen Khan"],
     bar: [2020],
     swarm: [2020],
   });
@@ -112,8 +111,18 @@ function App() {
               />
             )}
           />
-
-          <Route path="/employees" render={(props) => <Employees />} />
+          <Route
+            path="/employees"
+            render={(props) => (
+              <Employees
+                {...props}
+                {...{ surveys }}
+                virtues={virtues}
+                employees={employees}
+                virtueBuckets={virtueBuckets}
+              />
+            )}
+          />
         </Switch>
         {/* <Footer /> */}
         {/* </div> */}
