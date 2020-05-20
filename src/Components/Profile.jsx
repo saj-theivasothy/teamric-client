@@ -4,6 +4,8 @@ import Graphic from "./Profile/Graphic";
 import Cloud from "./WordCloud/Cloud";
 import Dropdown from "./Dropdown";
 import ProfileImage from "./images/profile.jpg";
+import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
+import { Link } from "react-router-dom";
 
 function Profile(props) {
   const {
@@ -79,7 +81,7 @@ function Profile(props) {
               type="pie"
               xLabel="x"
               yLabel="y"
-              title="Feedback"
+              title="Your Top Reviewers"
               feedbacks={feedbacks}
               settings={graphSettings}
             />
@@ -90,16 +92,16 @@ function Profile(props) {
         </section>
         <section className={ProfileStyles.box5}>
           {/* <h1>box5</h1> */}
-          {/* <Dropdown
+          <Dropdown
             title="Select Year"
             options={yearOptions}
             onClick={(event) => handleChange("candle", event)}
           />
-          <Dropdown
+          {/* <Dropdown
             title="Select Virtue Bucket"
             options={virtueBucketOptions}
             onClick={(event) => handleChange("candle", event, true)}
-          />
+          /> */}
           {feedbacks.length > 0 && (
             <Graphic
               type="candle"
@@ -107,7 +109,7 @@ function Profile(props) {
               feedbacks={feedbacks}
               settings={graphSettings}
             />
-          )} */}
+          )}
         </section>
         <section className={ProfileStyles.box6}>
           <div className={ProfileStyles.bio}>
@@ -123,7 +125,40 @@ function Profile(props) {
           <h5>Word Cloud</h5>
           <Cloud />
         </section>
-        <section className={ProfileStyles.box9}></section>
+        <section className={ProfileStyles.box9}>
+          <h4>Pending Feedback</h4>
+          <br />
+          <div className={ProfileStyles.pending_review}>
+            <div>Review Meeting #105064</div>
+            <Link to="/add-dot" style={{ textDecoration: "none" }}>
+              <div className="button">
+                <AddCircleOutlineIcon />
+                <div className="button-title">ADD DOT</div>
+              </div>
+            </Link>
+          </div>
+          <hr />
+          <div className={ProfileStyles.pending_review}>
+            <div>Review Meeting #105064</div>
+            <Link to="/add-dot" style={{ textDecoration: "none" }}>
+              <div className="button">
+                <AddCircleOutlineIcon />
+                <div className="button-title">ADD DOT</div>
+              </div>
+            </Link>
+          </div>
+          <hr />
+          <div className={ProfileStyles.pending_review}>
+            <div>Review Meeting #105064</div>
+            <Link to="/add-dot" style={{ textDecoration: "none" }}>
+              <div className={ProfileStyles.button}>
+                <AddCircleOutlineIcon />
+                <div className={ProfileStyles.button_title}>ADD DOT</div>
+              </div>
+            </Link>
+          </div>
+          <hr />
+        </section>
       </main>
     </div>
   );

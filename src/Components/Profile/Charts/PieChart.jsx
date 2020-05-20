@@ -4,7 +4,7 @@ import * as d3 from "d3";
 import Chart from "./Base/Chart";
 import { useChartDimensions } from "./Base/utils";
 
-const BarChart = ({ data, xAccessor, yAccessor, xLabel, yLabel }) => {
+const PieChart = ({ data, xAccessor, yAccessor, xLabel, yLabel }) => {
   const [ref, dimensions] = useChartDimensions({
     marginBottom: 20,
   });
@@ -45,7 +45,12 @@ const BarChart = ({ data, xAccessor, yAccessor, xLabel, yLabel }) => {
               </text>
 
               <text
-                style={{ textAnchor: "middle", fill: "#95a5a6" }}
+                style={{
+                  textAnchor: "middle",
+                  fill: "#95a5a6",
+                  color: "black",
+                  fontSize: "0.8rem",
+                }}
                 transform={`translate(${arc.centroid(d)[0] * 2.7 + 10}, ${
                   arc.centroid(d)[1] * 2.3 + 5
                 })`}
@@ -60,4 +65,4 @@ const BarChart = ({ data, xAccessor, yAccessor, xLabel, yLabel }) => {
   );
 };
 
-export default BarChart;
+export default PieChart;

@@ -90,7 +90,7 @@ function FeedbackContent(props) {
         </section>
 
         <section
-          className={LayoutStyles.effect2}
+          className={LayoutStyles.timeline}
           className={LayoutStyles.main_header}
           className={LayoutStyles.addchart}
         >
@@ -106,6 +106,7 @@ function FeedbackContent(props) {
           />
           {feedbacks.length > 0 && (
             <Graphic
+              className={LayoutStyles.timeline_graph}
               type="timeline"
               xLabel="Timeline"
               yLabel="Average Rating"

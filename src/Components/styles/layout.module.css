@@ -164,3 +164,7 @@
 .livefeed {
   border-radius: 10px;
 }
+
+.timeline {
+  background-color: gray;
+}

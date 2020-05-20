@@ -204,11 +204,13 @@ const getCandleData = (data, settings) => {
 };
 
 const getPieData = (data, settings) => {
+  console.log(data);
   const dataForUser = data.filter(
     (feedback) =>
       feedback.createdAt.getFullYear() === settings.pie[0] &&
       feedback.receiver === settings.pie[1]
   );
+  console.log(dataForUser);
   let generatedData = Object.values(
     dataForUser.reduce((feedback, { reviewer }) => {
       feedback[reviewer] = feedback[reviewer] || { x: 0, y: reviewer };
@@ -229,7 +231,7 @@ const getPieData = (data, settings) => {
   });
   const sumPercentage = Math.round((sum / total) * 100);
   filteredData.push({ x: sumPercentage, y: "Other" });
-
+  console.log("filter data", filteredData);
   return filteredData;
 };
 
