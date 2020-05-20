@@ -9,6 +9,7 @@
   width: 16em;
   height: 2em;
   font-size: 1em;
+  margin: 1em;
 }
 
 .search_bar::placeholder {

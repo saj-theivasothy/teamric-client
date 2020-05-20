@@ -124,10 +124,6 @@
 .survey_bucket_container {
   position: relative;
   height: 20em;
-
-  h6 {
-    font-size: 1.5em;
-  }
 }
 
 .virtues_container {
@@ -139,10 +135,6 @@
     flex-flow: row wrap;
     top: 1em;
   }
-
-  h6 {
-    font-size: 1.5em;
-  }
 }
 
 .feedback_container {
@@ -150,10 +142,6 @@
   width: 70em;
   top: 5em;
   height: 15em;
-
-  h6 {
-    font-size: 1.5em;
-  }
 
   .feedbacks {
     display: flex;
@@ -168,4 +156,14 @@
     flex-flow: row wrap;
     justify-content: space-evenly;
   }
+}
+
+.h6 {
+  font-size: 1em;
+  text-align: center;
+}
+
+.feedback_container {
+  width: calc(100vw - 220px);
+  margin: 0 auto;
 }

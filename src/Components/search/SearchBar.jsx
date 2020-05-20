@@ -4,7 +4,7 @@ import "./styles/search-bar.css";
 
 const SearchBar = (props) => {
   return (
-    <section>
+    <div class="search_div">
       <form onSubmit={(event) => event.preventDefault()}>
         <input
           className="search_bar fontAwesome"
@@ -16,7 +16,7 @@ const SearchBar = (props) => {
           onChange={(event) => props.onSearch(event.target.value)}
         />
       </form>
-    </section>
+    </div>
   );
 };
 
