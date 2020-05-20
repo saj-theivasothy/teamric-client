@@ -134,12 +134,24 @@ const getAverageRatings = (feedbacks) => {
 
       const average = Math.round(helper[key].sum / helper[key].count);
       helper[key].average = average;
-      // console.log(results);
     });
   });
-  console.log(helper);
-
+  console.log(Object.values(helper));
   return Object.values(helper);
+};
+
+const getTotalAverage = (data) => {
+  const helper = { totalAverage: 0 };
+  const key = "totalAverage";
+  const totalRatings = data.reduce((acc, current) => {
+    const currentRating = current.props.rating;
+    helper[key] = helper[key] + currentRating;
+
+    return acc.concat(helper[key]);
+  }, []);
+  helper[key] = helper[key] / data.length;
+
+  return helper[key];
 };
 const employee = [84];
 
@@ -1693,4 +1705,10 @@ const employees = [
 // getAverageRatings(userFeedback);
 // console.log(getAverageRatings(userFeedback));
 
-export { getFeedbacks, getResults, getUserFeedbacks, getAverageRatings };
+export {
+  getFeedbacks,
+  getResults,
+  getUserFeedbacks,
+  getAverageRatings,
+  getTotalAverage,
+};

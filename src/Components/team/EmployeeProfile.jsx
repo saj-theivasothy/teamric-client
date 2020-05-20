@@ -1,6 +1,10 @@
 import React from "react";
 
-import { getUserFeedbacks, getAverageRatings } from "../Helpers/getters";
+import {
+  getUserFeedbacks,
+  getAverageRatings,
+  getTotalAverage,
+} from "../Helpers/getters";
 import LiveFeed from "../livefeed/LiveFeed";
 // import Rater from "react-rater";
 import Skill from "../livefeed/Skill";
@@ -14,6 +18,7 @@ const EmployeeProfile = (props) => {
   let userFeedbacks = [];
   let averageRatings = [];
   let ratings = [];
+  let totalAverage = [];
   if (
     (surveys.length > 0 && virtues.length > 0 && employees.length > 0,
     virtueBuckets.length > 0)
@@ -29,6 +34,7 @@ const EmployeeProfile = (props) => {
     ratings = averageRatings.map((rating) => (
       <Skill name={rating.virtueBucket} rating={rating.average} />
     ));
+    totalAverage = getTotalAverage(ratings);
   }
 
   return (
@@ -50,6 +56,7 @@ const EmployeeProfile = (props) => {
           </div>
         </section>
         <section className={styles.box4}>
+          {totalAverage}
           <h3>Average Ratings</h3>
           {ratings.length > 0 && <div>{ratings}</div>}
         </section>
