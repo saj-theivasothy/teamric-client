@@ -50,7 +50,7 @@ function FeedbackContent(props) {
               type="bar"
               xLabel="Average Rating"
               yLabel="Vitue Bucket"
-              title="Average Rating for Virtue Bucket"
+              title="AVERAGE RATING FOR VIRTUE BUCKET"
               feedbacks={feedbacks}
               settings={graphSettings}
             />
@@ -71,7 +71,7 @@ function FeedbackContent(props) {
               type="quadrant"
               xLabel="Completeness of Vision"
               yLabel="Ability to Execute"
-              title="Magic Quadrant for Workplace"
+              title="MAGIC QUADRANT FOR WORKPLACE"
               feedbacks={feedbacks}
               settings={graphSettings}
             />
@@ -92,7 +92,7 @@ function FeedbackContent(props) {
               type="swarm"
               xLabel="Category"
               yLabel="Average Rating"
-              title="Average Rating of the Team"
+              title="AVERAGE RATING OF THE TEAM"
               feedbacks={feedbacks}
               settings={graphSettings}
             />
@@ -120,14 +120,14 @@ function FeedbackContent(props) {
               type="timeline"
               xLabel="Timeline"
               yLabel="Average Rating"
-              title="Average Performance Overtime"
+              title="AVERAGE PERFORMANCE OVERTIME"
               feedbacks={feedbacks}
               settings={graphSettings}
             />
           )}
         </section>
         <section className={LayoutStyles.feed}>
-          <h3>Live Feed</h3>
+          <h4>LIVE FEED</h4>
           {liveFeedResults.length > 0 && <LiveFeed results={liveFeedResults} />}
         </section>
       </main>
