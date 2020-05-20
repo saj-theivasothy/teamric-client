@@ -76,6 +76,9 @@ function App() {
               <Dashboard
                 {...props}
                 {...{
+                  virtues,
+                  surveys,
+                  employees,
                   feedbacks,
                   graphSettings,
                   handleChange,

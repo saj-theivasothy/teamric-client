@@ -24,7 +24,6 @@ const getFeedbacks = (surveys, virtues, virtueBuckets, employees) => {
       });
       return a.concat(...updatedFeedback);
     }, []);
-
     const newSurveys = [];
 
     feedbacks.forEach((survey) => {
@@ -46,6 +45,33 @@ const getFeedbacks = (surveys, virtues, virtueBuckets, employees) => {
     });
     return newSurveys;
   }
+};
+
+const getResults = (surveys, employees, virtues) => {
+  surveys.sort((a, b) => b.createdAt.localeCompare(a.createdAt));
+
+  const reducedSurveys = surveys.slice(0, 50);
+
+  const feedbacks = reducedSurveys.reduce((a, b) => {
+    const reviewer = employees.find(({ id }) => id === b.reviewerId);
+    const receiver = employees.find(({ id }) => id === b.receiverId);
+
+    const details = {
+      reviewer: reviewer,
+      receiver: receiver,
+      createdAt: b.createdAt,
+    };
+
+    const updatedFeedback = [];
+    b.feedback.forEach((feedback) => {
+      const virtue = virtues.find(({ id, name }) => id === feedback.skillId);
+      updatedFeedback.push({ ...feedback, name: virtue.name });
+    });
+
+    return a.concat({ feedback: updatedFeedback, ...details });
+  }, []);
+
+  return feedbacks;
 };
 
 const surveys = [
@@ -1588,4 +1614,6 @@ const employees = [
   },
 ];
 
-export { getFeedbacks };
+// console.log(getResults(surveys, employees, virtues));
+
+export { getFeedbacks, getResults };

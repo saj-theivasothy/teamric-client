@@ -1,0 +1,16 @@
+.livefeed {
+  position: relative;
+  height: 12.75em;
+  width: 22.75em;
+  left: -1.35em;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.review {
+  position: relative;
+  top: -0.75em;
+  .date {
+    position: relative;
+  }
+}

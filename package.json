@@ -26,8 +26,10 @@
     "react-scripts": "3.4.1",
     "react-wordcloud": "^1.2.3",
     "resize-observer-polyfill": "^1.5.1",
+    "socket.io-client": "^2.3.0",
     "styled-components": "^5.1.0",
-    "uuid": "^8.0.0"
+    "uuid": "^8.0.0",
+    "ws": "^7.3.0"
   },
   "scripts": {
     "start": "react-scripts start",

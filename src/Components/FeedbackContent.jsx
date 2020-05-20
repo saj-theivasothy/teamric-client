@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import LayoutStyles from "./styles/layout.module.css";
 import Graphic from "./Profile/Graphic";
 import Dropdown from "./Dropdown";
+import { getResults } from "./Helpers/getters";
+import LiveFeed from "./livefeed/LiveFeed";
 
 {
   /* <Graphic type="scatter" xLabel="x" yLabel="y" title="Title" />
@@ -14,12 +16,20 @@ import Dropdown from "./Dropdown";
 
 function FeedbackContent(props) {
   const {
+    virtues,
+    surveys,
+    employees,
     feedbacks,
     graphSettings,
     handleChange,
     yearOptions,
     virtueBucketOptions,
   } = props;
+
+  let liveFeedResults = [];
+  if (surveys.length > 0 && employees.length > 0) {
+    liveFeedResults = getResults(surveys, employees, virtues);
+  }
 
   return (
     <div className={LayoutStyles.main_heading}>
@@ -117,6 +127,7 @@ function FeedbackContent(props) {
         </section>
         <section className={LayoutStyles.feed}>
           <h3>Live Feed</h3>
+          {liveFeedResults.length > 0 && <LiveFeed results={liveFeedResults} />}
         </section>
       </main>
     </div>
