@@ -10,7 +10,6 @@ import LiveFeed from "../livefeed/LiveFeed";
 import Skill from "../livefeed/Skill";
 
 import styles from "./styles/employees.module.scss";
-import "react-dynamic-charts/dist/index.css";
 
 const EmployeeProfile = (props) => {
   const { employee, surveys, virtues, employees, virtueBuckets } = props;

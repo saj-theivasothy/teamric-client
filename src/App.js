@@ -51,7 +51,7 @@ function App() {
   ) {
     feedbacks = getFeedbacks(surveys, virtues, virtueBuckets, employees);
   }
-  console.log(feedbacks);
+
   const yearOptions = [2017, 2018, 2019, 2020];
   const virtueBucketOptions = [...virtueBuckets].map((data) => data.name);
 
