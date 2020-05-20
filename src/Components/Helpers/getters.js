@@ -85,7 +85,7 @@ const getUserFeedbacks = (
     (survey) => survey.receiverId === employeeId
   );
 
-  dataForUser.sort((a, b) => b.createdAt.localeCompare(a.createdAt));
+  // dataForUser.sort((a, b) => b.createdAt.localeCompare(a.createdAt));
 
   const feedbacks = dataForUser.reduce((a, b) => {
     const reviewer = employees.find(({ id }) => id === b.reviewerId);
@@ -103,7 +103,11 @@ const getUserFeedbacks = (
       const virtueBucket = virtueBuckets.find(
         ({ id }) => id === virtue.virtue_bucket_id
       );
-      updatedFeedback.push({ ...feedback, name: virtue.name, virtueBucket });
+      updatedFeedback.push({
+        ...feedback,
+        name: virtue.name,
+        virtueBucket: virtueBucket.name,
+      });
     });
 
     return a.concat({ feedback: updatedFeedback, ...details });
@@ -114,28 +118,28 @@ const getUserFeedbacks = (
 
 const getAverageRatings = (feedbacks) => {
   const helper = {};
-  const results = [];
+
   const averageRatings = feedbacks.map(({ feedback }) => {
     feedback.forEach((data) => {
-      helper[data.virtueBucket] = helper[data.virtueBucket] || {
-        virtueBucket: data.virtueBucket,
+      const key = data.virtueBucket;
+
+      helper[key] = helper[key] || {
+        virtueBucket: key,
         sum: 0,
         count: 0,
-        averageRatings: 0,
+        average: 0,
       };
-      helper[data.virtueBucket].sum += data.rating;
-      helper[data.virtueBucket].count++;
+      helper[key].sum += data.rating;
+      helper[key].count++;
 
-      const average = Math.round(
-        helper[data.virtueBucket].sum / helper[data.virtueBucket].count
-      );
-      helper[data.virtueBucket].average = average;
-      results.push(helper[data.virtueBucket]);
+      const average = Math.round(helper[key].sum / helper[key].count);
+      helper[key].average = average;
+      // console.log(results);
     });
-    return results;
   });
-  console.log(averageRatings);
-  return averageRatings;
+  console.log(helper);
+
+  return Object.values(helper);
 };
 const employee = [84];
 
@@ -1679,6 +1683,14 @@ const employees = [
   },
 ];
 
-// console.log(getAverageRatings(employee, surveys, virtues));
+// const userFeedback = getUserFeedbacks(
+//   employee[0],
+//   surveys,
+//   virtues,
+//   employees,
+//   virtueBuckets
+// );
+// getAverageRatings(userFeedback);
+// console.log(getAverageRatings(userFeedback));
 
 export { getFeedbacks, getResults, getUserFeedbacks, getAverageRatings };

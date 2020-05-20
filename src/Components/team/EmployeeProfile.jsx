@@ -1,14 +1,19 @@
 import React from "react";
 
-import styles from "./styles/employees.module.scss";
-
 import { getUserFeedbacks, getAverageRatings } from "../Helpers/getters";
 import LiveFeed from "../livefeed/LiveFeed";
+// import Rater from "react-rater";
+import Skill from "../livefeed/Skill";
+
+import styles from "./styles/employees.module.scss";
+import "react-dynamic-charts/dist/index.css";
 
 const EmployeeProfile = (props) => {
   const { employee, surveys, virtues, employees, virtueBuckets } = props;
 
   let userFeedbacks = [];
+  let averageRatings = [];
+  let ratings = [];
   if (
     (surveys.length > 0 && virtues.length > 0 && employees.length > 0,
     virtueBuckets.length > 0)
@@ -20,8 +25,12 @@ const EmployeeProfile = (props) => {
       employees,
       virtueBuckets
     );
-    const averageFeedbacks = getAverageRatings(userFeedbacks);
+    averageRatings = getAverageRatings(userFeedbacks);
+    ratings = averageRatings.map((rating) => (
+      <Skill name={rating.virtueBucket} rating={rating.average} />
+    ));
   }
+
   return (
     <div className={styles.popup}>
       <div className={styles.popup_inner}>
@@ -41,7 +50,8 @@ const EmployeeProfile = (props) => {
           </div>
         </section>
         <section className={styles.box4}>
-          <h3>Ratings</h3>
+          <h3>Average Ratings</h3>
+          {ratings.length > 0 && <div>{ratings}</div>}
         </section>
         <button onClick={props.closePopup}>X</button>
       </div>

@@ -8,7 +8,7 @@ const Skill = (props) => {
     <div>
       <span>{props.name}</span>
       <Rater total={5} rating={props.rating} interactive={false} />
-      <div>{props.description}</div>
+      {props.description && <div>{props.description}</div>}
     </div>
   );
 };
