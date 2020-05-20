@@ -82,11 +82,22 @@ const Survey = (props) => {
     );
   });
 
+  const handleDelete = (id) => {
+    const virtue = selectedVirtues.find((virtue, index) => {
+      let updatedVirtues = [...selectedVirtues];
+      if (id === virtue.id) {
+        updatedVirtues.splice(index, 1);
+        setSelectedVirtues(updatedVirtues);
+      }
+    });
+  };
+
   const feedbacks = selectedVirtues.map((virtue) => (
     <Feedback
       key={virtue.id}
       {...virtue}
       handleSetFeedback={handleSetFeedback}
+      handleDelete={handleDelete}
     />
   ));
 

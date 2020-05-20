@@ -21,6 +21,7 @@ function Feedback(props) {
         <p>Rating:</p>
         <Rating onRate={setRating} className={rating} />
         <Details onChange={setDescription} details={description} />
+        <input type="button" value="X" onClick={() => props.handleDelete(id)} />
       </div>
     </>
   );
