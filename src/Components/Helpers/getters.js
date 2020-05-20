@@ -74,6 +74,71 @@ const getResults = (surveys, employees, virtues) => {
   return feedbacks;
 };
 
+const getUserFeedbacks = (
+  employeeId,
+  surveys,
+  virtues,
+  employees,
+  virtueBuckets
+) => {
+  const dataForUser = surveys.filter(
+    (survey) => survey.receiverId === employeeId
+  );
+
+  dataForUser.sort((a, b) => b.createdAt.localeCompare(a.createdAt));
+
+  const feedbacks = dataForUser.reduce((a, b) => {
+    const reviewer = employees.find(({ id }) => id === b.reviewerId);
+    // const receiver = employees.find(({ id }) => id === b.receiverId);
+
+    const details = {
+      reviewer: reviewer,
+      // receiver: receiver,
+      createdAt: b.createdAt,
+    };
+
+    const updatedFeedback = [];
+    b.feedback.forEach((feedback) => {
+      const virtue = virtues.find(({ id, name }) => id === feedback.skillId);
+      const virtueBucket = virtueBuckets.find(
+        ({ id }) => id === virtue.virtue_bucket_id
+      );
+      updatedFeedback.push({ ...feedback, name: virtue.name, virtueBucket });
+    });
+
+    return a.concat({ feedback: updatedFeedback, ...details });
+  }, []);
+
+  return feedbacks;
+};
+
+const getAverageRatings = (feedbacks) => {
+  const helper = {};
+  const results = [];
+  const averageRatings = feedbacks.map(({ feedback }) => {
+    feedback.forEach((data) => {
+      helper[data.virtueBucket] = helper[data.virtueBucket] || {
+        virtueBucket: data.virtueBucket,
+        sum: 0,
+        count: 0,
+        averageRatings: 0,
+      };
+      helper[data.virtueBucket].sum += data.rating;
+      helper[data.virtueBucket].count++;
+
+      const average = Math.round(
+        helper[data.virtueBucket].sum / helper[data.virtueBucket].count
+      );
+      helper[data.virtueBucket].average = average;
+      results.push(helper[data.virtueBucket]);
+    });
+    return results;
+  });
+  console.log(averageRatings);
+  return averageRatings;
+};
+const employee = [84];
+
 const surveys = [
   {
     reviewerId: 27,
@@ -1614,6 +1679,6 @@ const employees = [
   },
 ];
 
-// console.log(getResults(surveys, employees, virtues));
+// console.log(getAverageRatings(employee, surveys, virtues));
 
-export { getFeedbacks, getResults };
+export { getFeedbacks, getResults, getUserFeedbacks, getAverageRatings };

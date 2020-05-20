@@ -16,8 +16,12 @@ const Review = (props) => {
         <div className={styles.date}>{date}</div>
         <p>Reviewer:</p>
         <Employee {...props.reviewer} />
-        <p>Receiver:</p>
-        <Employee {...props.receiver} />
+        {props.receiver && (
+          <>
+            <p>Receiver:</p>
+            <Employee {...props.receiver} />
+          </>
+        )}
       </div>
       <div>{skills}</div>
     </section>
