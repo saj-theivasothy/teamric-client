@@ -10,7 +10,7 @@ const EmployeeCard = (props) => {
         <img src={props.avatar} alt="profile" />
         <div class={styles.flip_card_back}>
           <h1>{props.name}</h1>
-          <h1>{props.job_title}</h1>
+          <h2>{props.job_title}</h2>
           <div>
             <button
               className={styles.button}

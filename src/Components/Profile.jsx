@@ -75,7 +75,9 @@ function Profile(props) {
               <h3>Debra Guereca</h3>
               <hr></hr>
               <h4>Software Developer</h4>
-              <p>"An avid reader with a deep passion in photography!"</p>
+              <p className={ProfileStyles.bio_line}>
+                "An avid reader with a deep passion in photography!"
+              </p>
             </div>
           </section>
 
@@ -122,8 +124,8 @@ function Profile(props) {
           </section>
           <section className={ProfileStyles.box6}>
             <div className={ProfileStyles.bio}>
-              <h3>John Doe Says: </h3>
-              <p>
+              <h4>John Doe Says: </h4>
+              <p className={ProfileStyles.bio_line2}>
                 "Excellent Research Skills and always upfront to achieve
                 required results, I love her passion for learning!"
               </p>
