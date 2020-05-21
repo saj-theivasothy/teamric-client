@@ -126,15 +126,18 @@ function Profile(props) {
           <h4>Box4</h4>
         </section> */}
           <section className={ProfileStyles.box5}>
-            {/* <h1>box5</h1> */}
+            <h5 className="center">RECENT FEEDBACKS</h5>
 
             {/* <Dropdown
             title="Select Virtue Bucket"
             options={virtueBucketOptions}
             onClick={(event) => handleChange("candle", event, true)}
           /> */}
-            <div className={styles.feed_div}>
-              <LiveFeed className={styles.live_feed} results={userFeedbacks} />
+            <div className={ProfileStyles.feed_div}>
+              <LiveFeed
+                className={ProfileStyles.profile_feed}
+                results={userFeedbacks}
+              />
             </div>
           </section>
           <section className={ProfileStyles.box6}>
@@ -155,7 +158,7 @@ function Profile(props) {
             <h4>PENDING FEEDBACK</h4>
             <br />
             <div className={ProfileStyles.pending_review}>
-              <div>Review Meeting #105064</div>
+              <div>Review Stephen Khan</div>
               <Link to="/add-dot" style={{ textDecoration: "none" }}>
                 <div
                   className={ProfileStyles.button}
@@ -166,14 +169,14 @@ function Profile(props) {
                     className={ProfileStyles.button_title}
                     onClick={() => setEmployee(1)}
                   >
-                    ADD DOT
+                    {/* ADD DOT */}
                   </div>
                 </div>
               </Link>
             </div>
             <hr />
             <div className={ProfileStyles.pending_review}>
-              <div>Review Meeting #122335</div>
+              <div>Review Thomas Harrison</div>
               <Link to="/add-dot" style={{ textDecoration: "none" }}>
                 <div
                   className={ProfileStyles.button}
@@ -184,7 +187,7 @@ function Profile(props) {
                     className={ProfileStyles.button_title}
                     onClick={() => setEmployee(5)}
                   >
-                    ADD DOT
+                    {/* ADD DOT */}
                   </div>
                 </div>
               </Link>
