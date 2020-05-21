@@ -58,7 +58,7 @@
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 3;
-  grid-row-end: 5;
+  grid-row-end: 4;
 }
 
 .radar_info {
@@ -173,4 +173,18 @@ h4 {
   padding-top: 0.7em;
   color: teal;
   text-transform: capitalize;
+}
+
+.feed_div {
+  height: 25vh;
+  width: 100%;
+  border-right: 2px solid #e67a7a;
+}
+
+.profile_feed {
+  position: relative;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
 }
