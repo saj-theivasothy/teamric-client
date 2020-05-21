@@ -19,6 +19,7 @@ function Profile(props) {
     handleChange,
     yearOptions,
     virtueBucketOptions,
+    setEmployee,
   } = props;
 
   // Word Cloud Modal
@@ -139,9 +140,17 @@ function Profile(props) {
             <div className={ProfileStyles.pending_review}>
               <div>Review Meeting #105064</div>
               <Link to="/add-dot" style={{ textDecoration: "none" }}>
-                <div className={ProfileStyles.button}>
+                <div
+                  className={ProfileStyles.button}
+                  onClick={() => setEmployee(1)}
+                >
                   <AddCircleOutlineIcon />
-                  <div className={ProfileStyles.button_title}>ADD DOT</div>
+                  <div
+                    className={ProfileStyles.button_title}
+                    onClick={() => setEmployee(1)}
+                  >
+                    ADD DOT
+                  </div>
                 </div>
               </Link>
             </div>
@@ -149,9 +158,17 @@ function Profile(props) {
             <div className={ProfileStyles.pending_review}>
               <div>Review Meeting #122335</div>
               <Link to="/add-dot" style={{ textDecoration: "none" }}>
-                <div className={ProfileStyles.button}>
+                <div
+                  className={ProfileStyles.button}
+                  onClick={() => setEmployee(3)}
+                >
                   <AddCircleOutlineIcon />
-                  <div className={ProfileStyles.button_title}>ADD DOT</div>
+                  <div
+                    className={ProfileStyles.button_title}
+                    onClick={() => setEmployee(5)}
+                  >
+                    ADD DOT
+                  </div>
                 </div>
               </Link>
             </div>

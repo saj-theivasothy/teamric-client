@@ -28,7 +28,12 @@
     border: 2px solid white;
   }
 
-  &:focus {
+  &_selected {
+    width: 2.5rem;
+    padding: 0.3rem;
+    margin-bottom: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
     background-color: teal;
     border: 2px solid white;
   }
@@ -58,9 +63,15 @@ article > p {
     color: white;
   }
 
-  &:active {
+  &_selected {
     background-color: teal;
     border: 2px solid white;
     color: white;
+    margin: 0.15rem;
+    padding: 0.3rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: 25px;
+    cursor: pointer;
   }
 }

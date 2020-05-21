@@ -16,11 +16,12 @@ function Feedback(props) {
 
   return (
     <>
-      <div>{props.name}</div>
+      <div className={styles.title}>{props.name}</div>
       <div className={styles.feedback}>
         <p>Rating:</p>
         <Rating onRate={setRating} className={rating} />
         <Details onChange={setDescription} details={description} />
+        <input type="button" value="X" onClick={() => props.handleDelete(id)} />
       </div>
     </>
   );

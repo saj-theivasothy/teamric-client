@@ -29,7 +29,11 @@ const Search = (props) => {
     <main className="container">
       <SearchBar onSearch={(term) => setTerm(term)} term={term} />
       <div className="results_container">
-        <Results results={searchResults} onClick={props.onClick} />
+        <Results
+          results={searchResults}
+          onClick={props.onClick}
+          employee={props.employee}
+        />
       </div>
     </main>
   );

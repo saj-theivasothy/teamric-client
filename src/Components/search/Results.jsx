@@ -10,7 +10,8 @@ const Results = (props) => {
       <Employee
         key={result.id}
         {...result}
-        onClick={(event) => props.onClick(result.id)}
+        onClick={props.onClick}
+        employee={props.employee}
       />
     );
   });

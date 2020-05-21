@@ -17,10 +17,25 @@
   margin-left: 0.5em;
 }
 
+.employee_name_selected {
+  color: teal;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-left: 0.5em;
+  width: fit-content;
+}
+
 .employee {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   margin: 0.4rem;
+}
+
+.employee_avatar_selected {
+  background-color: teal;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid grey;
 }

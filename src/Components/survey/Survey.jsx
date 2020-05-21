@@ -11,13 +11,14 @@ import Header from "../Header";
 import Sidebar from "../Sidebar";
 
 const Survey = (props) => {
-  const [employee, setEmployee] = useState();
   const [selectedVirtueBucket, setSelectedVirtueBucket] = useState();
   const [selectedVirtues, setSelectedVirtues] = useState([]);
   const [feedback, setFeedback] = useState([]);
 
   const virtuesData = props.virtues;
   const virtueBucketsData = props.virtueBuckets;
+
+  const { employee, setEmployee } = props;
 
   useEffect(() => {
     setSelectedVirtueBucket();
@@ -33,7 +34,7 @@ const Survey = (props) => {
     setSelectedVirtueBucket(id);
   };
 
-  const selectVirtues = (id) => {
+  const selectVirtues = (id, handleToggle) => {
     const virtueById = getVirtuesById(id);
     let updatedVirtues = [...selectedVirtues];
 
@@ -78,15 +79,31 @@ const Survey = (props) => {
   const virtuesForBucket = getVirtuesForBucketId(selectedVirtueBucket);
   const virtues = virtuesForBucket.map((virtue) => {
     return (
-      <VirtueListItem key={virtue.id} {...virtue} onClick={selectVirtues} />
+      <VirtueListItem
+        key={virtue.id}
+        {...virtue}
+        onClick={selectVirtues}
+        selectedVirtues={selectedVirtues}
+      />
     );
   });
+
+  const handleDelete = (id) => {
+    const virtue = selectedVirtues.find((virtue, index) => {
+      let updatedVirtues = [...selectedVirtues];
+      if (id === virtue.id) {
+        updatedVirtues.splice(index, 1);
+        setSelectedVirtues(updatedVirtues);
+      }
+    });
+  };
 
   const feedbacks = selectedVirtues.map((virtue) => (
     <Feedback
       key={virtue.id}
       {...virtue}
       handleSetFeedback={handleSetFeedback}
+      handleDelete={handleDelete}
     />
   ));
 
@@ -121,7 +138,11 @@ const Survey = (props) => {
 
         <main className={styles.main}>
           <section className={styles.search_container}>
-            <Search className={styles.search} onClick={selectEmployee} />
+            <Search
+              className={styles.search}
+              onClick={selectEmployee}
+              employee={employee}
+            />
           </section>
           <section className={styles.survey_bucket_container}>
             <h6 className={styles.h6}>Select a Virtue Category</h6>
