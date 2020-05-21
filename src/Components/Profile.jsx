@@ -11,6 +11,9 @@ import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
 import { Link } from "react-router-dom";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
+import { getUserFeedbacks } from "./Helpers/getters";
+import styles from "./team/styles/employees.module.scss";
+import LiveFeed from "./livefeed/LiveFeed";
 
 function Profile(props) {
   const {
@@ -20,6 +23,10 @@ function Profile(props) {
     yearOptions,
     virtueBucketOptions,
     setEmployee,
+    virtueBuckets,
+    employees,
+    virtues,
+    surveys,
   } = props;
 
   // Word Cloud Modal
@@ -32,6 +39,23 @@ function Profile(props) {
     document.getElementById("myModal").style.display = "none";
   }
   //
+
+  let userFeedbacks = [];
+  let averageRatings = [];
+  let ratings = [];
+  let totalAverage = [];
+  if (
+    (surveys.length > 0 && virtues.length > 0 && employees.length > 0,
+    virtueBuckets.length > 0)
+  ) {
+    userFeedbacks = getUserFeedbacks(
+      1,
+      surveys,
+      virtues,
+      employees,
+      virtueBuckets
+    );
+  }
   return (
     <div className={LayoutStyles.grid_container}>
       <Header />
@@ -103,24 +127,15 @@ function Profile(props) {
         </section> */}
           <section className={ProfileStyles.box5}>
             {/* <h1>box5</h1> */}
-            <Dropdown
-              title="Select Year"
-              options={yearOptions}
-              onClick={(event) => handleChange("candle", event)}
-            />
+
             {/* <Dropdown
             title="Select Virtue Bucket"
             options={virtueBucketOptions}
             onClick={(event) => handleChange("candle", event, true)}
           /> */}
-            {feedbacks.length > 0 && (
-              <Graphic
-                type="candle"
-                title="YOUR AVERAGE PERFORMANCE OVERTIME"
-                feedbacks={feedbacks}
-                settings={graphSettings}
-              />
-            )}
+            <div className={styles.feed_div}>
+              <LiveFeed className={styles.live_feed} results={userFeedbacks} />
+            </div>
           </section>
           <section className={ProfileStyles.box6}>
             <div className={ProfileStyles.bio}>

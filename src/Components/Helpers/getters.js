@@ -85,7 +85,7 @@ const getUserFeedbacks = (
     (survey) => survey.receiverId === employeeId
   );
 
-  // dataForUser.sort((a, b) => b.createdAt.localeCompare(a.createdAt));
+  dataForUser.sort((a, b) => b.createdAt.localeCompare(a.createdAt));
 
   const feedbacks = dataForUser.reduce((a, b) => {
     const reviewer = employees.find(({ id }) => id === b.reviewerId);

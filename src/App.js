@@ -112,6 +112,10 @@ function App() {
                   yearOptions,
                   virtueBucketOptions,
                   setEmployee,
+                  virtueBuckets,
+                  employees,
+                  virtues,
+                  surveys,
                 }}
               />
             )}
