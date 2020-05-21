@@ -149,6 +149,11 @@
     justify-content: left;
     overflow-y: auto;
     height: 12em;
+
+    input[type="submit"] {
+      font-size: 1em;
+      padding: 0.25em;
+    }
   }
 
   .feedback {
@@ -166,4 +171,13 @@
 .feedback_container {
   width: calc(100vw - 220px);
   margin: 0 auto;
+}
+
+textarea {
+  font-size: 1em;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 1.5em;
 }

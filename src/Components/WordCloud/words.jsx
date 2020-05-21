@@ -119,7 +119,7 @@ export default [
     value: 13,
   },
   {
-    text: "chiropractor",
+    text: "virtuso",
     value: 35,
   },
   {
