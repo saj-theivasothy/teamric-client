@@ -110,16 +110,18 @@ function FeedbackContent(props) {
             className={LayoutStyles.main_header}
             className={LayoutStyles.addchart}
           >
-            <Dropdown
+            {/* <Dropdown
               title="Select Year"
               options={yearOptions}
               onClick={(event) => handleChange("timeline", event)}
-            />
+            /> */}
             <Dropdown
-              title="Select Virtue Bucket"
+              className={LayoutStyles.virtue_dd}
+              title="Select Virtue"
               options={virtueBucketOptions}
               onClick={(event) => handleChange("timeline", event, true)}
             />
+
             {feedbacks.length > 0 && (
               <Graphic
                 className={LayoutStyles.timeline_graph}
