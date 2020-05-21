@@ -38,28 +38,37 @@ const EmployeeProfile = (props) => {
 
   return (
     <div className={styles.popup}>
+      {/* main div with white background */}
       <div className={styles.popup_inner}>
-        <section className={styles.box2}>
+        <button className={styles.close} onClick={props.closePopup}>
+          X
+        </button>
+        <div className={styles.box2}>
           {/* Box 1 orange color */}
           <img src={employee[2]} alt={employee[1]} />
           <div className={styles.bio}>
             <h3>{employee[1]}</h3>
-            <hr></hr>
             <h4>{employee[3]}</h4>
+            <hr></hr>
           </div>
-        </section>
-        <section className={styles.box3}>
-          <h3>Recent Feedbacks</h3>
-          <div>
-            <LiveFeed results={userFeedbacks} />
+        </div>
+
+        <div className={styles.feedback_flex}>
+          <div className={styles.box3}>
+            <h3 className="center">Recent Feedbacks</h3>
+            <div className={styles.feed_div}>
+              <LiveFeed className={styles.live_feed} results={userFeedbacks} />
+            </div>
           </div>
-        </section>
-        <section className={styles.box4}>
-          {totalAverage}
-          <h3>Average Ratings</h3>
-          {ratings.length > 0 && <div>{ratings}</div>}
-        </section>
-        <button onClick={props.closePopup}>X</button>
+
+          <div className={styles.box4}>
+            <h3 className="center">Average Ratings </h3>
+            {/* {totalAverage} */}
+            <div className={styles.ratings_div}>
+              {ratings.length > 0 && <div>{ratings}</div>}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

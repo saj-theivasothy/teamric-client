@@ -13,6 +13,7 @@ const EmployeeCard = (props) => {
           <h1>{props.job_title}</h1>
           <div>
             <button
+              className={styles.button}
               onClick={(event) =>
                 props.togglePopup([id, name, avatar, job_title, email])
               }
