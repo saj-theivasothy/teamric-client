@@ -5,6 +5,9 @@ import SearchBar from "../search/SearchBar";
 import EmployeeCard from "./EmployeeCard";
 import styles from "./styles/employees.module.scss";
 import EmployeeProfile from "./EmployeeProfile";
+import Header from "../Header";
+import Sidebar from "../Sidebar";
+import LayoutStyles from "../styles/layout.module.css";
 
 function Employees(props) {
   const [term, setTerm] = useState("");
@@ -35,31 +38,32 @@ function Employees(props) {
   });
 
   return (
-    <div className={styles.main_heading}>
-      <h3>PROFILE</h3>
-      <main className={styles.main}>
-        <section className={styles.box1}>
-          <SearchBar
-            id={styles.search}
-            onSearch={(term) => setTerm(term)}
-            term={term}
-          />
-        </section>
-        <section className={styles.box2}>
-          <h1>Box2</h1>
-        </section>
-        {employeeCards}
-        {popup ? (
-          <EmployeeProfile
-            closePopup={(event) => togglePopup()}
-            employee={selectedEmployee}
-            virtues={props.virtues}
-            surveys={props.surveys}
-            employees={props.employees}
-            virtueBuckets={props.virtueBuckets}
-          />
-        ) : null}
-      </main>
+    <div className={LayoutStyles.grid_container}>
+      <Header />
+      <Sidebar />
+      <div className={styles.main_heading}>
+        <h3 className="center">TEAM</h3>
+        <main className={styles.main}>
+          <section className={styles.box1}>
+            <SearchBar
+              id={styles.search}
+              onSearch={(term) => setTerm(term)}
+              term={term}
+            />
+          </section>
+          {employeeCards}
+          {popup ? (
+            <EmployeeProfile
+              closePopup={(event) => togglePopup()}
+              employee={selectedEmployee}
+              virtues={props.virtues}
+              surveys={props.surveys}
+              employees={props.employees}
+              virtueBuckets={props.virtueBuckets}
+            />
+          ) : null}
+        </main>
+      </div>
     </div>
   );
 }

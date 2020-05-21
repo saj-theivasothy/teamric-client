@@ -1,194 +1,11 @@
 export default [
   {
-    text: "told",
-    value: 64,
+    text: "Knowledge",
+    value: 2,
   },
   {
-    text: "review",
-    value: 24,
-  },
-  {
-    text: "call",
-    value: 38,
-  },
-
-  {
-    text: "asked",
-    value: 26,
-  },
-  {
-    text: "finally",
-    value: 14,
-  },
-  {
-    text: "insurance",
-    value: 29,
-  },
-  {
-    text: "week",
-    value: 41,
-  },
-
-  {
-    text: "problem",
-    value: 20,
-  },
-  {
-    text: "going",
-    value: 59,
-  },
-  {
-    text: "help",
-    value: 49,
-  },
-  {
-    text: "felt",
-    value: 45,
-  },
-  {
-    text: "discomfort",
-    value: 11,
-  },
-  {
-    text: "lower",
-    value: 22,
-  },
-  {
-    text: "severe",
-    value: 12,
-  },
-  {
-    text: "free",
-    value: 38,
-  },
-  {
-    text: "better",
-    value: 54,
-  },
-  {
-    text: "muscle",
-    value: 14,
-  },
-  {
-    text: "neck",
-    value: 41,
-  },
-  {
-    text: "root",
-    value: 24,
-  },
-  {
-    text: "adjustment",
-    value: 16,
-  },
-  {
-    text: "therapy",
-    value: 29,
-  },
-  {
-    text: "injury",
-    value: 20,
-  },
-  {
-    text: "excruciating",
-    value: 10,
-  },
-
-  {
-    text: "hospital",
-    value: 11,
-  },
-  {
-    text: "eye",
-    value: 13,
-  },
-  {
-    text: "therapy",
-    value: 29,
-  },
-  {
-    text: "injury",
-    value: 20,
-  },
-  {
-    text: "excruciating",
-    value: 10,
-  },
-  {
-    text: "chronic",
-    value: 13,
-  },
-  {
-    text: "virtuso",
-    value: 35,
-  },
-  {
-    text: "treatment",
-    value: 59,
-  },
-  {
-    text: "tooth",
-    value: 32,
-  },
-  {
-    text: "chiropractic",
-    value: 17,
-  },
-  {
-    text: "dr",
-    value: 77,
-  },
-  {
-    text: "relief",
-    value: 19,
-  },
-  {
-    text: "shoulder",
-    value: 26,
-  },
-  {
-    text: "nurse",
-    value: 17,
-  },
-  {
-    text: "room",
-    value: 22,
-  },
-  {
-    text: "hour",
-    value: 35,
-  },
-  {
-    text: "wait",
-    value: 38,
-  },
-  {
-    text: "hospital",
-    value: 11,
-  },
-  {
-    text: "eye",
-    value: 13,
-  },
-  {
-    text: "test",
-    value: 10,
-  },
-  {
-    text: "appointment",
-    value: 49,
-  },
-  {
-    text: "medical",
-    value: 19,
-  },
-  {
-    text: "question",
-    value: 20,
-  },
-  {
-    text: "office",
-    value: 64,
+    text: "Justify",
+    value: 4,
   },
   {
     text: "care",
@@ -268,7 +85,7 @@ export default [
   },
   {
     text: "chinese",
-    value: 32,
+    value: 3,
   },
   {
     text: "acupuncture",
@@ -396,7 +213,7 @@ export default [
   },
   {
     text: "procedure",
-    value: 32,
+    value: 3,
   },
   {
     text: "filling",
@@ -456,7 +273,7 @@ export default [
   },
   {
     text: "business",
-    value: 32,
+    value: 3,
   },
   {
     text: "refund",

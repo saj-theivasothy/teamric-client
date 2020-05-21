@@ -36,3 +36,13 @@
   color: rgb(77, 75, 75);
   padding-top: 0.5em;
 }
+
+.dd_list {
+  font-size: 0.6em;
+  cursor: pointer;
+}
+
+.dd-header {
+  font-size: 0.6em;
+  cursor: pointer;
+}
