@@ -160,7 +160,7 @@ const Survey = (props) => {
           </section>
           <section className={styles.feedback_container}>
             <h6 className={styles.h6}>Give your feedback</h6>
-            <div className={styles.feedbacks}>
+            <div className={styles.feedback}>
               <form onSubmit={handleSubmit}>
                 {feedbacks}
                 {feedbacks.length > 0 && <input type="submit" value="Submit" />}
