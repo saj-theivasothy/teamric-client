@@ -121,16 +121,20 @@
   color: white;
 }
 
+.bio .bio_line {
+  font-size: 0.7em;
+}
+
 .tagname {
   text-align: center;
   color: gray;
   margin-top: 1em;
 }
 
-.main .box3,
+/* .main .box3,
 .main .box9 {
   background: #ffffff50;
-}
+} */
 
 .main .box9 {
   background: #5cc5d350;

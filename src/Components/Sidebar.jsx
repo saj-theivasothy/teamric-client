@@ -53,14 +53,7 @@ function Sidebar(props) {
             </div>
           </Link>
         </li>
-        <li className={LayoutStyles.sidenav__list_item}>
-          <Link to="/notifications" style={{ textDecoration: "none" }}>
-            <div className="button">
-              <NotificationsActiveIcon />
-              <div className="button-title">NOTIFICATION</div>
-            </div>
-          </Link>
-        </li>
+
         <li className={LayoutStyles.sidenav__list_item}>
           <Link to="/employees" style={{ textDecoration: "none" }}>
             <div className="button">
