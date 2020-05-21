@@ -4,7 +4,7 @@ import styles from "./styles/survey.module.scss";
 
 function Details(props) {
   return (
-    <label>
+    <label className={styles.textarea}>
       Any Additional feedback on this virtue?
       <textarea
         cols={40}

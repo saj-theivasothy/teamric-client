@@ -100,7 +100,7 @@
 .main {
   display: grid;
   grid-template-columns: 30vw 30vw 30vw;
-  grid-template-rows: 40vh 50vh;
+  grid-template-rows: 45vh 40vh;
 }
 
 .main section {
@@ -118,16 +118,16 @@
 }
 
 .search_container {
-  height: 20em;
+  // height: 20em;
 }
 
 .survey_bucket_container {
   position: relative;
-  height: 20em;
+  // height: 20em;
 }
 
 .virtues_container {
-  height: 20em;
+  // height: 20em;
 
   .virtues {
     position: relative;
@@ -138,17 +138,12 @@
 }
 
 .feedback_container {
-  position: relative;
-  width: 70em;
-  top: 5em;
-  height: 15em;
-
   .feedbacks {
     display: flex;
     flex-flow: row wrap;
     justify-content: left;
     overflow-y: auto;
-    height: 12em;
+    height: 8em;
 
     input[type="submit"] {
       font-size: 1em;
@@ -169,15 +164,19 @@
 }
 
 .feedback_container {
-  width: calc(100vw - 220px);
+  width: calc(100vw - 180px);
   margin: 0 auto;
 }
 
 textarea {
   font-size: 1em;
+  height: 2em;
 }
 
 .title {
   font-weight: bold;
   font-size: 1.5em;
+}
+
+.textarea {
 }
